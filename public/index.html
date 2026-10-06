@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CDS IGRL OS — Legal Metrology Solutions</title>
+<meta name="description" content="CDS International Global Resources Limited supplies, installs, and supports precision measurement instruments and legal metrology solutions for retail, industrial, and scientific applications across Nigeria.">
+<link rel="canonical" href="https://cdsigrl.theboostnation.space/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cdsigrl.theboostnation.space/">
+<meta property="og:title" content="CDS IGRL — Legal Metrology Solutions">
+<meta property="og:description" content="Six service categories, one trusted partner. Explore CDS IGRL inside CDS IGRL OS.">
+<meta property="og:image" content="https://cdsigrl.theboostnation.space/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdsigrl.theboostnation.space/og-image.jpg">
+<meta name="theme-color" content="#0B0A07">
+<link rel="icon" href="os/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --emerald:#F5C518; --deep:#0B0A07; --mint:#FBE38A; --cream:#FFF8E6; --navy:#16130C; --ink:#080706; --pine:#12100B; --forest:#C99A00; --neon:#6B3FA0;
+  --glass:rgba(18,16,11,.72); --glass-strong:rgba(12,11,8,.95); --line:rgba(245,236,210,.12); --muted:rgba(245,236,210,.6);
+  --menubar-h:30px; --dock-size:54px;
+  --shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 0 .5px rgba(245,236,210,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:#070605;color:var(--cream);-webkit-font-smoothing:antialiased;user-select:none;-webkit-user-select:none}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block}
+::selection{background:var(--emerald);color:var(--deep)}
+
+/* ---------- Boot ---------- */
+#boot{position:fixed;inset:0;background:#000;z-index:9999;display:grid;place-items:center;transition:opacity .6s}
+#boot.gone{opacity:0;pointer-events:none}
+#boot .in{display:flex;flex-direction:column;align-items:center;gap:36px}
+#boot img{width:72px;height:72px}
+#boot .bar{width:180px;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+#boot .bar i{display:block;height:100%;width:0;background:#fff;border-radius:4px;animation:load 1.3s cubic-bezier(.6,.1,.3,1) forwards}
+@keyframes load{to{width:100%}}
+
+/* ---------- Wallpaper ---------- */
+#wallcv{position:fixed;inset:0;z-index:0;display:block;background:#070605 url(os/wallpapers/global.jpg) center/cover;filter:none}
+#wallcv:not(.live){box-shadow:inset 0 0 0 100vmax rgba(0,0,0,.58)}
+#wpLabel{position:fixed;left:18px;bottom:96px;z-index:1;pointer-events:none;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;color:var(--mint);display:flex;flex-direction:column;gap:6px;opacity:0}
+#wpLabel div{display:flex;gap:12px;align-items:center}
+#wpLabel b{color:var(--cream);font-weight:600}
+#wpLabel em{width:7px;height:7px;border-radius:50%;background:var(--emerald);box-shadow:0 0 10px var(--emerald)}
+#wpLabel .tr{width:150px;height:2px;background:rgba(251,227,138,.18);border-radius:2px;overflow:hidden}
+#wpLabel .tr i{display:block;height:100%;background:var(--mint);transform-origin:left;transform:scaleX(0)}
+
+/* ---------- Menubar ---------- */
+#menubar{position:fixed;top:0;left:0;right:0;height:var(--menubar-h);z-index:5000;display:flex;align-items:center;justify-content:space-between;padding:0 10px;font-size:13px;font-weight:500;background:rgba(10,9,6,.38);backdrop-filter:blur(30px) saturate(1.6);-webkit-backdrop-filter:blur(30px) saturate(1.6)}
+#menubar .side{display:flex;align-items:center;gap:2px;height:100%}
+.mb-item{height:22px;padding:0 9px;border-radius:5px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.mb-item:hover,.mb-item.open{background:rgba(255,255,255,.16)}
+.mb-item.app{font-weight:800}
+.mb-logo img{width:16px;height:16px}
+.mb-right .mb-item{padding:0 7px}
+.mb-right svg{width:17px;height:17px}
+.dropdown{position:fixed;top:calc(var(--menubar-h) - 2px);min-width:230px;padding:5px;border-radius:9px;background:rgba(18,16,11,.82);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);box-shadow:var(--shadow);font-size:13px;z-index:6000;display:none}
+.dropdown.show{display:block}
+.dropdown button,.dropdown a{display:flex;justify-content:space-between;width:100%;text-align:left;padding:4px 10px;border-radius:5px;gap:20px}
+.dropdown button:hover,.dropdown a:hover{background:var(--emerald);color:var(--deep)}
+.dropdown hr{border:0;border-top:1px solid var(--line);margin:5px 8px}
+.dropdown kbd{font-family:inherit;opacity:.55}
+
+/* ---------- Notch ---------- */
+#notch{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:5500;width:200px;height:32px;background:#000;border-radius:0 0 14px 14px;overflow:hidden;transition:width .45s cubic-bezier(.3,1.35,.5,1),height .45s cubic-bezier(.3,1.35,.5,1),border-radius .45s;cursor:pointer;color:#fff}
+#notch.big{width:460px;height:156px;border-radius:0 0 30px 30px}
+#notch .mini{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 12px;transition:opacity .2s}
+#notch.big .mini{opacity:0}
+#notch .mini .art{width:20px;height:20px;border-radius:5px}
+#notch .mini .ttl{font-size:12px;font-weight:600;flex:1;margin-left:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eq{display:flex;gap:2px;align-items:flex-end;height:14px}
+.eq i{width:3px;background:var(--emerald);border-radius:2px;animation:eq 1s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}.eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:3px}50%{height:14px}}
+#notch .full{position:absolute;inset:0;padding:40px 24px 16px;opacity:0;transition:opacity .25s .1s;display:flex;flex-direction:column;gap:12px;pointer-events:none}
+#notch.big .full{opacity:1;pointer-events:auto}
+#notch .row{display:flex;align-items:center;gap:14px}
+#notch .full .art{width:58px;height:58px;border-radius:12px;flex:none;display:grid;place-items:center;font-weight:900;font-size:18px;color:var(--deep)}
+#notch .meta{flex:1;min-width:0}
+#notch .meta small{font-size:10px;letter-spacing:.18em;color:var(--emerald);font-weight:800}
+#notch .meta b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#notch .meta span{font-size:11px;color:rgba(255,255,255,.5);font-family:"JetBrains Mono",monospace}
+#notch .prog{height:4px;background:rgba(255,255,255,.15);border-radius:4px;overflow:hidden}
+#notch .prog i{display:block;height:100%;background:#fff;width:0}
+#notch .ctrl{display:flex;justify-content:center;gap:26px;align-items:center}
+#notch .ctrl button{opacity:.85}#notch .ctrl button:hover{opacity:1;transform:scale(1.1)}
+#notch .ctrl svg{width:20px;height:20px}
+#notch .ctrl .open svg{width:26px;height:26px}
+
+/* ---------- Desktop ---------- */
+#desktop{position:fixed;top:var(--menubar-h);left:0;right:0;bottom:0;z-index:2}
+#icons{position:absolute;top:14px;left:14px;display:grid;grid-auto-flow:column;grid-template-rows:repeat(6,auto);gap:6px}
+.dicon{width:92px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:6px 2px;border-radius:7px;font-size:12px;font-weight:500;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.dicon .ic{width:52px;height:52px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+.dicon span{padding:1px 6px;border-radius:4px;line-height:1.3}
+.dicon.sel .ic{background:rgba(255,255,255,.12);border-radius:8px}
+.dicon.sel span{background:#8a6d0a}
+
+/* ---------- Widgets ---------- */
+#widgets{position:absolute;top:14px;right:14px;display:grid;grid-template-columns:repeat(2,160px);gap:14px}
+.wg{background:rgba(18,16,11,.5);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5);border-radius:22px;padding:14px 16px;box-shadow:0 0 0 .5px rgba(245,236,210,.16),0 10px 30px -10px rgba(0,0,0,.5);min-height:160px;position:relative;overflow:hidden}
+.wg.wide{grid-column:span 2}
+.wg .lbl{font-size:10px;letter-spacing:.14em;font-weight:800;color:var(--emerald);text-transform:uppercase}
+.wg-date .day{font-size:12px;font-weight:800;color:#ff6b5e;letter-spacing:.06em;text-transform:uppercase}
+.wg-date .num{font-size:46px;font-weight:300;line-height:1.05}
+.wg-date .ev{margin-top:10px;font-size:11px;border-left:3px solid var(--emerald);padding-left:7px;line-height:1.35}
+.wg-date .ev small{display:block;color:var(--muted)}
+.wg-stat .big{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-top:8px}
+.wg-stat .big em{font-style:normal;color:var(--emerald)}
+.wg-stat p{font-size:11px;color:var(--muted);margin-top:4px}
+.wg-stat svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:56px}
+.wg-clocks{display:flex;justify-content:space-between;min-height:auto;padding:16px 18px}
+.clk{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px}
+.clk svg{width:56px;height:56px}
+.clk b{font-weight:600}.clk small{color:var(--muted);font-size:10px;margin-top:-4px}
+.wg-quote{min-height:auto}
+.wg-quote q{display:block;font-size:13px;line-height:1.45;margin-top:8px;font-weight:500}
+.wg-quote q::before,.wg-quote q::after{content:""}
+.wg-quote .who{margin-top:10px;font-size:11px;color:var(--muted)}
+.wg-cta{background:linear-gradient(150deg,rgba(245,197,24,.9),rgba(201,154,0,.9));color:var(--deep);cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .2s}
+.wg-cta:hover{transform:scale(1.03)}
+.wg-cta .rk{font-size:30px;position:absolute;top:14px;left:16px}
+.wg-cta b{font-size:16px;font-weight:900;line-height:1.15}
+.wg-cta small{font-size:11px;font-weight:600;opacity:.75;margin-top:4px}
+
+/* ---------- Windows ---------- */
+.win{position:absolute;background:var(--glass-strong);backdrop-filter:blur(40px) saturate(1.6);-webkit-backdrop-filter:blur(40px) saturate(1.6);border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;min-width:300px;min-height:220px;transition:transform .35s cubic-bezier(.3,1.2,.5,1),opacity .3s;transform-origin:center bottom}
+.win.opening{transform:scale(.9);opacity:0}
+.win.genie{transition:none!important;will-change:transform,clip-path}
+.win.min{transform:scale(.08) translateY(400%);opacity:0;pointer-events:none}
+.win.zoomed{left:0!important;top:0!important;width:100%!important;height:calc(100% - 84px)!important;border-radius:0}
+.win.dragging{transition:none}
+.win:not(.focused){box-shadow:0 20px 50px -20px rgba(0,0,0,.6),0 0 0 .5px rgba(245,236,210,.1)}
+.titlebar{height:44px;flex:none;display:flex;align-items:center;padding:0 14px;position:relative;cursor:default;border-bottom:1px solid var(--line)}
+.lights{display:flex;gap:8px;z-index:2}
+.lights button{width:12px;height:12px;border-radius:50%;display:grid;place-items:center}
+.lights .c{background:#ff5f57}.lights .m{background:#febc2e}.lights .z{background:#28c840}
+.win:not(.focused) .lights button{background:rgba(245,236,210,.2)}
+.lights svg{width:8px;height:8px;opacity:0;stroke:rgba(0,0,0,.6);stroke-width:2.2}
+.lights:hover svg{opacity:1}
+.titlebar .ttl{position:absolute;left:0;right:0;text-align:center;font-size:13px;font-weight:700;pointer-events:none;color:rgba(242,242,242,.85)}
+.win:not(.focused) .titlebar .ttl{opacity:.5}
+.wbody{flex:1;overflow:auto;user-select:text;-webkit-user-select:text;scrollbar-width:thin;scrollbar-color:rgba(245,236,210,.2) transparent}
+.resize{position:absolute;right:0;bottom:0;width:18px;height:18px;cursor:nwse-resize;z-index:3}
+
+/* Welcome (browser) */
+.urlbar{flex:1;margin:0 14px 0 80px;height:28px;border-radius:8px;background:rgba(245,236,210,.08);display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;color:var(--muted);position:relative;z-index:2}
+.urlbar svg{width:11px;height:11px}
+.hero{padding:40px 38px 34px;background:radial-gradient(600px 300px at 90% 0%,rgba(245,197,24,.18),transparent 70%)}
+.eyebrow{font-size:10px;letter-spacing:.4em;font-weight:900;color:var(--emerald);text-transform:uppercase}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:900;line-height:.95;letter-spacing:-.03em;margin:14px 0 18px}
+.hero h1 sup{color:var(--emerald);font-size:.45em;vertical-align:top;position:relative;top:.15em}
+.hero p{color:rgba(242,242,242,.75);line-height:1.6;font-size:15px;max-width:520px}
+.hero ul{list-style:none;margin:18px 0 26px;display:grid;gap:8px;font-size:14px;font-weight:600}
+.hero li{display:flex;gap:10px;align-items:center}
+.hero li::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;background:var(--emerald) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-5' fill='none' stroke='%23013220' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;transition:all .2s}
+.btn.pri{background:var(--emerald);color:var(--deep)}.btn.pri:hover{background:var(--mint)}
+.btn.sec{box-shadow:inset 0 0 0 1px rgba(245,236,210,.3)}.btn.sec:hover{background:rgba(245,236,210,.1)}
+.duo{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.duo>div{padding:22px 38px}
+.duo>div+div{border-left:1px solid var(--line)}
+.duo small{font-size:10px;letter-spacing:.2em;color:var(--muted);font-weight:800}
+.duo p{font-size:13px;font-weight:800;margin-top:8px;line-height:1.4;text-transform:uppercase}
+
+/* Finder (Work) */
+.finder{display:flex;height:100%}
+.sidebar{width:170px;flex:none;padding:12px 8px;background:rgba(0,0,0,.18);border-right:1px solid var(--line);font-size:13px}
+.sidebar h6{font-size:11px;color:var(--muted);font-weight:700;padding:10px 10px 4px}
+.sidebar button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:5px 10px;border-radius:6px}
+.sidebar button.on{background:rgba(245,236,210,.12)}
+.sidebar button i{width:8px;height:8px;border-radius:50%;flex:none}
+.grid{flex:1;padding:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;align-content:start;overflow:auto}
+.proj{display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:10px;transition:background .15s;text-align:left}
+.proj:hover{background:rgba(245,236,210,.08)}
+.proj .thumb{aspect-ratio:4/3;border-radius:8px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px;box-shadow:0 0 0 .5px rgba(255,255,255,.15)}
+.proj .thumb b{font-size:22px;font-weight:900;letter-spacing:-.03em;line-height:1;color:rgba(255,255,255,.95);text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.proj .thumb .bw{position:absolute;top:8px;left:8px;right:8px;height:10px;display:flex;gap:3px}
+.proj .thumb .bw i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5)}
+.proj .thumb .go{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.35);display:grid;place-items:center;opacity:0;transition:opacity .2s;font-size:12px}
+.proj:hover .go{opacity:1}
+.proj .tag{font-size:9px;letter-spacing:.16em;font-weight:800;color:var(--emerald)}
+.proj .nm{font-size:13px;font-weight:700;margin-top:-4px}
+.proj .ds{font-size:11px;color:var(--muted);line-height:1.4}
+.statusbar{height:26px;flex:none;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;align-items:center;justify-content:center}
+
+/* App Store (Pricing) */
+.store{padding:26px 28px}
+.store h2{font-size:28px;font-weight:900;letter-spacing:-.02em}
+.store .sub{color:var(--muted);font-size:13px;margin:6px 0 4px}
+.slots{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.18em;font-weight:800;color:var(--emerald);margin:10px 0 20px}
+.slots i{width:7px;height:7px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 0 rgba(245,197,24,.6);animation:ping 1.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(245,197,24,0)}100%{box-shadow:0 0 0 0 rgba(245,197,24,0)}}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.plan{border-radius:16px;padding:20px;background:rgba(245,236,210,.05);box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column;gap:10px;position:relative}
+.plan.pop{background:linear-gradient(170deg,rgba(245,197,24,.22),rgba(245,197,24,.04));box-shadow:inset 0 0 0 1.5px rgba(245,197,24,.6)}
+.plan .badge{position:absolute;top:16px;right:16px;background:var(--emerald);color:var(--deep);font-size:8px;font-weight:900;letter-spacing:.18em;padding:4px 9px;border-radius:99px}
+.plan .pn{font-size:11px;font-weight:900;letter-spacing:.24em;color:var(--emerald)}
+.plan .pr{font-size:38px;font-weight:900;letter-spacing:-.03em}
+.plan .pd{font-size:12px;color:var(--muted);min-height:32px}
+.plan ul{list-style:none;font-size:12px;display:grid;gap:6px;margin:4px 0 8px;flex:1}
+.plan li::before{content:"✓  ";color:var(--emerald);font-weight:900}
+.get{align-self:flex-start;background:rgba(245,236,210,.12);color:var(--emerald);font-weight:800;font-size:13px;padding:6px 20px;border-radius:99px}
+.plan.pop .get{background:var(--emerald);color:var(--deep)}
+.get:hover{filter:brightness(1.15)}
+
+.cmp-h{font-size:16px;font-weight:800;margin:26px 0 10px}
+.cmp{overflow:auto;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line)}
+.cmp table{width:100%;border-collapse:collapse;font-size:12.5px}
+.cmp th,.cmp td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+.cmp th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}
+.cmp td:not(:first-child),.cmp th:not(:first-child){text-align:center}
+.cmp tr:last-child td{border-bottom:0}
+.cmp td:nth-child(3),.cmp th:nth-child(3){background:rgba(245,197,24,.1)}
+.prod{padding:26px 28px}
+.prod h2{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.05;margin:10px 0 10px}
+.prod>p{color:rgba(255,245,224,.75);font-size:14px;line-height:1.6;max-width:560px}
+.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:20px 0}
+.feat.two{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.feat>div{padding:14px;border-radius:12px;background:rgba(245,236,210,.05);box-shadow:inset 0 0 0 1px var(--line)}
+.feat b{font-size:18px;color:var(--mint)}
+.feat h4{font-size:13px;margin:6px 0 3px}
+.feat p{font-size:12px;color:var(--muted);line-height:1.45}
+.cases{display:grid;gap:8px}
+.cases>div{padding:12px 14px;border-left:3px solid var(--emerald);background:rgba(245,197,24,.07);border-radius:0 10px 10px 0}
+.cases h4{font-size:13px}.cases p{font-size:12px;color:var(--muted);margin-top:3px}
+.trust{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+.trust span{font-size:11px;padding:5px 10px;border-radius:99px;background:rgba(251,227,138,.1);color:var(--mint)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.ba>div{padding:14px;border-radius:12px;background:rgba(255,95,87,.08)}
+.ba .after{background:rgba(245,197,24,.14)}
+.ba small{font-size:10px;letter-spacing:.2em;font-weight:900;color:var(--muted)}
+.ba p{font-size:13px;margin-top:6px;line-height:1.45}
+@media (max-width:760px){.ba{grid-template-columns:1fr}}
+
+/* Notes */
+.notes{display:flex;height:100%}
+.nlist{width:210px;flex:none;border-right:1px solid var(--line);overflow:auto;padding:8px}
+.nlist button{display:block;width:100%;text-align:left;padding:10px 12px;border-radius:8px;margin-bottom:2px}
+.nlist button b{display:block;font-size:13px}
+.nlist button small{font-size:11px;color:var(--muted)}
+.nlist button.on{background:#b88a1a}
+.nlist button.on small{color:rgba(255,255,255,.75)}
+.ndoc{flex:1;padding:24px 30px;overflow:auto}
+.ndoc .when{font-size:11px;color:var(--muted);text-align:center;margin-bottom:16px}
+.ndoc h3{font-size:24px;font-weight:900;letter-spacing:-.02em;margin-bottom:10px}
+.ndoc p{font-size:14px;line-height:1.65;color:rgba(242,242,242,.82);margin-bottom:12px}
+.ndoc .item{display:flex;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+.ndoc .item b{font-size:11px;color:var(--emerald);font-weight:900;letter-spacing:.1em;width:28px;flex:none;padding-top:2px}
+.ndoc .item h4{font-size:14px;margin-bottom:3px}
+.ndoc .item p{margin:0;font-size:13px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.metrics div{background:rgba(245,236,210,.06);border-radius:12px;padding:16px}
+.metrics b{font-size:30px;font-weight:900;color:var(--emerald);display:block;letter-spacing:-.02em}
+.metrics small{font-size:10px;letter-spacing:.16em;font-weight:800;color:var(--muted)}
+
+/* Messages (Nova) */
+.chat{display:flex;flex-direction:column;height:100%}
+.chat-head{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px;border-bottom:1px solid var(--line)}
+.chat-head .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(140deg,var(--emerald),var(--forest));display:grid;place-items:center;font-weight:900;color:var(--deep)}
+.chat-head b{font-size:12px}
+.chat-head small{font-size:10px;color:var(--emerald)}
+.msgs{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:6px}
+.bub{max-width:78%;padding:8px 13px;border-radius:18px;font-size:13.5px;line-height:1.4;animation:pop .25s ease-out}
+.bub a{text-decoration:underline;font-weight:700}
+.bub.in{align-self:flex-start;background:rgba(245,236,210,.12);border-bottom-left-radius:5px}
+.bub.out{align-self:flex-end;background:var(--emerald);color:var(--deep);border-bottom-right-radius:5px;font-weight:500}
+.bub.typing{display:flex;gap:4px;padding:12px 14px}
+.bub.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:blink 1.2s infinite}
+.bub.typing i:nth-child(2){animation-delay:.2s}.bub.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+@keyframes pop{from{transform:scale(.85);opacity:0}}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 10px}
+.quick button{font-size:12px;padding:5px 11px;border-radius:99px;box-shadow:inset 0 0 0 1px rgba(245,197,24,.5);color:var(--emerald)}
+.quick button:hover{background:rgba(245,197,24,.15)}
+.composer{display:flex;gap:8px;padding:10px 14px 14px}
+.composer input{flex:1;background:transparent;border:1px solid rgba(245,236,210,.2);border-radius:99px;padding:8px 14px;color:inherit;font:inherit;font-size:13px;outline:none}
+.composer input:focus{border-color:var(--emerald)}
+.composer button{width:32px;height:32px;border-radius:50%;background:var(--emerald);color:var(--deep);display:grid;place-items:center;flex:none}
+
+/* Games */
+.games{padding:26px 28px;background:radial-gradient(500px 260px at 100% 0%,rgba(107,63,160,.45),transparent 70%)}
+.games h2{font-size:30px;font-weight:900;letter-spacing:-.02em;margin:10px 0 8px;line-height:1.05}
+.games>p{color:var(--muted);font-size:14px;line-height:1.6;max-width:520px}
+.gcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:22px 0}
+.gcard{padding:16px;border-radius:14px;background:rgba(245,236,210,.06);box-shadow:inset 0 0 0 1px var(--line)}
+.gcard .e{font-size:26px}
+.gcard h4{font-size:14px;margin:8px 0 4px}
+.gcard p{font-size:12px;color:var(--muted);line-height:1.45}
+
+/* Terminal */
+.term{background:rgba(6,5,3,.92);font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;line-height:1.55;padding:12px 14px;height:100%;overflow:auto;color:#efe6cc;cursor:text}
+.term .ln{white-space:pre-wrap;word-break:break-word}
+.term .p{color:var(--emerald)}
+.term .k{color:#f5d76e}
+.term a{color:#7fd7ff;text-decoration:underline}
+.term .in-row{display:flex}
+.term input{flex:1;background:none;border:0;outline:none;color:inherit;font:inherit;caret-color:var(--emerald)}
+
+/* Mail */
+.mail{padding:0}
+.mail .hdr{padding:18px 26px;border-bottom:1px solid var(--line);font-size:13px;display:grid;gap:6px}
+.mail .hdr span{color:var(--muted);display:inline-block;width:62px}
+.mail .bd{padding:26px}
+.mail h3{font-size:24px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px;line-height:1.15}
+.mail p{font-size:14px;line-height:1.65;color:rgba(242,242,242,.8);margin-bottom:14px}
+.links{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* Trash */
+.trash{padding:26px;text-align:center}
+.trash .big{font-size:54px}
+.trash h3{font-size:18px;margin:10px 0 6px}
+.trash p{font-size:13px;color:var(--muted);line-height:1.6}
+.trash ul{list-style:none;margin:18px auto 0;max-width:320px;text-align:left;display:grid;gap:8px}
+.trash li{font-size:13px;padding:10px 12px;border-radius:8px;background:rgba(245,236,210,.06);display:flex;justify-content:space-between;text-decoration:line-through;color:var(--muted)}
+
+/* ---------- Dock ---------- */
+#dock{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);z-index:4000;display:flex;align-items:flex-end;gap:4px;padding:6px 8px;border-radius:20px;background:rgba(18,16,11,.42);backdrop-filter:blur(30px) saturate(1.6);-webkit-backdrop-filter:blur(30px) saturate(1.6);box-shadow:0 0 0 .5px rgba(245,236,210,.22),0 10px 40px -10px rgba(0,0,0,.5);height:calc(var(--dock-size) + 14px)}
+.dk{width:var(--dock-size);height:var(--dock-size);position:relative;flex:none;transition:width .12s,height .12s,margin .12s}
+.dk .ic{width:100%;height:100%;transform-origin:bottom center}
+.dk.bounce .ic{animation:bounce .55s ease 2}
+@keyframes bounce{40%{transform:translateY(-22px)}}
+.dk .dot{position:absolute;left:50%;bottom:-5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--mint);opacity:0}
+.dk.run .dot{opacity:.9}
+.dk .tip{position:absolute;bottom:calc(100% + 14px);left:50%;transform:translateX(-50%);padding:4px 11px;border-radius:7px;font-size:12px;font-weight:500;white-space:nowrap;background:rgba(18,16,11,.9);box-shadow:0 0 0 .5px rgba(245,236,210,.25);opacity:0;pointer-events:none;transition:opacity .12s}
+.dk:hover .tip{opacity:1}
+.sep{width:1px;align-self:stretch;margin:4px 4px;background:rgba(245,236,210,.25)}
+
+/* ---------- Icons ---------- */
+.ic svg{width:100%;height:100%;display:block}
+
+/* ---------- Spotlight & ctx ---------- */
+#spot{position:fixed;inset:0;z-index:7000;display:none;background:rgba(0,0,0,.15)}
+#spot.show{display:block}
+#spot .box{position:absolute;top:22%;left:50%;transform:translateX(-50%);width:min(620px,92vw);border-radius:16px;background:rgba(18,16,11,.88);backdrop-filter:blur(40px) saturate(1.8);-webkit-backdrop-filter:blur(40px) saturate(1.8);box-shadow:var(--shadow);overflow:hidden}
+#spot .q{display:flex;align-items:center;gap:12px;padding:14px 18px}
+#spot .q svg{width:22px;height:22px;opacity:.6;flex:none}
+#spot input{flex:1;background:none;border:0;outline:none;color:inherit;font:inherit;font-size:22px;font-weight:400}
+#spot .res{border-top:1px solid var(--line);max-height:340px;overflow:auto;padding:6px}
+#spot .res:empty{display:none}
+#spot .r{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:7px 10px;border-radius:8px;font-size:14px}
+#spot .r .ic{width:28px;height:28px;flex:none}
+#spot .r small{margin-left:auto;font-size:11px;color:var(--muted)}
+#spot .r.on{background:var(--emerald);color:var(--deep)}
+#spot .r.on small{color:var(--deep)}
+#ctx{position:fixed;z-index:6500}
+
+/* ---------- Mobile ---------- */
+@media (max-width:760px){
+  :root{--dock-size:38px}
+  #clock .d{display:none}
+  .dk[data-id="trash"]{display:none}
+  .proj .thumb b{font-size:16px}
+  .proj .nm{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #notch{width:130px;height:28px}
+  #notch .mini .ttl{display:none}
+  #notch.big{width:min(94vw,400px)}
+  .mb-hide{display:none!important}
+  #widgets{display:none}
+  #icons{left:0;right:0;top:20px;grid-auto-flow:row;grid-template-rows:none;grid-template-columns:repeat(4,1fr);justify-items:center;gap:14px 0}
+  .dicon{width:78px;font-size:11px}
+  .dicon .ic{width:58px;height:58px}
+  #dock{gap:2px;padding:5px 6px;border-radius:16px;max-width:96vw}
+  .dk.social,.sep,.dk.mob-hide{display:none}
+  .win{left:6px!important;right:6px;top:6px!important;width:auto!important;height:calc(100% - 82px)!important;min-width:0}
+  .resize{display:none}
+  .urlbar{margin-left:70px}
+  .hero{padding:28px 22px}
+  .duo{grid-template-columns:1fr}.duo>div{padding:18px 22px}.duo>div+div{border-left:0;border-top:1px solid var(--line)}
+  .sidebar{display:none}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:10px;gap:4px}
+  .nlist{width:120px}
+  .nlist button small{display:none}
+  .ndoc{padding:18px}
+}
+@media (min-width:761px) and (max-width:1120px){#widgets{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}}
+.ba .neutral{background:rgba(245,236,210,.06)}
+.step{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.step b{font-size:10px;letter-spacing:.2em;font-weight:900;color:var(--emerald);padding-top:4px}
+.step h4{font-size:17px;font-weight:800;margin-bottom:4px}
+.step p{font-size:13px;color:var(--muted);line-height:1.5}
+@media (max-width:760px){.step{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+
+<div id="boot"><div class="in"><img src="os/logo-white.svg" alt="CDS IGRL"><div class="bar"><i></i></div></div></div>
+
+<canvas id="wallcv"></canvas>
+<div id="wpLabel"><div><em></em><b></b><span></span></div><div class="tr"><i></i></div></div>
+
+<!-- Menubar -->
+<header id="menubar">
+  <div class="side">
+    <button class="mb-item mb-logo" data-menu="brand" aria-label="CDS IGRL menu"><img src="os/logo-white.svg" alt=""></button>
+    <button class="mb-item app" id="appName" data-menu="app">CDS IGRL OS</button>
+    <button class="mb-item mb-hide" data-menu="file">File</button>
+    <button class="mb-item mb-hide" data-menu="view">View</button>
+    <button class="mb-item mb-hide" data-menu="window">Window</button>
+    <button class="mb-item mb-hide" data-menu="help">Help</button>
+  </div>
+  <div class="side mb-right">
+    <span class="mb-item mb-hide" title="Headquartered globally, deployed locally">● Abuja · Nationwide</span>
+    <span class="mb-item mb-hide" aria-label="Battery 100%">100% <svg viewBox="0 0 28 14" fill="none"><rect x=".5" y=".5" width="24" height="13" rx="3.5" stroke="currentColor" opacity=".5"/><rect x="2" y="2" width="21" height="10" rx="2" fill="currentColor"/><path d="M26 5v4" stroke="currentColor" stroke-linecap="round" opacity=".5"/></svg></span>
+    <span class="mb-item mb-hide" aria-label="Wi-Fi"><svg viewBox="0 0 20 16" fill="currentColor"><path d="M10 13.5l2.2-2.6a3.3 3.3 0 00-4.4 0zM10 6.5c2.3 0 4.3.9 5.8 2.3l1.6-1.9A10.6 10.6 0 0010 4a10.6 10.6 0 00-7.4 2.9l1.6 1.9A8.2 8.2 0 0110 6.5zM10 1.5c3.6 0 6.9 1.4 9.4 3.6L21 3.2A16.4 16.4 0 0010-1 16.4 16.4 0 00-1 3.2l1.6 1.9A13.9 13.9 0 0110 1.5z" transform="translate(0 2)"/></svg></span>
+    <button class="mb-item" id="spotBtn" aria-label="Spotlight"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5" stroke-linecap="round"/></svg></button>
+    <span class="mb-item" id="clock"></span>
+  </div>
+</header>
+<div class="dropdown" id="dropdown"></div>
+
+<!-- Notch -->
+<div id="notch" aria-label="Core capabilities">
+  <div class="mini"><i class="art" id="nArtMini"></i><span class="ttl" id="nTtlMini"></span><div class="eq"><i></i><i></i><i></i><i></i></div></div>
+  <div class="full">
+    <div class="row">
+      <div class="art" id="nArt"></div>
+      <div class="meta"><small>CORE CAPABILITY</small><b id="nTtl"></b><span id="nUrl"></span></div>
+      <div class="eq"><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="prog"><i id="nProg"></i></div>
+    <div class="ctrl">
+      <button id="nPrev" aria-label="Previous pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 6v12l-8.5-6zM21 6v12l-8.5-6z"/></svg></button>
+      <button id="nOpen" class="open" aria-label="Open pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+      <button id="nNext" aria-label="Next pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 6v12l8.5-6zM3 6v12l8.5-6z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<main id="desktop">
+  <div id="icons"></div>
+  <aside id="widgets">
+    <div class="wg wg-date"><div class="day" id="wDay"></div><div class="num" id="wNum"></div>
+      <div class="ev">Precision measurement solutions<small>Retail · Industrial · Scientific</small></div>
+      <div class="ev" style="border-color:#FBE38A">Legal metrology compliance<small>Every measurement matters</small></div></div>
+    <div class="wg wg-stat"><div class="lbl">Service categories</div><div class="big">6</div><p>working as one system</p>
+      <svg viewBox="0 0 160 56" preserveAspectRatio="none"><defs><linearGradient id="gS" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F5C518" stop-opacity=".5"/><stop offset="1" stop-color="#F5C518" stop-opacity="0"/></linearGradient></defs><path d="M0 50 C20 48 30 44 45 42 S70 40 85 30 S115 22 125 14 S150 6 160 3 V56 H0Z" fill="url(#gS)"/><path d="M0 50 C20 48 30 44 45 42 S70 40 85 30 S115 22 125 14 S150 6 160 3" fill="none" stroke="#F5C518" stroke-width="2"/></svg></div>
+    <div class="wg wide wg-clocks" id="clocks"></div>
+    <div class="wg wg-stat"><div class="lbl">Methodology</div><div class="big">5<em>S</em></div><p>assess → support</p>
+      <svg viewBox="0 0 160 56" preserveAspectRatio="none"><g fill="#F5C518" opacity=".55"><rect x="10" y="40" width="22" height="16" rx="3"/><rect x="40" y="31" width="22" height="25" rx="3"/><rect x="70" y="22" width="22" height="34" rx="3"/><rect x="100" y="13" width="22" height="43" rx="3"/><rect x="130" y="4" width="22" height="52" rx="3" opacity="1"/></g></svg></div>
+    <div class="wg wg-cta" id="ctaWidget"><span class="rk">🏛️</span><b>Request a quote</b><small>tell us what you need</small></div>
+    <div class="wg wide wg-quote"><div class="lbl">Our mission</div><q>“To make every trade, industrial, and scientific measurement in Nigeria accurate, certified, and trusted.”</q><div class="who">CDS International Global Resources Limited · Legal Metrology Partner</div></div>
+  </aside>
+</main>
+
+<nav id="dock"></nav>
+
+<div id="spot"><div class="box"><div class="q"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4.5 4.5" stroke-linecap="round"/></svg><input id="spotIn" placeholder="Spotlight Search" autocomplete="off" spellcheck="false"></div><div class="res" id="spotRes"></div></div></div>
+
+<!-- ============ Window templates ============ -->
+<template id="t-welcome">
+  <div class="hero">
+    <div class="eyebrow">Legal Metrology Partner</div>
+    <h1>Precision<br>Measurement<br>Solutions.</h1>
+    <p>We supply, install, and support measurement instruments that keep trade fair, industry accurate, and laboratories compliant. From retail scales to weighbridges, fuel dispensers to analytical balances — complete legal metrology solutions across Nigeria.</p>
+    <ul><li>6 service categories, one trusted partner</li><li>Assess → Select → Install → Certify → Support</li><li>Built for retail, industry, and science</li><li>Certified instruments, deployed nationwide</li></ul>
+    <div class="btns"><a class="btn pri" data-book>Request a quote →</a><button class="btn sec" data-open="work">Explore services</button></div>
+  </div>
+  <div class="duo"><div><small>THE MISSION</small><p>Make every trade, industrial, and scientific measurement in Nigeria accurate, certified, and trusted.</p></div><div><small>THE MODEL</small><p>Assessment, selection, installation, certification, and support — delivered as one service.</p></div></div>
+</template>
+
+<template id="t-work">
+  <div class="finder">
+        <div class="sidebar"><h6>Services</h6>
+      <button class="on" data-f="all"><i style="background:#F5C518"></i>All Services</button>
+      <button data-f="ret"><i style="background:#FBE38A"></i>Retail &amp; Packaging</button>
+      <button data-f="ind"><i style="background:#e8a33d"></i>Fuel &amp; Industrial Flow</button>
+      <button data-f="bul"><i style="background:#cfc6ae"></i>Truck &amp; Bulk Weighing</button>
+      <button data-f="agr"><i style="background:#b8a05a"></i>Hospitality &amp; Agriculture</button>
+      <button data-f="utl"><i style="background:#8a7b4a"></i>Utilities &amp; Transport</button>
+      <button data-f="pre"><i style="background:#9a7b1c"></i>Laboratory &amp; Precision</button>
+      <h6>Locations</h6><button data-book>📍 Maitama, Abuja</button></div>
+    <div style="flex:1;display:flex;flex-direction:column;min-width:0"><div class="grid" id="workGrid"></div><div class="statusbar" id="workStatus"></div></div>
+  </div>
+</template>
+
+<template id="t-approach">
+  <div class="store">
+    <div class="eyebrow">Our approach</div>
+    <h2>Assess to support, end to end.</h2>
+    <p class="sub">Five disciplined steps. Equipment selection, installation, certification, and support are handled as one connected service — and we stay accurate after delivery.</p>
+    <div class="slots"><i></i>ONE TRUSTED PARTNER · QUOTE TO CERTIFIED ACCURACY</div>
+    <div id="steps"></div>
+    <div class="ba" style="margin-top:18px"><div class="neutral"><small>WHY IT MATTERS</small><p>One team responsible from first assessment through certified installation and ongoing support.</p></div><div class="after"><small>OUR ROLE</small><p>Does not stop at delivery. We install, certify, calibrate, and keep your instruments accurate.</p></div></div>
+    <div class="btns"><a class="btn pri" data-book>Request a quote →</a><a class="btn sec" href="/approach" target="_blank" rel="noopener">Full page</a></div>
+  </div>
+</template>
+
+<template id="t-clients">
+  <div class="prod">
+    <div class="eyebrow">Who we serve</div>
+    <h2>Clients measuring what matters.</h2>
+    <p>CDS IGRL works with retailers, manufacturers, oil & gas operators, healthcare labs, farms, logistics yards, and utilities — turning measurement requirements into compliant, reliable instruments.</p>
+    <div class="feat two">
+      <div><b>RT</b><h4>Retail · Trade Measurement</h4><p>Supermarkets, food packagers, and retail outlets needing accurate, certified scales and checkweighers.</p></div>
+      <div><b>IN</b><h4>Industrial · Flow &amp; Bulk</h4><p>Oil &amp; gas, chemical, logistics, and mining operations measuring fuel, liquid flow, and bulk weight.</p></div>
+      <div><b>HC</b><h4>Healthcare · Science</h4><p>Pharmaceutical, research, and quality-control laboratories requiring analytical precision.</p></div>
+    </div>
+    <h3 class="cmp-h">Sectors</h3>
+    <div class="trust"><span>Retail</span><span>Manufacturing</span><span>Oil &amp; Gas</span><span>Healthcare</span><span>Agriculture</span><span>Logistics</span><span>Utilities</span></div>
+    <div class="btns"><a class="btn pri" data-book>Discuss your needs →</a><a class="btn sec" href="/clients" target="_blank" rel="noopener">Full page</a></div>
+  </div>
+</template>
+
+<template id="t-notes">
+  <div class="notes"><div class="nlist" id="nlist"></div><div class="ndoc" id="ndoc"></div></div>
+</template>
+
+<template id="t-nova">
+  <div class="chat">
+    <div class="chat-head"><div class="av">A</div><b>Ask CDS IGRL</b><small>● online · replies instantly</small></div>
+    <div class="msgs" id="msgs"></div>
+    <div class="quick" id="quick"><button>What do you do?</button><button>How do you work?</button><button>Who do you serve?</button><button>PPP advisory?</button><button>Investor readiness?</button><button>Contact the team</button></div>
+    <form class="composer" id="composer"><input id="chatIn" placeholder="Ask about our instruments…" autocomplete="off"><button aria-label="Send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></form>
+  </div>
+</template>
+
+<template id="t-terminal"><div class="term" id="term"></div></template>
+
+<template id="t-mail">
+  <div class="mail">
+    <div class="hdr"><div><span>From:</span>CDS International Global Resources Limited</div><div><span>To:</span>Operations leaders like you</div><div><span>Subject:</span><b>Let's get your measurements certified.</b></div></div>
+    <div class="bd">
+      <h3>Accurate instruments protect revenue.<br>CDS IGRL keeps them compliant.</h3>
+      <p>Tell us what you measure. We begin with a rapid assessment of your application, environment, and compliance requirements to recommend the right instruments.</p>
+      <p>📍 3B, Baltic Crescent, Maitama, Abuja.<br>📞 <a href="tel:+2348037777760">+234 803 777 7760</a><br>✉️ <a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a></p>
+      <div class="btns"><a class="btn pri" data-book>Request a quote →</a><a class="btn sec" href="mailto:info@cdsigrl.org">Email us</a></div>
+    </div>
+  </div>
+</template>
+
+<template id="t-trash">
+  <div class="trash"><div class="big">🗑️</div><h3>What we leave behind</h3><p>Measurement systems don't fail from lack of equipment.<br>They fail from these.</p>
+    <ul><li>Uncalibrated scales in daily use <span>01</span></li><li>Equipment bought without compliance checks <span>02</span></li><li>No local support after purchase <span>03</span></li><li>Manual records that cannot be audited <span>04</span></li></ul></div>
+</template>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="os/wallpaper.js?v=photos-2"></script>
+<script>
+(() => {
+const BOOK = '/get-started';
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const mobile = () => matchMedia('(max-width:760px)').matches;
+
+/* ---------- Icons ---------- */
+const tile = (bg, inner, extra = '') => `<svg viewBox="0 0 64 64"><defs>${extra}</defs><rect x="2" y="2" width="60" height="60" rx="14" fill="${bg}"/><rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" stroke="rgba(255,255,255,.18)"/>${inner}</svg>`;
+const ICONS = {
+  welcome: tile('url(#gw)', `<image href="os/logo-white.svg" x="14" y="14" width="36" height="36"/>`, `<linearGradient id="gw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2f0c"/><stop offset="1" stop-color="#0B0A07"/></linearGradient>`),
+  work: tile('url(#gf)', `<path d="M12 22a3 3 0 013-3h11l4 4h19a3 3 0 013 3v20a3 3 0 01-3 3H15a3 3 0 01-3-3z" fill="#FFF3C4"/><path d="M12 28h40v18a3 3 0 01-3 3H15a3 3 0 01-3-3z" fill="#fff"/><path d="M26 38h12" stroke="#C99A00" stroke-width="3" stroke-linecap="round"/>`, `<linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE38A"/><stop offset="1" stop-color="#C99A00"/></linearGradient>`),
+  approach: tile('url(#ga)', `<g fill="#0B0A07"><rect x="13" y="40" width="6" height="11" rx="2"/><rect x="22" y="34" width="6" height="17" rx="2"/><rect x="31" y="28" width="6" height="23" rx="2"/><rect x="40" y="21" width="6" height="30" rx="2"/></g><path d="M14 33l9-6 9 3 13-13" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="45" cy="17" r="3" fill="#fff"/>`, `<linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd84d"/><stop offset="1" stop-color="#e0a800"/></linearGradient>`),
+  clients: tile('url(#gc)', `<path d="M32 13l19 9H13z" fill="#F5C518"/><g fill="#FFF8E6"><rect x="16" y="25" width="5" height="18" rx="1"/><rect x="26" y="25" width="5" height="18" rx="1"/><rect x="36" y="25" width="5" height="18" rx="1"/><rect x="45" y="25" width="3" height="18" rx="1" opacity="0"/></g><rect x="43" y="25" width="5" height="18" rx="1" fill="#FFF8E6"/><rect x="12" y="45" width="40" height="5" rx="1.5" fill="#F5C518"/>`, `<linearGradient id="gc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e2a20"/><stop offset="1" stop-color="#0B0A07"/></linearGradient>`),
+  notes: tile('url(#gn)', `<rect x="2" y="2" width="60" height="16" rx="14" fill="#F5C518"/><rect x="2" y="12" width="60" height="6" fill="#F5C518"/><g stroke="#d8d2bf" stroke-width="1.5"><path d="M12 28h40M12 36h40M12 44h40M12 52h28"/></g>`, `<linearGradient id="gn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffdf5"/><stop offset="1" stop-color="#f1ecdc"/></linearGradient>`),
+  nova: tile('url(#gm)', `<path d="M32 15c10.5 0 19 6.7 19 15s-8.5 15-19 15c-2 0-4-.3-5.8-.7L18 48l2.2-7.3C15.8 38 13 34.3 13 30c0-8.3 8.5-15 19-15z" fill="#0B0A07"/><text x="32" y="36" font-family="Inter" font-weight="900" font-size="15" fill="#F5C518" text-anchor="middle">A</text>`, `<linearGradient id="gm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE38A"/><stop offset="1" stop-color="#e0a800"/></linearGradient>`),
+  terminal: tile('#111', `<rect x="2" y="2" width="60" height="10" rx="5" fill="#2a2a2a" opacity=".6"/><path d="M14 26l8 6-8 6" fill="none" stroke="#F5C518" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 40h12" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>`),
+  mail: tile('url(#ge)', `<rect x="12" y="19" width="40" height="27" rx="4" fill="#FFF8E6"/><path d="M13 21l19 14 19-14" fill="none" stroke="#C99A00" stroke-width="2.6" stroke-linejoin="round"/>`, `<linearGradient id="ge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3528"/><stop offset="1" stop-color="#14120c"/></linearGradient>`),
+  trash: `<svg viewBox="0 0 64 64"><defs><linearGradient id="gt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(255,255,255,.55)"/><stop offset="1" stop-color="rgba(255,255,255,.25)"/></linearGradient></defs><path d="M12 12h40l-3 46a4 4 0 01-4 4H19a4 4 0 01-4-4z" fill="url(#gt)" stroke="rgba(255,255,255,.6)"/><g stroke="rgba(255,255,255,.45)" stroke-width="1.4"><path d="M24 18l1 38M32 18v38M40 18l-1 38"/></g><ellipse cx="32" cy="12" rx="20" ry="3" fill="rgba(255,255,255,.7)"/></svg>`,
+  readme: `<svg viewBox="0 0 64 64"><path d="M14 4h26l12 12v42a2 2 0 01-2 2H14a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#fff"/><path d="M40 4v10a2 2 0 002 2h10" fill="#d9d9d9"/><text x="32" y="44" font-family="Inter" font-weight="800" font-size="10" fill="#0B0A07" text-anchor="middle">MD</text><rect x="18" y="24" width="28" height="3" rx="1.5" fill="#F5C518"/></svg>`,
+};
+
+/* ---------- Data ---------- */
+const PILLARS = [
+  {n:'01',slug:'retail-food-packaging',c:'ret',t:'Retail & Food Packaging',tags:['Scales','Checkweighers','Compliance'],g:['#F5C518','#3d2f05'],
+   hook:'Trade measurements must be accurate, fast, and compliant. We supply and support scales and checkweighers built for retail and food operations.',
+   body:'We supply price-computing scales, retail checkweighers, and multihead weighers for supermarkets, delis, bakeries, and food packaging lines. We help clients select equipment that meets Nigerian legal metrology standards, then support installation, calibration, and compliance certification.',
+   del:['Equipment selection','Installation support','Calibration','Compliance certification'],
+   out:'Accurate trade measurements, faster checkout, and confidence during regulatory inspections.',
+   best:'Supermarkets, delis, bakeries, and food packaging operations.'},
+  {n:'02',slug:'fuel-industrial-flow',c:'ind',t:'Fuel & Industrial Flow',tags:['Flow Meters','Fuel Dispensers','Oil & Gas'],g:['#FBE38A','#6b520a'],
+   hook:'Liquid and fuel measurement is high-stakes. We provide flow meters and dispensers engineered for accuracy in demanding industrial environments.',
+   body:'We source and deploy turbine flow meters, fuel dispensers, ultrasonic flow meters, and Coriolis mass flow meters for oil & gas, chemical processing, and industrial liquid transfer. Our team ensures each instrument is matched to the application, installed correctly, and traceable to measurement standards.',
+   del:['Flow-meter selection','Dispenser supply','Installation supervision','Calibration support'],
+   out:'Reliable liquid measurement, reduced product loss, and audit-ready compliance documentation.',
+   best:'Fuel stations, depots, chemical plants, and liquid-processing facilities.'},
+  {n:'03',slug:'truck-bulk-weighing',c:'bul',t:'Truck & Bulk Weighing',tags:['Weighbridges','Load Cells','Mining'],g:['#cfc6ae','#1f1c14'],
+   hook:'Bulk weight drives revenue, logistics, and safety. We deliver weighbridges and load-cell systems that stand up to heavy use.',
+   body:'We supply truck weighbridges, column load cells, conveyor belt scales, and weigh-in-motion systems for quarries, agriculture, logistics yards, and mining operations. We focus on rugged accuracy, local support, and compliance with weights and measures regulations across Nigeria.',
+   del:['Weighbridge supply','Load-cell installation','System commissioning','Ongoing support'],
+   out:'Accurate bulk weighing, improved load control, and fewer compliance disputes.',
+   best:'Quarries, farms, logistics hubs, and mining operations.'},
+  {n:'04',slug:'hospitality-agriculture',c:'agr',t:'Hospitality & Agriculture',tags:['Beverage','Agriculture','Livestock'],g:['#e8a33d','#3b1f05'],
+   hook:'From bar pours to grain moisture, precise measurement protects margins and quality in hospitality and farming.',
+   body:'We provide spirit measures, beverage flow meters, livestock scales, and grain moisture meters for hotels, bars, breweries, and agricultural operations. Each solution is chosen for the local environment and backed by calibration guidance so measurements stay accurate season after season.',
+   del:['Equipment supply','Installation support','Calibration','Training'],
+   out:'Better inventory control, reduced waste, and consistent product quality.',
+   best:'Hotels, bars, breweries, farms, and feed mills.'},
+  {n:'05',slug:'utilities-transport',c:'utl',t:'Utilities & Transport',tags:['Electricity Meters','Taximeters','Utilities'],g:['#F5C518','#0B0A07'],
+   hook:'Public services and transport depend on trusted meters. We supply electricity meters and taxi meters built for accountability.',
+   body:'We supply smart electricity meters, GPS taximeters, and utility measurement solutions for power distribution companies, transportation fleets, and public-service providers. We prioritize certified accuracy, tamper resistance, and local support capability.',
+   del:['Meter procurement','Supply logistics','Installation support','Compliance guidance'],
+   out:'Fair billing, reduced revenue leakage, and trusted public measurement.',
+   best:'Power distributors, taxi / transport fleets, and utility agencies.'},
+  {n:'06',slug:'laboratory-precision',c:'pre',t:'Laboratory & Precision',tags:['Balances','Pharmacy','QC Labs'],g:['#9a7b1c','#0B0A07'],
+   hook:'Research and quality control demand exact measurements. We supply analytical balances and precision scales for labs and pharmacies.',
+   body:'We source analytical balances, pharmacy counting scales, and high-precision jewellery scales for pharmaceutical, research, and quality-control laboratories. Every instrument is selected for resolution, repeatability, and traceability to support regulatory and scientific accuracy.',
+   del:['Precision instrument selection','Supply & delivery','Calibration support','Maintenance guidance'],
+   out:'Traceable precision, compliant lab workflows, and reliable quality control.',
+   best:'Pharmaceutical labs, research institutions, and jewellery / precious-metal operations.'},
+];
+PILLARS.forEach(p => p.id = 'p' + p.n);
+const STEPS = [
+  ['01 · ASSESS','Understand your measurement environment.','We review your application, regulatory requirements, site conditions, and accuracy needs to identify the right instruments.'],
+  ['02 · SELECT','Choose certified equipment for the job.','We recommend equipment from verified global manufacturers that matches Nigerian legal metrology standards and your operational demands.'],
+  ['03 · INSTALL','Put the system to work.','We support delivery, installation, and commissioning so instruments are positioned and configured for accurate, repeatable performance.'],
+  ['04 · CERTIFY','Confirm compliance.','We guide calibration and compliance certification so your measurements stand up to regulatory and customer scrutiny.'],
+  ['05 · SUPPORT','Keep it accurate.','Our team remains available for maintenance, recalibration, troubleshooting, and replacement as your operations grow.'],
+];
+const initials = n => n.replace(/[^A-Za-z0-9 ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+const grad = p => `linear-gradient(140deg,${p.g[0]},${p.g[1]})`;
+
+const APPS = {
+  welcome:{title:'cdsigrl.theboostnation.space', name:'Safari', w:640, h:600, url:true},
+  work:{title:'Capabilities', name:'Finder', w:780, h:520},
+  approach:{title:'Methodology', name:'Approach', w:700, h:580},
+  clients:{title:'Who We Serve', name:'Clients', w:680, h:560},
+  notes:{title:'Notes', name:'Notes', w:680, h:480},
+  nova:{title:'Messages', name:'Ask CDS IGRL', w:400, h:560},
+  terminal:{title:'cdsigrl — zsh — 80×24', name:'Terminal', w:600, h:380},
+  mail:{title:'Inbox — Request a Conversation', name:'Mail', w:580, h:540},
+  trash:{title:'Trash', name:'Finder', w:420, h:440},
+};
+/* one window per pillar, generated from data */
+const esc = s => s.replace(/&/g,'&amp;');
+PILLARS.forEach(p => {
+  APPS[p.id] = {title:`${p.n} · ${p.t}`, name:'Capabilities', w:680, h:580};
+  const t = document.createElement('template'); t.id = 't-' + p.id;
+  t.innerHTML = `<div class="prod"><div class="eyebrow">Pillar ${p.n}</div><h2>${esc(p.t)}</h2><p>${p.hook}</p><p style="margin-top:10px">${p.body}</p>
+    <div class="feat">${p.del.map((d,i)=>`<div><b>0${i+1}</b><h4>${esc(d)}</h4></div>`).join('')}</div>
+    <div class="ba"><div class="after"><small>OUTCOME</small><p>${p.out}</p></div><div class="neutral"><small>BEST FOR</small><p>${p.best}</p></div></div>
+    <div class="trust">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div>
+    <div class="btns"><a class="btn pri" data-book>Discuss your needs →</a><a class="btn sec" href="/services/${p.slug}" target="_blank" rel="noopener">Full page</a></div></div>`;
+  document.body.append(t);
+});
+const DOCK = ['work','welcome','notes','nova','approach','clients','terminal','mail','|','trash'];
+const DOCK_LABEL = {work:'Capabilities',welcome:'Safari',notes:'Notes',nova:'Ask CDS IGRL',approach:'Approach',clients:'Who We Serve',terminal:'Terminal',mail:'Contact',trash:'Trash'};
+const DESK = [['readme','About CDS IGRL','notes'],['work','Capabilities','work'],['approach','Approach','approach'],['clients','Who We Serve','clients'],['nova','Ask CDS IGRL','nova'],['mail','Contact','mail']];
+
+/* ---------- Boot ---------- */
+setTimeout(() => { $('#boot').classList.add('gone'); openApp('welcome'); demoStart(); }, 1350);
+
+/* ---------- Clock ---------- */
+function tick(){
+  const d = new Date();
+  $('#clock').innerHTML = '<span class="d">' + d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}).replace(',','') + '&nbsp;&nbsp;</span>' + d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  $('#wDay').textContent = d.toLocaleDateString('en-US',{weekday:'long'});
+  $('#wNum').textContent = d.getDate();
+  drawClocks(d);
+}
+const ZONES = [['Abuja','Africa/Lagos'],['London','Europe/London'],['New York','America/New_York'],['Dubai','Asia/Dubai']];
+$('#clocks').innerHTML = ZONES.map((z,i)=>`<div class="clk"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="29" fill="${i%2?'#f2f2f2':'#12100b'}" stroke="rgba(245,236,210,.25)"/>${[...Array(12)].map((_,k)=>{const a=k*Math.PI/6;return `<text x="${30+22*Math.sin(a)}" y="${30-22*Math.cos(a)+2.6}" font-size="7" font-family="Inter" font-weight="600" text-anchor="middle" fill="${i%2?'#0B0A07':'#f2f2f2'}">${k||12}</text>`}).join('')}<line class="h" x1="30" y1="30" x2="30" y2="17" stroke="${i%2?'#0B0A07':'#fff'}" stroke-width="2.6" stroke-linecap="round"/><line class="m" x1="30" y1="30" x2="30" y2="9" stroke="${i%2?'#0B0A07':'#fff'}" stroke-width="1.8" stroke-linecap="round"/><line class="s" x1="30" y1="34" x2="30" y2="8" stroke="#E0A800" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="#E0A800"/></svg><b>${z[0]}</b><small class="off"></small></div>`).join('');
+function drawClocks(d){
+  $$('#clocks .clk').forEach((el,i)=>{
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:ZONES[i][1],hour:'numeric',minute:'numeric',second:'numeric',hour12:false}).formatToParts(d).map(x=>[x.type,x.value]));
+    const h=+p.hour%12, m=+p.minute, s=+p.second;
+    el.querySelector('.h').setAttribute('transform',`rotate(${h*30+m/2} 30 30)`);
+    el.querySelector('.m').setAttribute('transform',`rotate(${m*6} 30 30)`);
+    el.querySelector('.s').setAttribute('transform',`rotate(${s*6} 30 30)`);
+    const local = new Date(d.toLocaleString('en-US',{timeZone:ZONES[i][1]}));
+    const diff = Math.round((local - new Date(d.toLocaleString('en-US')))/36e5);
+    el.querySelector('.off').textContent = diff===0?'Local':(diff>0?'+':'')+diff+'h';
+  });
+}
+tick(); setInterval(tick, 1000);
+
+/* ---------- Notch: cycles the 8 pillars ---------- */
+const notch=$('#notch'); let ni=0; const NDUR=6000; let nStart=performance.now();
+function setNotch(i){
+  ni=(i+PILLARS.length)%PILLARS.length; const p=PILLARS[ni];
+  $('#nArtMini').style.background=grad(p); $('#nTtlMini').textContent=p.t;
+  const a=$('#nArt'); a.style.background=grad(p); a.textContent=p.n; a.style.color='#fff';
+  $('#nTtl').textContent=p.t; $('#nUrl').textContent=p.tags.join(' · '); nStart=performance.now();
+}
+(function loop(t){ const k=(t-nStart)/NDUR; if(k>=1)setNotch(ni+1); $('#nProg').style.width=Math.min(k,1)*100+'%'; requestAnimationFrame(loop); })(performance.now());
+setNotch(0);
+let nLeave; notch.addEventListener('mouseenter',()=>{clearTimeout(nLeave);notch.classList.add('big')});
+notch.addEventListener('mouseleave',()=>{nLeave=setTimeout(()=>notch.classList.remove('big'),250)});
+notch.addEventListener('click',e=>{ if(!e.target.closest('button')) notch.classList.toggle('big'); });
+$('#nPrev').onclick=e=>{e.stopPropagation();setNotch(ni-1)};
+$('#nNext').onclick=e=>{e.stopPropagation();setNotch(ni+1)};
+$('#nOpen').onclick=e=>{e.stopPropagation();notch.classList.remove('big');openApp(PILLARS[ni].id)};
+
+/* ---------- Desktop icons ---------- */
+$('#icons').innerHTML = DESK.map(([ic,label,app])=>`<button class="dicon" data-app="${app}"><div class="ic">${ICONS[ic]}</div><span>${label}</span></button>`).join('');
+$$('.dicon').forEach(el=>{
+  el.addEventListener('click',()=>{ $$('.dicon').forEach(x=>x.classList.remove('sel')); el.classList.add('sel'); if(mobile()||matchMedia('(pointer:coarse)').matches) openApp(el.dataset.app); });
+  el.addEventListener('dblclick',()=>openApp(el.dataset.app));
+});
+$('#desktop').addEventListener('pointerdown',e=>{ if(e.target.id==='desktop'||e.target.id==='icons') $$('.dicon').forEach(x=>x.classList.remove('sel')); });
+$('#ctaWidget').onclick=()=>window.open(BOOK,'_blank','noopener');
+
+/* ---------- Dock ---------- */
+const dock=$('#dock');
+dock.innerHTML = DOCK.map(id=>id==='|'?'<div class="sep"></div>':`<button class="dk${['welcome','clients','terminal'].includes(id)?' mob-hide':''}" data-id="${id}" aria-label="${DOCK_LABEL[id]}"><div class="ic">${ICONS[id]}</div><i class="dot"></i><span class="tip">${DOCK_LABEL[id]}</span></button>`).join('');
+$$('.dk').forEach(b=>b.onclick=()=>openApp(b.dataset.id));
+const BASE=()=>parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--dock-size'));
+dock.addEventListener('mousemove',e=>{ if(mobile())return; const b=BASE(); $$('.dk').forEach(el=>{const r=el.getBoundingClientRect();const d=Math.abs(e.clientX-(r.left+r.width/2));const s=1+.7*Math.max(0,1-d/150)**2;el.style.width=el.style.height=b*s+'px';}); });
+dock.addEventListener('mouseleave',()=>$$('.dk').forEach(el=>el.style.width=el.style.height=''));
+
+/* ---------- Window manager ---------- */
+const OS_NAME='CDS IGRL OS';
+const wins={}; let z=10, cascade=0;
+function focusWin(id){
+  Object.values(wins).forEach(w=>w.classList.remove('focused'));
+  const w=wins[id]; if(!w)return; w.style.zIndex=++z; w.classList.add('focused');
+  $('#appName').textContent=APPS[id].name;
+}
+function openApp(id){
+  $$(`.dk[data-id="${id}"]`).forEach(d=>{d.classList.remove('bounce');void d.offsetWidth;if(!wins[id])d.classList.add('bounce');});
+  if(wins[id]){ if(wins[id].classList.contains('min')){ wins[id].classList.add('genie'); wins[id].classList.remove('min'); genie(wins[id],id,'in'); } focusWin(id); return wins[id]; }
+  const a=APPS[id], D=$('#desktop').getBoundingClientRect();
+  const w=document.createElement('section'); w.className='win'; w.dataset.id=id;
+  const W=Math.min(a.w,D.width-40), H=Math.min(a.h,D.height-110);
+  const isWelcome=id==='welcome';
+  const x=isWelcome?Math.max(20,(D.width-W)/2-(D.width>1120?170:0)):Math.max(20,Math.min(D.width-W-20,130+cascade*34));
+  const y=isWelcome?Math.max(10,(D.height-90-H)/2):Math.max(10,Math.min(D.height-H-90,30+cascade*30));
+  if(!isWelcome) cascade=(cascade+1)%6;
+  Object.assign(w.style,{left:x+'px',top:y+'px',width:W+'px',height:H+'px'});
+  const x8='<svg viewBox="0 0 8 8"><path d="M1.5 1.5l5 5M6.5 1.5l-5 5"/></svg>', m8='<svg viewBox="0 0 8 8"><path d="M1 4h6"/></svg>', z8='<svg viewBox="0 0 8 8"><path d="M2 2h4v4" fill="none"/><path d="M6 2L2 6"/></svg>';
+  w.innerHTML=`<div class="titlebar"><div class="lights"><button class="c" aria-label="Close">${x8}</button><button class="m" aria-label="Minimize">${m8}</button><button class="z" aria-label="Zoom">${z8}</button></div>${a.url?`<div class="urlbar"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 5V3.5a3 3 0 016 0V5h.5a1 1 0 011 1v4.5a1 1 0 01-1 1h-7a1 1 0 01-1-1V6a1 1 0 011-1zm1.5 0h3V3.5a1.5 1.5 0 00-3 0z"/></svg>${a.title}</div>`:`<div class="ttl">${a.title}</div>`}</div><div class="wbody"></div><div class="resize"></div>`;
+  w.querySelector('.wbody').append($('#t-'+id).content.cloneNode(true));
+  $('#desktop').append(w); wins[id]=w;
+  genie(w,id,'in');
+  w.addEventListener('pointerdown',()=>focusWin(id));
+  w.querySelector('.c').onclick=e=>{e.stopPropagation();closeWin(id)};
+  w.querySelector('.m').onclick=e=>{e.stopPropagation();minimizeWin(id);};
+  w.querySelector('.z').onclick=e=>{e.stopPropagation();w.classList.toggle('zoomed')};
+  w.querySelector('.titlebar').addEventListener('dblclick',()=>w.classList.toggle('zoomed'));
+  drag(w); resize(w); wire(w,id);
+  $$(`.dk[data-id="${id}"]`).forEach(d=>d.classList.add('run'));
+  focusWin(id); return w;
+}
+function closeWin(id){
+  const w=wins[id]; if(!w)return; delete wins[id];
+  $$(`.dk[data-id="${id}"]`).forEach(d=>d.classList.remove('run'));
+  genie(w,id,'out',()=>w.remove()); $('#appName').textContent=OS_NAME;
+  const rest=Object.keys(wins); if(rest.length) focusWin(rest.sort((a,b)=>wins[b].style.zIndex-wins[a].style.zIndex)[0]);
+}
+function minimizeWin(id){
+  const w=wins[id]; if(!w||w.classList.contains('min'))return;
+  w.classList.remove('focused'); $('#appName').textContent=OS_NAME;
+  genie(w,id,'out',()=>{w.classList.add('min');});
+}
+
+/* ---------- Genie: windows pour out of / get sucked into their dock icon ---------- */
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function dockPoint(id){
+  const pick=[id,/^p\d/.test(id)?'work':null].filter(Boolean).map(k=>$(`.dk[data-id="${k}"]`)).find(d=>d&&d.offsetParent);
+  const r=(pick||$('#dock')).getBoundingClientRect();
+  return {x:r.left+r.width/2, y:r.top+r.height/2};
+}
+function genie(w,id,dir,done){
+  gsap.killTweensOf(w);
+  if(still||typeof gsap==='undefined'){ if(dir==='out'){w.style.opacity=0;} done&&done(); return; }
+  w.classList.add('genie');
+  // measure the untransformed layout box: a window may be mid-genie when closed
+  const D=$('#desktop').getBoundingClientRect();
+  const r={left:D.left+w.offsetLeft,width:w.offsetWidth,height:w.offsetHeight,bottom:D.top+w.offsetTop+w.offsetHeight}, t=dockPoint(id);
+  const px=Math.max(4,Math.min(96,(t.x-r.left)/r.width*100));
+  const full='polygon(0% 0%,100% 0%,100% 45%,100% 100%,0% 100%,0% 45%)';
+  const pinch=`polygon(0% 0%,100% 0%,${100-(96-px)*.25}% 45%,${px+4}% 100%,${px-4}% 100%,${(px-4)*.25}% 45%)`;
+  const sunk={y:t.y-r.bottom+r.height*.02,scaleY:.03,scaleX:.35,opacity:0};
+  let finished=false;
+  const fin=()=>{ if(finished)return; finished=true; gsap.set(w,{clearProps:'transform,opacity,clipPath,transformOrigin'});w.classList.remove('genie');done&&done();};
+  // animation frames freeze in background tabs; never leave a window stuck mid-genie
+  setTimeout(()=>{ if(!finished){ gsap.killTweensOf(w); fin(); } },1500);
+  gsap.set(w,{transformOrigin:`${px}% 100%`});
+  const tl=gsap.timeline({onComplete:fin});
+  if(dir==='in'){
+    gsap.set(w,{clipPath:pinch,...sunk});
+    tl.to(w,{y:0,scaleY:1,scaleX:1,opacity:1,duration:.42,ease:'power3.out'})
+      .to(w,{clipPath:full,duration:.3,ease:'power2.out'},'-=.22');
+  }else{
+    gsap.set(w,{clipPath:full});
+    tl.to(w,{clipPath:pinch,duration:.24,ease:'power2.in'})
+      .to(w,{...sunk,duration:.36,ease:'power3.in'},'-=.06');
+  }
+}
+
+/* ---------- Self-running demo: apps open and close on their own while nobody is using the page ---------- */
+const DEMO=['work','p04','approach','clients','nova','p05','notes','mail','p07'];
+const ACTIVITY=['pointermove','pointerdown','wheel','keydown','touchstart'];
+let demoOn=false, demoIdx=0, demoTimer=null, demoWin=null, lastPt=null, resumeTimer=null;
+function demoStep(){
+  if(!demoOn)return;
+  if(document.hidden){ demoTimer=setTimeout(demoStep,1000); return; }
+  if(demoWin&&wins[demoWin]){ const id=demoWin; demoWin=null; closeWin(id); demoTimer=setTimeout(demoStep,1100); return; }
+  const id=DEMO[demoIdx++%DEMO.length];
+  if(wins[id]){ demoTimer=setTimeout(demoStep,50); return; }
+  openApp(id); demoWin=id; demoTimer=setTimeout(demoStep,3400);
+}
+function demoStart(){ if(still)return; demoOn=true; demoWin='welcome'; demoTimer=setTimeout(demoStep,3800); }
+function demoStop(e){
+  // a pointermove only counts once the pointer has really moved (layout changes can fire one in place)
+  if(e.type==='pointermove'){ const pt=e.clientX+','+e.clientY; if(lastPt===null||lastPt===pt){ lastPt=pt; return; } lastPt=pt; }
+  clearTimeout(resumeTimer);
+  // touch screens have no "mouse left the page", so resume after a quiet spell instead
+  if(e.type==='touchstart'||e.pointerType==='touch') resumeTimer=setTimeout(demoResume,20000);
+  if(!demoOn)return;
+  demoOn=false; clearTimeout(demoTimer);
+}
+function demoResume(){
+  if(demoOn||still)return;
+  demoOn=true; demoWin=null;
+  // genie away whatever the visitor left open, then carry on the cycle
+  const open=Object.keys(wins).filter(k=>!wins[k].classList.contains('min'));
+  open.forEach((id,i)=>setTimeout(()=>{ if(demoOn) closeWin(id); },i*200));
+  demoTimer=setTimeout(demoStep,700+open.length*200);
+}
+ACTIVITY.forEach(t=>addEventListener(t,demoStop,{passive:true}));
+document.documentElement.addEventListener('mouseleave',()=>{ lastPt=null; clearTimeout(resumeTimer); resumeTimer=setTimeout(demoResume,1200); });
+
+function drag(w){
+  const bar=w.querySelector('.titlebar');
+  bar.addEventListener('pointerdown',e=>{
+    if(e.target.closest('button')||mobile()||w.classList.contains('zoomed'))return;
+    const sx=e.clientX-w.offsetLeft, sy=e.clientY-w.offsetTop; w.classList.add('dragging'); bar.setPointerCapture(e.pointerId);
+    const mv=ev=>{w.style.left=Math.min(innerWidth-80,Math.max(-w.offsetWidth+80,ev.clientX-sx))+'px';w.style.top=Math.max(0,Math.min(innerHeight-120,ev.clientY-sy))+'px';};
+    const up=()=>{w.classList.remove('dragging');bar.removeEventListener('pointermove',mv);bar.removeEventListener('pointerup',up);};
+    bar.addEventListener('pointermove',mv); bar.addEventListener('pointerup',up);
+  });
+}
+function resize(w){
+  const h=w.querySelector('.resize');
+  h.addEventListener('pointerdown',e=>{
+    e.stopPropagation(); const sw=w.offsetWidth, sh=w.offsetHeight, sx=e.clientX, sy=e.clientY; w.classList.add('dragging'); h.setPointerCapture(e.pointerId);
+    const mv=ev=>{w.style.width=Math.max(320,sw+ev.clientX-sx)+'px';w.style.height=Math.max(240,sh+ev.clientY-sy)+'px';};
+    const up=()=>{w.classList.remove('dragging');h.removeEventListener('pointermove',mv);h.removeEventListener('pointerup',up);};
+    h.addEventListener('pointermove',mv); h.addEventListener('pointerup',up);
+  });
+}
+
+/* ---------- App wiring ---------- */
+function wire(w,id){
+  $$('[data-book]',w).forEach(a=>{a.href=BOOK;a.target='_blank';a.rel='noopener'});
+  $$('[data-open]',w).forEach(b=>b.onclick=()=>openApp(b.dataset.open));
+  ({work:wireWork,approach:wireApproach,notes:wireNotes,nova:wireNova,terminal:wireTerm})[id]?.(w);
+}
+function wireWork(w){
+  const grid=$('#workGrid',w), st=$('#workStatus',w);
+  const render=f=>{const list=PILLARS.filter(p=>f==='all'||p.c===f);
+    grid.innerHTML=list.map(p=>`<button class="proj" data-p="${p.id}"><div class="thumb" style="background:${grad(p)}"><span class="bw"><i></i><i></i><i></i></span><span class="go">↗</span><b>${p.n}</b></div><span class="tag">${p.tags.join(' · ').toUpperCase()}</span><span class="nm">${p.t}</span><span class="ds">${p.hook}</span></button>`).join('');
+    $$('[data-p]',grid).forEach(b=>b.onclick=()=>openApp(b.dataset.p));
+    st.textContent=`${list.length} of 6 services · one trusted partner`;};
+  $$('.sidebar [data-f]',w).forEach(b=>b.onclick=()=>{$$('.sidebar [data-f]',w).forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.f);});
+  render('all');
+}
+function wireApproach(w){
+  $('#steps',w).innerHTML=STEPS.map(([l,h,p])=>`<div class="step"><b>${l}</b><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
+}
+const NOTES=[
+  {t:'About CDS IGRL',s:'Precision measurement, certified compliance.',h:`<h3>Precision measurement, certified compliance.</h3><p>CDS International Global Resources Limited is Nigeria's trusted partner for legal metrology and precision measurement instruments.</p><p>We interpret every measurement requirement as an end-to-end service — assessing the application, selecting the right certified instrument, supporting installation, confirming compliance, and staying available for calibration and maintenance.</p>
+    <div class="item"><b>RET</b><div><h4>Retail & Packaging</h4><p>Scales and checkweighers for supermarkets, delis, and food packagers.</p></div></div>
+    <div class="item"><b>IND</b><div><h4>Industrial & Flow</h4><p>Flow meters, fuel dispensers, and bulk weighing for heavy industry.</p></div></div>
+    <div class="item"><b>PRE</b><div><h4>Precision & Labs</h4><p>Analytical balances and precision scales for laboratories and quality control.</p></div></div>
+    <div class="btns" style="margin-top:16px"><button class="btn pri" data-open="work">See all 6 services →</button></div>`},
+  {t:'Why CDS IGRL',s:'Accuracy · Reach · Support',h:`<h3>What guides every engagement.</h3>
+    <div class="item"><b>01</b><div><h4>Certified Accuracy</h4><p>Every instrument is chosen to meet Nigerian legal metrology standards and the demands of real-world use.</p></div></div>
+    <div class="item"><b>02</b><div><h4>Nationwide Reach</h4><p>Headquartered in Abuja and equipped to serve clients across all 36 states of Nigeria.</p></div></div>
+    <div class="item"><b>03</b><div><h4>After-Sales Support</h4><p>Calibration, maintenance, and troubleshooting keep your measurements reliable long after delivery.</p></div></div>`},
+  {t:'Executive summary',s:'Legal Metrology Partner',h:`<h3>CDS IGRL | Legal Metrology Partner</h3><p>Our mission is to make every trade, industrial, and scientific measurement in Nigeria accurate, certified, and trusted.</p><p>We integrate assessment, equipment selection, installation, certification, and support into <b>one measurement-led service model</b>.</p><div class="metrics"><div><b>6</b><small>SERVICE CATEGORIES</small></div><div><b>5S</b><small>ASSESS → SUPPORT</small></div><div><b>Nationwide</b><small>NIGERIA COVERAGE</small></div><div><b>Certified</b><small>INSTRUMENTS</small></div></div>`},
+  {t:'Who we serve',s:'Retail · Industry · Science',h:`<h3>Clients measuring what matters.</h3><p>CDS IGRL works with retailers, manufacturers, oil & gas operators, healthcare labs, farms, logistics yards, and utilities — turning measurement requirements into compliant, reliable instruments.</p><p>Headquartered in Maitama, Abuja, we combine global manufacturer relationships with deep local understanding to deliver instruments that work on the ground.</p><h3 style="margin-top:22px;font-size:18px">Sectors</h3><div class="metrics"><div><b style="font-size:18px">Retail</b><small>& TRADE</small></div><div><b style="font-size:18px">Oil & Gas</b><small>& INDUSTRY</small></div><div><b style="font-size:18px">Healthcare</b><small>& LABS</small></div><div><b style="font-size:18px">Agriculture</b><small>& LOGISTICS</small></div></div>`},
+  {t:'How we work',s:'Assess · Select · Install · Certify · Support',h:`<h3>One trusted partner.</h3><p>This model gives clients coherence: one team responsible from first assessment through certified installation and ongoing support.</p>${STEPS.map(([l,h])=>`<div class="item"><b>${l.slice(0,2)}</b><div><h4>${l.slice(5)}</h4><p>${h}</p></div></div>`).join('')}<div class="btns" style="margin-top:16px"><button class="btn pri" data-open="approach">Open the methodology →</button></div>`},
+];
+function wireNotes(w){
+  const list=$('#nlist',w), doc=$('#ndoc',w);
+  const show=i=>{$$('button',list).forEach((b,k)=>b.classList.toggle('on',k===i));doc.innerHTML=`<div class="when">${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}</div>`+NOTES[i].h;$$('[data-open]',doc).forEach(b=>b.onclick=()=>openApp(b.dataset.open));};
+  list.innerHTML=NOTES.map(n=>`<button><b>${n.t}</b><small>${n.s}</small></button>`).join('');
+  $$('button',list).forEach((b,i)=>b.onclick=()=>show(i)); show(0);
+}
+const pil = n => PILLARS.find(p=>p.n===n);
+const NOVA=[
+  [/retail|supermarket|scale|checkout|deli|food pack/i,`<b>Retail & Food Packaging</b>: price-computing scales, checkweighers, and multihead weighers for accurate trade measurement. <a data-open="p01">Open Retail & Food Packaging</a>`],
+  [/fuel|flow meter|dispenser|oil|gas|chemical|liquid/i,`<b>Fuel & Industrial Flow</b>: turbine, ultrasonic, and Coriolis flow meters plus fuel dispensers for demanding industrial environments. <a data-open="p02">Open Fuel & Industrial Flow</a>`],
+  [/weighbridge|truck|bulk|load cell|conveyor|mining|quarry/i,`<b>Truck & Bulk Weighing</b>: truck weighbridges, load cells, and weigh-in-motion systems for heavy industry. <a data-open="p03">Open Truck & Bulk Weighing</a>`],
+  [/lab|laboratory|balance|pharmacy|precision|jewellery|research/i,`<b>Laboratory & Precision</b>: analytical balances and precision scales for labs, pharmacies, and QC. <a data-open="p06">Open Laboratory & Precision</a>`],
+  [/meter|electricity|taxi|taximeter|utility|transport/i,`<b>Utilities & Transport</b>: smart electricity meters and GPS taximeters for accountable public services. <a data-open="p05">Open Utilities & Transport</a>`],
+  [/hospitality|bar|brewery|spirit|beverage|farm|livestock|grain/i,`<b>Hospitality & Agriculture</b>: spirit measures, beverage flow meters, livestock scales, and grain moisture meters. <a data-open="p04">Open Hospitality & Agriculture</a>`],
+  [/approach|method|process|how .*work|step/i,'Five steps: <b>Assess → Select → Install → Certify → Support</b>. One trusted partner from quote to certified accuracy. <a data-open="approach">Open the methodology</a>'],
+  [/client|who|serve|industry|sector/i,'We serve <b>retailers</b>, <b>industrial operators</b>, and <b>scientific labs</b> across Nigeria. <a data-open="clients">Who we serve</a>'],
+  [/price|cost|fee|budget|much|quote/i,`Every quote is scoped to the instrument and site. <a href="${BOOK}" target="_blank" rel="noopener">Request a quote</a> and we will recommend the right solution.`],
+  [/where|office|address|locat|abuja/i,'House 21, Megro Crescent, Maitama, Abuja, Nigeria — serving all 36 states.'],
+  [/contact|call|talk|email|phone|book|start|team/i,`Call <a href="tel:+2348002742475">+234 800 CDS IGRL</a>, email <a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a>, or <a href="${BOOK}" target="_blank" rel="noopener">request a quote →</a>`],
+  [/what|do|offer|service|instrument|measure/i,'Six service categories: retail & packaging, fuel & flow, truck & bulk weighing, hospitality & agriculture, utilities & transport, and laboratory & precision. <a data-open="work">Opening Services…</a>',()=>openApp('work')],
+  [/^(hi|hey|hello|good)/i,'Hello! Ask me about our instruments, how we work, or who we serve.'],
+];
+function wireNova(w){
+  const box=$('#msgs',w);
+  const add=(html,cls)=>{const b=document.createElement('div');b.className='bub '+cls;b.innerHTML=html;box.append(b);$$('[data-open]',b).forEach(a=>{a.href='#';a.onclick=e=>{e.preventDefault();openApp(a.dataset.open)}});box.scrollTop=box.scrollHeight;return b;};
+  const reply=q=>{const t=add('<i></i><i></i><i></i>','in typing');setTimeout(()=>{t.remove();const m=NOVA.find(([r])=>r.test(q));add(m?m[1]:`Good question — the team can go deep on that in a conversation. <a href="${BOOK}" target="_blank" rel="noopener">Request one here</a>.`,'in');m?.[2]?.();},700+Math.random()*500);};
+  const send=q=>{q=q.trim();if(!q)return;add(q.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])),'out');reply(q);};
+  setTimeout(()=>add("Hello — I'm the <b>CDS IGRL</b> assistant. What do you need to measure?",'in'),300);
+  $$('#quick button',w).forEach(b=>b.onclick=()=>send(b.textContent));
+  $('#composer',w).onsubmit=e=>{e.preventDefault();const i=$('#chatIn',w);send(i.value);i.value='';};
+}
+function wireTerm(w){
+  const t=$('#term',w); const hist=[]; let hi=0;
+  const out=(s,cls='')=>{const d=document.createElement('div');d.className='ln '+cls;d.innerHTML=s;t.insertBefore(d,row);t.scrollTop=t.scrollHeight;};
+  const row=document.createElement('div');row.className='in-row';row.innerHTML='<span class="p">you@cdsigrl&nbsp;~&nbsp;%&nbsp;</span><input spellcheck="false" autocomplete="off" aria-label="Terminal input">';
+  t.append(row); const inp=row.querySelector('input');
+  out(`Last login: ${new Date().toDateString()} on ttys001`);
+  out(`Type <span class="k">help</span> to see what CDS IGRL can do.\n`);
+  const C={
+    help:()=>`<span class="k">about</span>      who we are
+<span class="k">services</span>   the 6 service categories
+<span class="k">approach</span>   assess → support
+<span class="k">clients</span>    who we serve
+<span class="k">contact</span>    reach the team
+<span class="k">open</span> &lt;app&gt; open work|approach|clients|notes|nova|mail
+<span class="k">quote</span>      request a quote
+<span class="k">neofetch</span>   system info
+<span class="k">clear</span>      clear the screen`,
+    about:()=>'CDS International Global Resources Limited is Nigeria\'s trusted partner
+for legal metrology and precision measurement instruments.',
+    whoami:()=>'an operations leader who needs measurement accuracy and compliance.',
+    services:()=>PILLARS.map(p=>`<span class="k">${p.n}</span>  ${p.t.padEnd(36)} ${p.tags.join(' · ')}`).join('
+'),
+    ls:()=>C.services(),
+    approach:()=>STEPS.map(([l,h])=>`${l.padEnd(14)} ${h}`).join('
+'),
+    clients:()=>'RETAIL        trade measurement · compliance
+INDUSTRIAL    flow meters · weighbridges · bulk weighing
+SCIENCE       analytical balances · lab precision',
+    contact:()=>'House 21, Megro Crescent, Maitama, Abuja, Nigeria
++234 800 CDS IGRL
+<a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a>',
+    quote:()=>{window.open(BOOK,'_blank','noopener');return 'Opening quote request…';},
+    neofetch:()=>`<span class="p">      ▄▄</span>        you@cdsigrl
+<span class="p">     █▀▀█</span>       ------------
+<span class="p">    █▄▄▄▄█</span>      OS: CDS IGRL OS (Legal Metrology)
+<span class="p">   █      █</span>     Kernel: Assess · Select · Install · Certify · Support
+                  Method: Assess → Support
+                  Services: ${PILLARS.length}
+                  Uptime: measurement you can trust`,
+    clear:()=>{$$('.ln',t).forEach(l=>l.remove());return null;},
+    sudo:a=>/quote/.test(a)?(window.open(BOOK,'_blank','noopener'),'Quote request accepted. We will be in touch. ⚖️'):'sudo: try <span class="k">sudo request-quote</span>',
+    open:a=>APPS[a]?(openApp(a),`Opening ${a}…`):'usage: open work|approach|clients|notes|nova|mail|welcome',
+    exit:()=>{closeWin('terminal');return null;},
+  };
+  inp.addEventListener('keydown',e=>{
+    if(e.key==='ArrowUp'&&hist.length){hi=Math.max(0,hi-1);inp.value=hist[hi];e.preventDefault();return;}
+    if(e.key==='ArrowDown'){hi=Math.min(hist.length,hi+1);inp.value=hist[hi]||'';return;}
+    if(e.key!=='Enter')return;
+    const v=inp.value.trim(); inp.value=''; out(`<span class="p">you@cdsigrl ~ %</span> ${v.replace(/</g,'&lt;')}`);
+    if(!v)return; hist.push(v); hi=hist.length;
+    const [c,...r]=v.split(/\s+/); const fn=C[c.toLowerCase()];
+    const res=fn?fn(r.join(' ')):`zsh: command not found: ${c.replace(/</g,'&lt;')}`; if(res!=null)out(res+'\n');
+  });
+  t.addEventListener('click',()=>inp.focus()); setTimeout(()=>inp.focus(),300);
+}
+
+/* ---------- Menus ---------- */
+const dd=$('#dropdown');
+const go=u=>()=>window.open(u,'_blank','noopener');
+const MENUS={
+  brand:()=>[['About CDS IGRL OS',()=>openApp('notes')],['Request a Quote…',go(BOOK)],'-',['Email the team',()=>location.href='mailto:info@cdsigrl.org'],'-',['Restart…',()=>location.reload()]],
+  app:()=>[['About CDS IGRL',()=>openApp('welcome')],['Methodology…',()=>openApp('approach'),'⌘,'],'-',['Hide Others',()=>Object.keys(wins).forEach(k=>!wins[k].classList.contains('focused')&&minimizeWin(k))]],
+  file:()=>[['New Quote…',go(BOOK),'⌘N'],['Open Capabilities',()=>openApp('work'),'⌘O'],['New Terminal',()=>openApp('terminal'),'⌘T'],'-',['Close Window',closeFocused,'⌘W']],
+  view:()=>[['Next Wallpaper',nextWall],[(window.OSWall&&OSWall.playing?'Pause':'Play')+' Wallpaper Slideshow',toggleSlideshow],['Toggle Widgets',()=>{const w=$('#widgets');w.style.visibility=w.style.visibility==='hidden'?'':'hidden';}]],
+  window:()=>{const o=Object.keys(wins);return [['Minimize',()=>{const f=$('.win.focused');f&&minimizeWin(f.dataset.id)},'⌘M'],['Zoom',()=>{const f=$('.win.focused');f&&f.classList.toggle('zoomed')}],'-',...(o.length?o.map(k=>[(wins[k].classList.contains('focused')?'✓ ':'')+APPS[k].title,()=>openApp(k)]):[['No Windows',()=>{}]])];},
+  help:()=>[['Ask CDS IGRL',()=>openApp('nova')],['Classic Website',()=>location.href='/classic'],['Privacy Policy',go('/privacy')],['Terms of Use',go('/terms')],'-',['Terminal Commands',()=>openApp('terminal')],['Spotlight',openSpot,'⌘K']],
+};
+let openMenu=null;
+function showMenu(btn){
+  const key=btn.dataset.menu; $$('.mb-item').forEach(b=>b.classList.remove('open'));
+  if(openMenu===key){hideMenu();return;}
+  openMenu=key; btn.classList.add('open'); fillMenu(MENUS[key]());
+  const r=btn.getBoundingClientRect(); dd.style.left=Math.min(r.left,innerWidth-240)+'px'; dd.style.top=''; dd.classList.add('show');
+}
+function fillMenu(items){
+  dd.innerHTML=''; items.forEach(it=>{ if(it==='-'){dd.append(document.createElement('hr'));return;} const b=document.createElement('button'); b.innerHTML=`<span>${it[0]}</span>${it[2]?`<kbd>${it[2]}</kbd>`:''}`; b.onclick=()=>{hideMenu();it[1]();}; dd.append(b); });
+}
+function hideMenu(){openMenu=null;dd.classList.remove('show');$$('.mb-item').forEach(b=>b.classList.remove('open'));}
+$$('[data-menu]').forEach(b=>{b.onclick=e=>{e.stopPropagation();showMenu(b)};b.onmouseenter=()=>{if(openMenu&&openMenu!==b.dataset.menu)showMenu(b)};});
+document.addEventListener('pointerdown',e=>{if(!e.target.closest('#dropdown,[data-menu]'))hideMenu();});
+$('#desktop').addEventListener('contextmenu',e=>{
+  if(e.target.closest('.win'))return; e.preventDefault(); openMenu='ctx';
+  fillMenu([['New Quote…',go(BOOK)],['Change Wallpaper',nextWall],'-',['Open Terminal',()=>openApp('terminal')],['Ask CDS IGRL',()=>openApp('nova')]]);
+  dd.style.left=Math.min(e.clientX,innerWidth-240)+'px'; dd.style.top=Math.min(e.clientY,innerHeight-200)+'px'; dd.classList.add('show');
+});
+function closeFocused(){const f=$('.win.focused');f&&closeWin(f.dataset.id);}
+function nextWall(){window.OSWall&&OSWall.next();}
+function toggleSlideshow(){window.OSWall&&OSWall.toggle();}
+
+/* ---------- Spotlight ---------- */
+const spot=$('#spot'), si=$('#spotIn'), sr=$('#spotRes'); let sel=0, results=[];
+const INDEX=[...Object.keys(APPS).filter(k=>!/^p\d/.test(k)).map(k=>({l:k==='welcome'?'Welcome — CDS IGRL':k==='nova'?'Ask CDS IGRL':APPS[k].title,ic:k,k:'Application',go:()=>openApp(k)})),
+  ...PILLARS.map(p=>({l:p.t,ic:'work',k:'Pillar '+p.n,sub:p.tags.join(' '),go:()=>openApp(p.id)})),
+  {l:'Request a Conversation',ic:'mail',k:'Action',go:go(BOOK)}];
+function openSpot(){spot.classList.add('show');si.value='';renderSpot();setTimeout(()=>si.focus(),10);}
+function renderSpot(){const q=si.value.toLowerCase().trim();results=q?INDEX.filter(x=>(x.l+' '+(x.sub||'')+' '+x.k).toLowerCase().includes(q)).slice(0,8):[];sel=0;
+  sr.innerHTML=results.map((x,i)=>`<button class="r${i===sel?' on':''}"><span class="ic">${ICONS[x.ic]}</span>${x.l}<small>${x.k}</small></button>`).join('');
+  $$('.r',sr).forEach((b,i)=>b.onclick=()=>{spot.classList.remove('show');results[i].go();});}
+si.oninput=renderSpot;
+si.onkeydown=e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();sel=(sel+(e.key==='ArrowDown'?1:-1)+results.length)%Math.max(results.length,1);$$('.r',sr).forEach((b,i)=>b.classList.toggle('on',i===sel));}
+  if(e.key==='Enter'&&results[sel]){spot.classList.remove('show');results[sel].go();} if(e.key==='Escape')spot.classList.remove('show');};
+spot.onclick=e=>{if(e.target===spot)spot.classList.remove('show');};
+$('#spotBtn').onclick=openSpot;
+document.addEventListener('keydown',e=>{
+  const mod=e.metaKey||e.ctrlKey;
+  if(mod&&(e.key==='k'||e.key===' ')){e.preventDefault();openSpot();}
+  if(e.key==='Escape'){spot.classList.remove('show');hideMenu();notch.classList.remove('big');}
+});
+})();
+</script>
+</body>
+</html>
