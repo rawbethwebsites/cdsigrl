@@ -910,39 +910,18 @@ function wireTerm(w){
   out(`Last login: ${new Date().toDateString()} on ttys001`);
   out(`Type <span class="k">help</span> to see what CDS IGRL can do.\n`);
   const C={
-    help:()=>`<span class="k">about</span>      who we are
-<span class="k">services</span>   the 6 service categories
-<span class="k">approach</span>   assess → support
-<span class="k">clients</span>    who we serve
-<span class="k">contact</span>    reach the team
-<span class="k">open</span> &lt;app&gt; open work|approach|clients|notes|nova|mail
-<span class="k">quote</span>      request a quote
-<span class="k">neofetch</span>   system info
-<span class="k">clear</span>      clear the screen`,
-    about:()=>'CDS International Global Resources Limited is Nigeria\'s trusted partner
-for legal metrology and precision measurement instruments.',
+    help:()=>`<span class="k">about</span>      who we are\n<span class="k">pillars</span>    the 8 core capabilities\n<span class="k">approach</span>   diagnose → deliver\n<span class="k">clients</span>    who we serve\n<span class="k">contact</span>    reach the team\n<span class="k">open</span> &lt;app&gt; open work|approach|clients|notes|nova|mail\n<span class="k">book</span>       request a conversation\n<span class="k">neofetch</span>   system info\n<span class="k">clear</span>      clear the screen`,
+    about:()=>'CDS International Global Resources Limited is Nigeria\'s trusted partner\nfocused on one outcome: legal metrology and precision measurement instruments.',
     whoami:()=>'an operations leader who needs measurement accuracy and compliance.',
-    services:()=>PILLARS.map(p=>`<span class="k">${p.n}</span>  ${p.t.padEnd(36)} ${p.tags.join(' · ')}`).join('
-'),
-    ls:()=>C.services(),
-    approach:()=>STEPS.map(([l,h])=>`${l.padEnd(14)} ${h}`).join('
-'),
-    clients:()=>'RETAIL        trade measurement · compliance
-INDUSTRIAL    flow meters · weighbridges · bulk weighing
-SCIENCE       analytical balances · lab precision',
-    contact:()=>'House 21, Megro Crescent, Maitama, Abuja, Nigeria
-+234 800 CDS IGRL
-<a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a>',
-    quote:()=>{window.open(BOOK,'_blank','noopener');return 'Opening quote request…';},
-    neofetch:()=>`<span class="p">      ▄▄</span>        you@cdsigrl
-<span class="p">     █▀▀█</span>       ------------
-<span class="p">    █▄▄▄▄█</span>      OS: CDS IGRL OS (Legal Metrology)
-<span class="p">   █      █</span>     Kernel: Assess · Select · Install · Certify · Support
-                  Method: Assess → Support
-                  Services: ${PILLARS.length}
-                  Uptime: measurement you can trust`,
+    pillars:()=>PILLARS.map(p=>`<span class="k">${p.n}</span>  ${p.t.padEnd(36)} ${p.tags.join(' · ')}`).join('\n'),
+    ls:()=>C.pillars(),
+    approach:()=>STEPS.map(([l,h])=>`${l.padEnd(14)} ${h}`).join('\n'),
+    clients:()=>'RETAIL        trade measurement · compliance\nINDUSTRIAL    flow meters · weighbridges, bulk weighing\nSCIENCE       analytical balances · lab precision · ',
+    contact:()=>'House 21, Megro Crescent, Maitama, Abuja, Nigeria\n+234 800 CDS IGRL\n<a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a>',
+    book:()=>{window.open(BOOK,'_blank','noopener');return 'Opening request form…';},
+    neofetch:()=>`<span class="p">      ▄▄</span>        you@cdsigrl\n<span class="p">     █▀▀█</span>       ------------\n<span class="p">    █▄▄▄▄█</span>      OS: CDS IGRL OS (Legal Metrology)\n<span class="p">   █      █</span>     Kernel: Assess · Select · Install · Support\n                  Method: Assess → Support\n                  Services: ${PILLARS.length}\n                  Uptime: measurement you can trust`,
     clear:()=>{$$('.ln',t).forEach(l=>l.remove());return null;},
-    sudo:a=>/quote/.test(a)?(window.open(BOOK,'_blank','noopener'),'Quote request accepted. We will be in touch. ⚖️'):'sudo: try <span class="k">sudo request-quote</span>',
+    sudo:a=>/request-quote/.test(a)?(window.open(BOOK,'_blank','noopener'),'Quote request accepted. We will be in touch\'s build. 🏛️'):'sudo: try <span class="k">sudo request-quote</span>',
     open:a=>APPS[a]?(openApp(a),`Opening ${a}…`):'usage: open work|approach|clients|notes|nova|mail|welcome',
     exit:()=>{closeWin('terminal');return null;},
   };
