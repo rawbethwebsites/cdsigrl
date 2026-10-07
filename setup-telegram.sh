@@ -31,20 +31,44 @@ if ! printf '%s' "$ME_JSON" | grep -q '"ok":true'; then
   printf '%s\n' "$ME_JSON" >&2
   exit 1
 fi
-BOT_NAME="$(printf '%s' "$ME_JSON" | sed -n 's/.*"username":"\([^"]*\)".*/\1/p')"
+BOT_NAME="$(printf '%s' "$ME_JSON" | python3 -c 'import sys,json; d=json.load(sys.stdin); print(d.get("result",{}).get("username",""))')"
+if [ -z "$BOT_NAME" ]; then
+  echo "!! Could not read the bot username:" >&2
+  printf '%s\n' "$ME_JSON" >&2
+  exit 1
+fi
 echo "   OK — bot @${BOT_NAME}"
 
 # 3. Chat id -----------------------------------------------------------------
 echo
-echo "Now send any message to @${BOT_NAME} in Telegram (or add it to the group"
-echo "you want leads delivered to, then send a message there)."
+echo "Now send any message to @${BOT_NAME} in Telegram."
+echo "For a GROUP: add the bot to the group, then send a message there."
 read -rp "Press Enter once sent... " _
 
 CHAT_ID=""
-for _ in 1 2 3 4 5; do
-  UPD="$(curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates")"
-  CHAT_ID="$(printf '%s' "$UPD" | sed -n 's/.*"chat":{"id":\(-\?[0-9]*\).*/\1/p' | tail -1)"
-  [ -n "$CHAT_ID" ] && break
+CHAT_TITLE=""
+for _ in 1 2 3 4 5 6; do
+  PARSED="$(curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates" | python3 -c '
+import sys, json
+try:
+    d = json.load(sys.stdin)
+except Exception:
+    sys.exit(0)
+best = None
+for u in d.get("result", []):
+    m = u.get("message") or u.get("channel_post") or u.get("edited_message") or {}
+    c = m.get("chat") or {}
+    if c.get("id") is not None:
+        best = c
+if best:
+    title = best.get("title") or best.get("first_name") or best.get("username") or ""
+    print("%s\t%s" % (best["id"], title))
+')"
+  if [ -n "$PARSED" ]; then
+    CHAT_ID="${PARSED%%	*}"
+    CHAT_TITLE="${PARSED#*	}"
+    break
+  fi
   echo "   no message seen yet, retrying in 3s..."
   sleep 3
 done
@@ -52,17 +76,21 @@ if [ -z "$CHAT_ID" ]; then
   echo "!! Could not detect a chat id. Send a message to the bot and re-run." >&2
   exit 1
 fi
-echo "   OK — chat id ${CHAT_ID}"
+echo "   OK — chat id ${CHAT_ID} (${CHAT_TITLE:-private chat})"
 
 # 4. Confirm the bot can actually post there ---------------------------------
 echo "-> Sending a test message..."
 TEST="$(curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   -H 'Content-Type: application/json' \
-  -d "{\"chat_id\":\"${CHAT_ID}\",\"text\":\"CDS IGRL lead delivery is connected. Test message.\"}")"
+  --data "$(python3 -c '
+import json, sys
+print(json.dumps({"chat_id": sys.argv[1],
+                  "text": "CDS IGRL lead delivery is connected.\nThis is a test message from setup-telegram.sh."}))
+' "$CHAT_ID")")"
 if ! printf '%s' "$TEST" | grep -q '"ok":true'; then
   echo "!! Test message failed:" >&2
   printf '%s\n' "$TEST" >&2
-  echo "   (For a group, promote the bot to admin or disable privacy mode via /setprivacy.)" >&2
+  echo "   For a group: promote the bot to admin, or run /setprivacy in @BotFather and pick Disable." >&2
   exit 1
 fi
 echo "   OK — check Telegram, the test message is there."
@@ -92,9 +120,12 @@ echo "   response: ${API_RESP}"
 echo
 if printf '%s' "$API_RESP" | grep -q '"ok":true'; then
   echo "SUCCESS — contact form leads now arrive in Telegram."
+  echo "Delete the two test messages from Telegram, then you are done."
 else
   echo "!! The endpoint did not return ok. Check the Vercel function logs:"
   echo "   vercel logs cdsigrl.theboostnation.space --scope ${VERCEL_SCOPE}"
 fi
 echo
-echo "Delete the test lead from Telegram, then you are done."
+echo "Note: 'vercel env add' also writes the value to ${PROJECT_DIR}/.env.local."
+echo "It is gitignored, but remove it once you have confirmed the setup."
+echo
