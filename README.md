@@ -25,6 +25,9 @@ npm run build
 | utility.jpg | Utilities & Metering (3-phase smart meter) | photo-1684684383508-261dd0e8f467 |
 | calibration.jpg | Certified Accuracy (gauge + stamp) | photo-1791085669879-471685e3fcc5 |
 
+### Service photos
+`public/os/services/<slug>.jpg` (Unsplash License), used by the OS Capabilities window and the React services pages via `serviceImage()` in `src/data/content.ts`. Swap in client photos with the same filenames.
+
 ## Brand
 Logo mark: a gauge-dial "C" with a calibrated needle. Sources in `brand/` (SVG + 1024px PNG); the site copies are
 `public/os/logo.svg`, `public/os/logo-white.svg` (transparent), `public/favicon.svg` (simplified for small sizes)
