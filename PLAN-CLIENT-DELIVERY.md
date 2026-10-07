@@ -4,6 +4,7 @@
 **Repo:** rawbethwebsites/cdsigrl · **Local:** `/Users/mac/Documents/PROJECTS/cdsigrl`
 **Baseline:** Astudity template cloned, OS boot bug fixed (commit `60a38da`). Structure + layout intact. Content swap is ~70% done.
 **Audit date:** 2026-10-07
+**Last update:** 2026-10-07 — P0 blockers, content purge, equipment catalogue, brand assets, and SEO files all shipped and verified live. Remaining: client logo file, address confirmation, mobile QA, Lighthouse, real 404.
 
 ---
 
@@ -36,7 +37,7 @@ and form wiring.
 
 ## P0 — Blockers (must fix before showing client)
 
-- [ ] **B1. Contact form is dead.** `api/lead.js` returns HTTP 500 because `TELEGRAM_BOT_TOKEN`
+- [x] **B1. (DONE — Telegram @TbnFish_bot, E2E verified)** Contact form is dead.** `api/lead.js` returns HTTP 500 because `TELEGRAM_BOT_TOKEN`
       and `TELEGRAM_CHAT_ID` are not set on the Vercel project (`vercel env ls` → none).
       User sees an error; no lead ever arrives. *Decision needed: Telegram channel, or email
       via Brevo/SendGrid, or both?*
@@ -47,40 +48,40 @@ and form wiring.
 
 ## P0 — Leftover Astudity wording (client-visible)
 
-- [ ] **C1. `src/components/SiteFooter.tsx`** — "Institutional build for governments, funds, and enterprises."
-- [ ] **C2. `src/components/CTASection.tsx`** — default title "Ready to build an institution that lasts?" + body
-- [ ] **C3. `src/pages/HomePage.tsx`** — eyebrow "Institutional Build Partner"; H1 "END-TO-END INSTITUTIONAL BUILD."; section "The 8 pillars of institutional build."; "Building institutions, not just fixing them."; "Every mandate is an end-to-end build…"; "Clients building institutions that matter."; `STATS` array (`8 / End-to-End / Global + Local`)
-- [ ] **C4. `src/pages/ServicesPage.tsx`** — "THE 8 PILLARS OF INSTITUTIONAL BUILD."; description; testimonial lines ("strategy, structure, systems, governance, capital…"); CTA "Not sure which pillars you need?"
-- [ ] **C5. `src/pages/ServiceDetailPage.tsx`** — eyebrow "Pillar {n}"; "All 8 Pillars"; "Discuss Your Mandate"; "Next Pillar" (×2)
-- [ ] **C6. `src/pages/ClientsPage.tsx`** — title/description/hero "CLIENTS BUILDING INSTITUTIONS THAT MATTER."
-- [ ] **C7. `src/pages/GetStartedPage.tsx`** — `ORG_TYPES` (Government/DFI/Enterprise/SPV); "Tell us about your mandate"; label "Your mandate *"
-- [ ] **C8. `src/pages/AboutPage.tsx`** — mission quote; "strategy, institution design, technology, PPP advisory, investor engagement… governance… capital"
-- [ ] **C9. `src/pages/LegalPage.tsx`** — "advisory or implementation engagement"
-- [ ] **C10. `public/index.html`** — notch aria-labels "pillar"; terminal help "the 8 core capabilities"; quick-chat buttons "PPP advisory? / Investor readiness?"; pillar window eyebrow "Pillar {n}"; Spotlight label "Pillar "+p.n; `/* cycles the 8 pillars */`
-- [ ] **C11. `public/os/wallpaper.js`** — scene name "Institutional Identity" → "Measurement Identity"
-- [ ] **C12. Rename `Pillar`→`Service` type** in `src/data/content.ts` (internal, low risk, avoids future confusion)
+- [x] **C1. `src/components/SiteFooter.tsx`** — "Institutional build for governments, funds, and enterprises."
+- [x] **C2. `src/components/CTASection.tsx`** — default title "Ready to build an institution that lasts?" + body
+- [x] **C3. `src/pages/HomePage.tsx`** — eyebrow "Institutional Build Partner"; H1 "END-TO-END INSTITUTIONAL BUILD."; section "The 8 pillars of institutional build."; "Building institutions, not just fixing them."; "Every mandate is an end-to-end build…"; "Clients building institutions that matter."; `STATS` array (`8 / End-to-End / Global + Local`)
+- [x] **C4. `src/pages/ServicesPage.tsx`** — "THE 8 PILLARS OF INSTITUTIONAL BUILD."; description; testimonial lines ("strategy, structure, systems, governance, capital…"); CTA "Not sure which pillars you need?"
+- [x] **C5. `src/pages/ServiceDetailPage.tsx`** — eyebrow "Pillar {n}"; "All 8 Pillars"; "Discuss Your Mandate"; "Next Pillar" (×2)
+- [x] **C6. `src/pages/ClientsPage.tsx`** — title/description/hero "CLIENTS BUILDING INSTITUTIONS THAT MATTER."
+- [x] **C7. `src/pages/GetStartedPage.tsx`** — `ORG_TYPES` (Government/DFI/Enterprise/SPV); "Tell us about your mandate"; label "Your mandate *"
+- [x] **C8. `src/pages/AboutPage.tsx`** — mission quote; "strategy, institution design, technology, PPP advisory, investor engagement… governance… capital"
+- [x] **C9. `src/pages/LegalPage.tsx`** — "advisory or implementation engagement"
+- [x] **C10. `public/index.html`** — notch aria-labels "pillar"; terminal help "the 8 core capabilities"; quick-chat buttons "PPP advisory? / Investor readiness?"; pillar window eyebrow "Pillar {n}"; Spotlight label "Pillar "+p.n; `/* cycles the 8 pillars */`
+- [x] **C11. `public/os/wallpaper.js`** — scene name "Institutional Identity" → "Measurement Identity"
+- [x] **C12. Rename `Pillar`→`Service` type** in `src/data/content.ts` (internal, low risk, avoids future confusion)
 
 ## P0 — Missing deliverables the old site had
 
-- [ ] **D1. Equipment catalogue.** Old repo shipped a 22-item, password-gated
+- [x] **D1. (DONE — 22 items, /equipment)** Equipment catalogue.** Old repo shipped a 22-item, password-gated
       `equipment.html` (6 categories, password `METRO2026`) with What It Does / Uses in Nigeria /
       Compliance fields. The new site has **nothing** — the client's core product list is gone.
       Rebuild as a proper `/equipment` route on the new design system, ungated or
       gated-behind-a-real-form (recommend: ungated, it's marketing collateral).
-- [ ] **D2. OG / social image.** `public/og-image.jpg` is byte-identical to Astudity's
+- [x] **D2. (DONE — regenerated)** OG / social image.** `public/og-image.jpg` is byte-identical to Astudity's
       (md5 `b6565b1c…`). Shares the wrong brand on every WhatsApp/LinkedIn/X link preview.
-- [ ] **D3. Favicon + logo mark.** `favicon.svg` / `public/os/logo.svg` still draw Astudity's
+- [x] **D3. (DONE — client CD monogram restored)** Favicon + logo mark.** `favicon.svg` / `public/os/logo.svg` still draw Astudity's
       "A" chevron. Needs the official CDS IGRL mark (per TBN convention: client logo first).
-- [ ] **D4. Remove `/classic` from `SiteHeader` NAV.** It exposes the template lineage and
+- [x] **D4. (DONE)** Remove `/classic` from `SiteHeader` NAV.** It exposes the template lineage and
       leads to a redundant homepage.
 
 ## P1 — Polish for a credible handover
 
-- [ ] **P1.1 Contrast.** `text-white/30`, `/40`, `/45` appear 7× and fall below the 4.5:1
+- [x] **P1.1 Contrast.** `text-white/30`, `/40`, `/45` appear 7× and fall below the 4.5:1
       body-text threshold on black. Raise the floor to `/60`.
-- [ ] **P1.2 Swap the 🏛️ emoji** in the OS "Request a quote" widget for an inline SVG
+- [x] **P1.2 Swap the 🏛️ emoji** in the OS "Request a quote" widget for an inline SVG
       (brand rule: no emoji as structural icons). `📍📞✉️` in the mail template are fine.
-- [ ] **P1.3 Stats integrity.** HomePage `STATS` says "8 / End-to-End / Global + Local" for a
+- [x] **P1.3 Stats integrity.** HomePage `STATS` says "8 / End-to-End / Global + Local" for a
       6-service company. Replace with real numbers: 6 categories, 22+ instrument types,
       36-state coverage, 100% compliance-checked.
 - [ ] **P1.4 Mobile QA** at 375px + landscape on every route; confirm OS desktop is usable
@@ -90,7 +91,7 @@ and form wiring.
 
 ## P2 — Nice to have
 
-- [ ] **P2.1** `robots.txt` + `sitemap.xml`
+- [x] **P2.1** `robots.txt` + `sitemap.xml`
 - [ ] **P2.2** 404 route (currently `*` silently redirects to the OS)
 - [ ] **P2.3** Focus trap in the OS mobile menu / modal
 - [ ] **P2.4** Confirm Vercel Analytics is receiving events
