@@ -194,7 +194,8 @@ img{display:block}
 .grid{flex:1;padding:18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;align-content:start;overflow:auto}
 .proj{display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:10px;transition:background .15s;text-align:left}
 .proj:hover{background:rgba(226,236,244,.08)}
-.proj .thumb{aspect-ratio:4/3;border-radius:8px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px;box-shadow:0 0 0 .5px rgba(255,255,255,.15)}
+.proj:hover .thumb{transform:scale(1.02)}
+.proj .thumb{aspect-ratio:4/3;transition:transform .35s;border-radius:8px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px;box-shadow:0 0 0 .5px rgba(255,255,255,.15)}
 .proj .thumb b{font-size:22px;font-weight:900;letter-spacing:-.03em;line-height:1;color:rgba(255,255,255,.95);text-shadow:0 2px 10px rgba(0,0,0,.3)}
 .proj .thumb .bw{position:absolute;top:8px;left:8px;right:8px;height:10px;display:flex;gap:3px}
 .proj .thumb .bw i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5)}
@@ -234,6 +235,9 @@ img{display:block}
 .cmp tr:last-child td{border-bottom:0}
 .cmp td:nth-child(3),.cmp th:nth-child(3){background:rgba(24,194,90,.1)}
 .prod{padding:26px 28px}
+.prod-hero{height:200px;background:#0C1E30 center/cover no-repeat;position:relative;display:flex;align-items:flex-end;padding:14px 28px}
+.prod-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,19,31,0) 40%,rgba(7,19,31,.95))}
+.prod-hero span{position:relative;z-index:1;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mint)}
 .prod h2{font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.05;margin:10px 0 10px}
 .prod>p{color:rgba(226,236,244,.75);font-size:14px;line-height:1.6;max-width:560px}
 .feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:20px 0}
@@ -500,8 +504,8 @@ img{display:block}
       <button data-f="ret"><i style="background:#8FF0B5"></i>Retail &amp; Packaging</button>
       <button data-f="ind"><i style="background:#2BD46E"></i>Fuel &amp; Industrial Flow</button>
       <button data-f="bul"><i style="background:#B4C4D2"></i>Truck &amp; Bulk Weighing</button>
-      <button data-f="agr"><i style="background:#b8a05a"></i>Hospitality &amp; Agriculture</button>
-      <button data-f="utl"><i style="background:#8a7b4a"></i>Utilities &amp; Transport</button>
+      <button data-f="agr"><i style="background:#4CB4FF"></i>Hospitality &amp; Agriculture</button>
+      <button data-f="utl"><i style="background:#7A8FA3"></i>Utilities &amp; Transport</button>
       <button data-f="pre"><i style="background:#0B6B32"></i>Laboratory &amp; Precision</button>
       <h6>Locations</h6><button data-book>📍 Maitama, Abuja</button></div>
     <div style="flex:1;display:flex;flex-direction:column;min-width:0"><div class="grid" id="workGrid"></div><div class="statusbar" id="workStatus"></div></div>
@@ -575,6 +579,7 @@ img{display:block}
 <script>
 (() => {
 const BOOK = '/get-started';
+window.openApp = id => openApp(id); /* used by Ceedee (os/buddy.js) to open windows from chat */
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const mobile = () => matchMedia('(max-width:760px)').matches;
@@ -596,25 +601,25 @@ const ICONS = {
 
 /* ---------- Data ---------- */
 const PILLARS = [
-  {n:'01',slug:'retail-food-packaging',c:'ret',t:'Retail & Food Packaging',tags:['Scales','Checkweighers','Compliance'],g:['#18C25A','#3d2f05'],
+  {n:'01',slug:'retail-food-packaging',c:'ret',t:'Retail & Food Packaging',tags:['Scales','Checkweighers','Compliance'],g:['#18C25A','#07131F'],
    hook:'Trade measurements must be accurate, fast, and compliant. We supply and support scales and checkweighers built for retail and food operations.',
    body:'We supply price-computing scales, retail checkweighers, and multihead weighers for supermarkets, delis, bakeries, and food packaging lines. We help clients select equipment that meets Nigerian legal metrology standards, then support installation, calibration, and compliance certification.',
    del:['Equipment selection','Installation support','Calibration','Compliance certification'],
    out:'Accurate trade measurements, faster checkout, and confidence during regulatory inspections.',
    best:'Supermarkets, delis, bakeries, and food packaging operations.'},
-  {n:'02',slug:'fuel-industrial-flow',c:'ind',t:'Fuel & Industrial Flow',tags:['Flow Meters','Fuel Dispensers','Oil & Gas'],g:['#8FF0B5','#6b520a'],
+  {n:'02',slug:'fuel-industrial-flow',c:'ind',t:'Fuel & Industrial Flow',tags:['Flow Meters','Fuel Dispensers','Oil & Gas'],g:['#8FF0B5','#0C1E30'],
    hook:'Liquid and fuel measurement is high-stakes. We provide flow meters and dispensers engineered for accuracy in demanding industrial environments.',
    body:'We source and deploy turbine flow meters, fuel dispensers, ultrasonic flow meters, and Coriolis mass flow meters for oil & gas, chemical processing, and industrial liquid transfer. Our team ensures each instrument is matched to the application, installed correctly, and traceable to measurement standards.',
    del:['Flow-meter selection','Dispenser supply','Installation supervision','Calibration support'],
    out:'Reliable liquid measurement, reduced product loss, and audit-ready compliance documentation.',
    best:'Fuel stations, depots, chemical plants, and liquid-processing facilities.'},
-  {n:'03',slug:'truck-bulk-weighing',c:'bul',t:'Truck & Bulk Weighing',tags:['Weighbridges','Load Cells','Mining'],g:['#B4C4D2','#1f1c14'],
+  {n:'03',slug:'truck-bulk-weighing',c:'bul',t:'Truck & Bulk Weighing',tags:['Weighbridges','Load Cells','Mining'],g:['#B4C4D2','#0C1E30'],
    hook:'Bulk weight drives revenue, logistics, and safety. We deliver weighbridges and load-cell systems that stand up to heavy use.',
    body:'We supply truck weighbridges, column load cells, conveyor belt scales, and weigh-in-motion systems for quarries, agriculture, logistics yards, and mining operations. We focus on rugged accuracy, local support, and compliance with weights and measures regulations across Nigeria.',
    del:['Weighbridge supply','Load-cell installation','System commissioning','Ongoing support'],
    out:'Accurate bulk weighing, improved load control, and fewer compliance disputes.',
    best:'Quarries, farms, logistics hubs, and mining operations.'},
-  {n:'04',slug:'hospitality-agriculture',c:'agr',t:'Hospitality & Agriculture',tags:['Beverage','Agriculture','Livestock'],g:['#2BD46E','#3b1f05'],
+  {n:'04',slug:'hospitality-agriculture',c:'agr',t:'Hospitality & Agriculture',tags:['Beverage','Agriculture','Livestock'],g:['#2BD46E','#07131F'],
    hook:'From bar pours to grain moisture, precise measurement protects margins and quality in hospitality and farming.',
    body:'We provide spirit measures, beverage flow meters, livestock scales, and grain moisture meters for hotels, bars, breweries, and agricultural operations. Each solution is chosen for the local environment and backed by calibration guidance so measurements stay accurate season after season.',
    del:['Equipment supply','Installation support','Calibration','Training'],
@@ -660,7 +665,7 @@ const esc = s => s.replace(/&/g,'&amp;');
 PILLARS.forEach(p => {
   APPS[p.id] = {title:`${p.n} · ${p.t}`, name:'Capabilities', w:680, h:580};
   const t = document.createElement('template'); t.id = 't-' + p.id;
-  t.innerHTML = `<div class="prod"><div class="eyebrow">Service ${p.n}</div><h2>${esc(p.t)}</h2><p>${p.hook}</p><p style="margin-top:10px">${p.body}</p>
+  t.innerHTML = `<div class="prod-hero" style="background-image:url(os/services/${p.slug}.jpg)"><span>${p.tags.join(' · ')}</span></div><div class="prod"><div class="eyebrow">Service ${p.n}</div><h2>${esc(p.t)}</h2><p>${p.hook}</p><p style="margin-top:10px">${p.body}</p>
     <div class="feat">${p.del.map((d,i)=>`<div><b>0${i+1}</b><h4>${esc(d)}</h4></div>`).join('')}</div>
     <div class="ba"><div class="after"><small>OUTCOME</small><p>${p.out}</p></div><div class="neutral"><small>BEST FOR</small><p>${p.best}</p></div></div>
     <div class="trust">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div>
@@ -856,7 +861,7 @@ function genie(w,id,dir,done){
 }
 
 /* ---------- Self-running demo: apps open and close on their own while nobody is using the page ---------- */
-const DEMO=['work','p04','approach','clients','nova','p05','notes','mail','p07'];
+const DEMO=['work','p04','approach','clients','nova','p05','notes','mail','p06'];
 const ACTIVITY=['pointermove','pointerdown','wheel','keydown','touchstart'];
 let demoOn=false, demoIdx=0, demoTimer=null, demoWin=null, lastPt=null, resumeTimer=null;
 function demoStep(){
@@ -917,7 +922,7 @@ function wire(w,id){
 function wireWork(w){
   const grid=$('#workGrid',w), st=$('#workStatus',w);
   const render=f=>{const list=PILLARS.filter(p=>f==='all'||p.c===f);
-    grid.innerHTML=list.map(p=>`<button class="proj" data-p="${p.id}"><div class="thumb" style="background:${grad(p)}"><span class="bw"><i></i><i></i><i></i></span><span class="go">↗</span><b>${p.n}</b></div><span class="tag">${p.tags.join(' · ').toUpperCase()}</span><span class="nm">${p.t}</span><span class="ds">${p.hook}</span></button>`).join('');
+    grid.innerHTML=list.map(p=>`<button class="proj" data-p="${p.id}"><div class="thumb" style="background:linear-gradient(180deg,rgba(7,19,31,0) 35%,rgba(7,19,31,.88)),url(os/services/${p.slug}.jpg) center/cover,${grad(p)}"><span class="bw"><i></i><i></i><i></i></span><span class="go">↗</span><b>${p.n}</b></div><span class="tag">${p.tags.join(' · ').toUpperCase()}</span><span class="nm">${p.t}</span><span class="ds">${p.hook}</span></button>`).join('');
     $$('[data-p]',grid).forEach(b=>b.onclick=()=>openApp(b.dataset.p));
     st.textContent=`${list.length} of 6 services · one trusted partner`;};
   $$('.sidebar [data-f]',w).forEach(b=>b.onclick=()=>{$$('.sidebar [data-f]',w).forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.f);});
