@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
+import EquipmentPage from "./pages/EquipmentPage";
 import ApproachPage from "./pages/ApproachPage";
 import ClientsPage from "./pages/ClientsPage";
 import GetStartedPage from "./pages/GetStartedPage";
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
+        <Route path="/equipment" element={<EquipmentPage />} />
         <Route path="/approach" element={<ApproachPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/get-started" element={<GetStartedPage />} />

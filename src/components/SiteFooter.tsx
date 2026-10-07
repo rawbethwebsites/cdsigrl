@@ -14,6 +14,7 @@ export default function SiteFooter() {
         </div>
         <div className="flex flex-col gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white/45">
           <Link to="/services" className="hover:text-gold">Services</Link>
+          <Link to="/equipment" className="hover:text-gold">Equipment</Link>
           <Link to="/approach" className="hover:text-gold">Approach</Link>
           <Link to="/about" className="hover:text-gold">About</Link>
           <Link to="/privacy" className="hover:text-gold">Privacy</Link>
