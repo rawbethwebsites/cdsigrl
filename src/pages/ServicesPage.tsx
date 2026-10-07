@@ -44,7 +44,7 @@ export default function ServicesPage() {
               <div>
                 <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-3 group-hover:text-gold transition-colors">{p.title}</h2>
                 <p className="text-white/70 text-lg mb-4 max-w-3xl">{p.hook}</p>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/35">{p.tags.join(" • ")}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/55">{p.tags.join(" • ")}</p>
               </div>
               <span className="hidden md:grid h-14 w-14 place-items-center rounded-full border border-white/15 group-hover:bg-gold group-hover:text-ink group-hover:border-gold transition-all">
                 <ArrowRight size={20} />

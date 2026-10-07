@@ -30,7 +30,7 @@ export default function ApproachPage() {
             <div key={s.label} className="reveal-left grid md:grid-cols-[12rem_1fr] gap-6 md:gap-12 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12">
               <span className="text-7xl md:text-8xl font-black text-gold leading-none">0{i + 1}</span>
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mb-3">{s.label.split("· ")[1]}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 mb-3">{s.label.split("· ")[1]}</p>
                 <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4">{s.title}</h2>
                 <p className="text-lg text-white/65 max-w-2xl">{s.desc}</p>
               </div>

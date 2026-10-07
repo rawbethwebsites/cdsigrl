@@ -45,7 +45,7 @@ export default function SiteHeader({ backHref, backLabel = "All Services" }: { b
               </NavLink>
             ))}
             {backHref && (
-              <Link to={backHref} className="text-[11px] font-semibold tracking-wide text-white/50 hover:text-gold">← {backLabel}</Link>
+              <Link to={backHref} className="text-[11px] font-semibold tracking-wide text-white/60 hover:text-gold">← {backLabel}</Link>
             )}
           </nav>
 

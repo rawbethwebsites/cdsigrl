@@ -8,11 +8,11 @@ export default function SiteFooter() {
       <div className="max-w-7xl mx-auto grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo />
-          <p className="mt-5 max-w-sm text-sm text-white/50 leading-relaxed">
+          <p className="mt-5 max-w-sm text-sm text-white/60 leading-relaxed">
             Legal metrology and precision measurement instruments for retail, industry, and science. Abuja-based, serving all 36 states.
           </p>
         </div>
-        <div className="flex flex-col gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white/45">
+        <div className="flex flex-col gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white/60">
           <Link to="/services" className="hover:text-gold">Services</Link>
           <Link to="/equipment" className="hover:text-gold">Equipment</Link>
           <Link to="/approach" className="hover:text-gold">Approach</Link>
@@ -26,7 +26,7 @@ export default function SiteFooter() {
           <a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a>
         </address>
       </div>
-      <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-black tracking-[0.3em] uppercase text-white/30">
+      <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-black tracking-[0.3em] uppercase text-white/55">
         <span>© {new Date().getFullYear()} {SITE.name}</span>
         <span>Built by The Boost Nation</span>
       </div>

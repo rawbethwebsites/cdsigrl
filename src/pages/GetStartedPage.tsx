@@ -10,8 +10,8 @@ const ORG_TYPES = ["Retail / Supermarket", "Food & Beverage Production", "Oil & 
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-const field = "w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-white/30 focus:border-gold focus:outline-none transition-colors";
-const label = "block text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-3";
+const field = "w-full rounded-xl bg-white/5 border border-white/10 px-5 py-4 text-white placeholder:text-white/60 focus:border-gold focus:outline-none transition-colors";
+const label = "block text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-3";
 
 export default function GetStartedPage() {
   const [status, setStatus] = useState<Status>("idle");

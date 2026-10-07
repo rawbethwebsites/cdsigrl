@@ -103,7 +103,7 @@ export default function EquipmentPage() {
 
                 {isOpen && (
                   <div className="mt-6 pt-6 border-t border-white/10">
-                    <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-3">
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-3">
                       Uses in Nigeria
                     </h3>
                     <ul className="space-y-2 mb-6">
@@ -114,14 +114,14 @@ export default function EquipmentPage() {
                         </li>
                       ))}
                     </ul>
-                    <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-3">
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-3">
                       Compliance
                     </h3>
                     <p className="text-white/65 text-sm leading-relaxed">{e.compliance}</p>
                   </div>
                 )}
 
-                <p className="mt-6 text-[9px] font-black uppercase tracking-[0.25em] text-white/30">
+                <p className="mt-6 text-[9px] font-black uppercase tracking-[0.25em] text-white/55">
                   {e.categoryTitle}
                 </p>
               </article>

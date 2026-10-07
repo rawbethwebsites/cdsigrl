@@ -49,7 +49,7 @@ export default function HomePage() {
           <dl className="mt-20 grid grid-cols-3 max-w-3xl border-t border-white/10 pt-8 gap-6">
             {STATS.map((s) => (
               <div key={s.label}>
-                <dt className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-white/45 mb-2">{s.label}</dt>
+                <dt className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-2">{s.label}</dt>
                 <dd className="text-lg md:text-3xl font-black tracking-tight text-gold">{s.value}</dd>
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function HomePage() {
             {AUDIENCES.map((a) => (
               <div key={a.code} className="reveal bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-gold/40 transition-colors">
                 <div className="h-14 w-14 rounded-xl bg-gold text-ink grid place-items-center font-black mb-8">{a.code}</div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 mb-2">{a.sub}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-2">{a.sub}</p>
                 <h3 className="text-3xl font-black tracking-tight mb-4">{a.title}</h3>
                 <p className="text-white/60 mb-8">{a.desc}</p>
                 <p className="text-xs font-bold text-gold">{a.focus}</p>

@@ -24,7 +24,7 @@ export default function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
       <section className="px-6 md:px-24 pt-40 pb-32">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-4">{heading}</h1>
-          <p className="text-white/40 text-sm mb-16">Last updated October 2026</p>
+          <p className="text-white/60 text-sm mb-16">Last updated October 2026</p>
           <div className="space-y-12">
             {items.map(([t, b]) => (
               <div key={t}>
@@ -33,7 +33,7 @@ export default function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
               </div>
             ))}
           </div>
-          <p className="mt-16 text-white/50">Questions? Contact <a href={`mailto:${SITE.email}`} className="text-gold underline">{SITE.email}</a>.</p>
+          <p className="mt-16 text-white/60">Questions? Contact <a href={`mailto:${SITE.email}`} className="text-gold underline">{SITE.email}</a>.</p>
         </div>
       </section>
     </PageShell>
