@@ -13,7 +13,7 @@ function AnimatedOrb() {
   });
   return (
     <Sphere ref={meshRef} args={[1, 96, 192]} scale={2.3} position={[1.6, 0, 0]}>
-      <MeshDistortMaterial color="#F5C518" attach="material" distort={0.45} speed={1.6} roughness={0.15} metalness={0.6} />
+      <MeshDistortMaterial color="#18C25A" attach="material" distort={0.45} speed={1.6} roughness={0.15} metalness={0.6} />
     </Sphere>
   );
 }
@@ -23,8 +23,8 @@ export default function HeroOrb() {
     <Canvas dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
       <PerspectiveCamera makeDefault position={[0, 0, 6]} />
       <ambientLight intensity={0.35} />
-      <pointLight position={[10, 10, 10]} intensity={60} color="#fff4cc" />
-      <pointLight position={[-8, -6, 4]} intensity={25} color="#C99A00" />
+      <pointLight position={[10, 10, 10]} intensity={60} color="#dff3ff" />
+      <pointLight position={[-8, -6, 4]} intensity={25} color="#0E8A3E" />
       <Stars radius={100} depth={50} count={3500} factor={4} saturation={0} fade speed={0.8} />
       <AnimatedOrb />
     </Canvas>

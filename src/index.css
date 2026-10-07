@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold:      #F5C518;
-  --color-gold-deep: #C99A00;
-  --color-ink:       #080808;
-  --color-coal:      #121210;
-  --color-cream:     #FBF5DD;
+  --color-brand:      #18C25A;
+  --color-brand-deep: #0E8A3E;
+  --color-ink:       #06111C;
+  --color-coal:      #0C1E30;
+  --color-cream:     #EEF4F8;
   --color-bone:      #F5F5F0;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
@@ -30,8 +30,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #080808;
-  color: #FBF5DD;
+  background-color: #06111C;
+  color: #EEF4F8;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -41,7 +41,7 @@ canvas { touch-action: none; }
 ::-webkit-scrollbar { display: none; }
 * { -ms-overflow-style: none; scrollbar-width: none; }
 
-:focus-visible { outline: 2px solid #F5C518; outline-offset: 3px; }
+:focus-visible { outline: 2px solid #18C25A; outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee, .hero-content { animation: none; }

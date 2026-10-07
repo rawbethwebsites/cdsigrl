@@ -10,7 +10,7 @@ export default function AboutPage() {
       description="CDS IGRL works with retailers, manufacturers, oil & gas operators, healthcare labs, farms, logistics yards, and utilities — turning measurement requirements into compliant, reliable instruments."
       path="/about"
     >
-      <PageHero eyebrow="Who We Are" title={<>GLOBAL PERSPECTIVE.<br /><span className="text-gold">LOCAL DEPLOYMENT.</span></>}>
+      <PageHero eyebrow="Who We Are" title={<>GLOBAL PERSPECTIVE.<br /><span className="text-brand">LOCAL DEPLOYMENT.</span></>}>
         <p className="text-xl md:text-2xl font-medium text-white/75 max-w-3xl mx-auto leading-relaxed">
           CDS IGRL works with retailers, manufacturers, oil & gas operators, healthcare labs, farms, logistics yards, and utilities — turning measurement requirements into compliant, reliable instruments.
         </p>
@@ -18,7 +18,7 @@ export default function AboutPage() {
 
       <section data-reveal className="bg-cream text-ink py-32 px-6 md:px-24">
         <div className="max-w-5xl mx-auto">
-          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold-deep mb-8">Our Mission</p>
+          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-brand-deep mb-8">Our Mission</p>
           <blockquote className="reveal text-3xl md:text-5xl font-black tracking-tighter leading-[1.05]">
             “To make every trade, industrial, and scientific measurement in Nigeria accurate, certified, and trusted.”
           </blockquote>
@@ -39,7 +39,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {VALUES.map((v, i) => (
               <div key={v.title} className="reveal bg-white/5 border border-white/10 p-8 rounded-2xl">
-                <span className="text-gold font-black text-sm tracking-widest">0{i + 1}</span>
+                <span className="text-brand font-black text-sm tracking-widest">0{i + 1}</span>
                 <h3 className="text-2xl font-bold mt-6 mb-3">{v.title}</h3>
                 <p className="text-white/60">{v.desc}</p>
               </div>
@@ -48,9 +48,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section data-reveal className="bg-gold/[0.06] border-y border-gold/10 py-24 px-6 md:px-24">
+      <section data-reveal className="bg-brand/[0.06] border-y border-brand/10 py-24 px-6 md:px-24">
         <div className="max-w-5xl mx-auto text-center">
-          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold mb-10">Sectors We Work In</p>
+          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-brand mb-10">Sectors We Work In</p>
           <div className="reveal flex flex-wrap justify-center gap-3">
             {SECTORS.map((s) => (
               <span key={s} className="rounded-full border border-white/15 px-6 py-3 text-sm font-bold">{s}</span>

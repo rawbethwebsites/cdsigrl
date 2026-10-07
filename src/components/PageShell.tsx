@@ -18,7 +18,7 @@ export default function PageShell({ title, description, path, backHref, backLabe
   useReveal(containerRef, [path]);
 
   return (
-    <div ref={containerRef} className="bg-ink text-white min-h-screen selection:bg-gold selection:text-ink">
+    <div ref={containerRef} className="bg-ink text-white min-h-screen selection:bg-brand selection:text-ink">
       <SEO title={title} description={description} path={path} />
       <SiteHeader backHref={backHref} backLabel={backLabel} />
       <main className="relative z-10">

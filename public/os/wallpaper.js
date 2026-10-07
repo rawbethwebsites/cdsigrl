@@ -1,6 +1,6 @@
 /* CDS IGRL OS — animated wallpaper engine (GSAP-driven measurement scenes on one canvas) */
 (() => {
-const C = { navy:'#16130C', green:'#F5C518', mint:'#FBE38A', cream:'#FFF8E6', forest:'#C99A00', ink:'#0B0A07' };
+const C = { navy:'#0C1E30', green:'#18C25A', mint:'#8FF0B5', cream:'#EEF4F8', forest:'#0E8A3E', ink:'#07131F' };
 const rgba = (h, a) => { const n = parseInt(h.slice(1), 16); return `rgba(${n >> 16},${n >> 8 & 255},${n & 255},${a})`; };
 const rand = (a, b) => a + Math.random() * (b - a);
 const cv = document.getElementById('wallcv'), ctx = cv.getContext('2d');
@@ -23,7 +23,7 @@ function photoBg(i, t, dim = .6) {
     const w = im.naturalWidth * k, h = im.naturalHeight * k;
     ctx.drawImage(im, (W - w) / 2, (H - h) / 2, w, h);
   }
-  ctx.fillStyle = `rgba(0,0,0,${dim})`; ctx.fillRect(-W, -H, W * 3, H * 3);
+  ctx.fillStyle = `rgba(4,12,20,${dim})`; ctx.fillRect(-W, -H, W * 3, H * 3);
 }
 
 /* ---------------- shared drawing helpers ---------------- */
@@ -41,7 +41,7 @@ function rrect(x, y, w, h, r) { ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x
 function readout(x, y, cap, val, o, status = '', so = 0) {
   if (o <= 0) return;
   const w = Math.min(W - 32, fs(.15) * 8.6 + 48), h = fs(.13) * 2.2 + fs(.09) * 1.6;
-  al(o * .9); ctx.fillStyle = 'rgba(11,10,7,.78)'; rrect(x - w / 2, y - h / 2, w, h, 12); ctx.fill();
+  al(o * .9); ctx.fillStyle = 'rgba(7,19,31,.78)'; rrect(x - w / 2, y - h / 2, w, h, 12); ctx.fill();
   al(o * .55); ctx.strokeStyle = C.mint; ctx.lineWidth = 1; ctx.stroke();
   al(o * .7); text(cap, x, y - h / 2 + fs(.09) * .95, fs(.075), C.mint, { track: 2.5 });
   al(o); text(val, x, y + fs(.05), fs(.15), C.green, { weight: 600 });
@@ -94,7 +94,7 @@ function Trade() {
         const ex = cx + Math.cos(st.ang) * L * s, ey = py + Math.sin(st.ang) * L * s, pyy = ey + S;
         al(.55); ctx.strokeStyle = C.mint; ctx.lineWidth = 1;
         ctx.beginPath(); ctx.moveTo(ex, ey); ctx.lineTo(ex - pw / 2, pyy); ctx.moveTo(ex, ey); ctx.lineTo(ex + pw / 2, pyy); ctx.stroke();
-        al(.95); ctx.fillStyle = 'rgba(11,10,7,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
+        al(.95); ctx.fillStyle = 'rgba(7,19,31,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.ellipse(ex, pyy, pw / 2, pw * .14, 0, 0, Math.PI); ctx.closePath(); ctx.fill(); ctx.stroke();
         al(1); ctx.fillStyle = C.cream; ctx.beginPath(); ctx.arc(ex, ey, 3.5, 0, 7); ctx.fill();
         if (s < 0) { /* produce on the left pan */
@@ -157,7 +157,7 @@ function Flow() {
       });
       ctx.lineCap = 'butt';
       /* meter body + turbine */
-      al(1); ctx.fillStyle = '#0d0b07'; ctx.strokeStyle = C.green; ctx.lineWidth = 2.5;
+      al(1); ctx.fillStyle = '#0A1A2A'; ctx.strokeStyle = C.green; ctx.lineWidth = 2.5;
       ctx.beginPath(); ctx.arc(cx, cy, mr, 0, 7); ctx.fill(); ctx.stroke();
       al(.55); ctx.strokeStyle = C.mint; ctx.lineWidth = 1;
       for (let k = 0; k < 48; k++) { const a = k / 48 * 6.283, l = k % 4 ? 4 : 9; ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * (mr - 6), cy + Math.sin(a) * (mr - 6)); ctx.lineTo(cx + Math.cos(a) * (mr - 6 - l), cy + Math.sin(a) * (mr - 6 - l)); ctx.stroke(); }
@@ -192,7 +192,7 @@ function Bridge() {
     const wr = R * .085, ch = gy - wr * 2.1, bh = R * .48, back = x - TL / 2, front = x + TL / 2;
     const spin = x / wr;
     /* dump body */
-    al(.95); ctx.fillStyle = 'rgba(11,10,7,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
+    al(.95); ctx.fillStyle = 'rgba(7,19,31,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(back, ch - bh); ctx.lineTo(back + TL * .66, ch - bh); ctx.lineTo(back + TL * .62, ch); ctx.lineTo(back + TL * .04, ch); ctx.closePath(); ctx.fill(); ctx.stroke();
     al(.35); ctx.strokeStyle = C.mint; ctx.lineWidth = 1;
     for (let k = 1; k < 5; k++) { const xx = back + TL * .66 * k / 5; ctx.beginPath(); ctx.moveTo(xx, ch - bh + 4); ctx.lineTo(xx - TL * .01, ch - 4); ctx.stroke(); }
@@ -201,7 +201,7 @@ function Bridge() {
     for (let k = 0; k <= 8; k++) ctx.lineTo(back + TL * (.03 + .6 * k / 8), ch - bh - R * (.05 + .05 * Math.sin(k * 1.7)));
     ctx.lineTo(back + TL * .63, ch - bh); ctx.fill();
     /* cab */
-    al(.95); ctx.fillStyle = 'rgba(11,10,7,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
+    al(.95); ctx.fillStyle = 'rgba(7,19,31,.85)'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(back + TL * .7, ch); ctx.lineTo(back + TL * .7, ch - bh * .95); ctx.lineTo(front - TL * .1, ch - bh * .95); ctx.lineTo(front, ch - bh * .45); ctx.lineTo(front, ch); ctx.closePath(); ctx.fill(); ctx.stroke();
     al(.45); ctx.fillStyle = C.mint; ctx.beginPath(); ctx.moveTo(back + TL * .76, ch - bh * .85); ctx.lineTo(front - TL * .12, ch - bh * .85); ctx.lineTo(front - TL * .04, ch - bh * .5); ctx.lineTo(back + TL * .76, ch - bh * .5); ctx.closePath(); ctx.fill();
     /* headlight */
@@ -210,7 +210,7 @@ function Bridge() {
     al(.8); ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(front, ch - bh * .25); ctx.arc(front, ch - bh * .25, R * .5, -.35, .35); ctx.fill();
     /* wheels */
     [back + TL * .14, back + TL * .32, front - TL * .16].forEach(wx => {
-      al(1); ctx.fillStyle = '#0d0b07'; ctx.strokeStyle = C.cream; ctx.lineWidth = 2.2;
+      al(1); ctx.fillStyle = '#0A1A2A'; ctx.strokeStyle = C.cream; ctx.lineWidth = 2.2;
       ctx.beginPath(); ctx.arc(wx, gy - wr, wr, 0, 7); ctx.fill(); ctx.stroke();
       ctx.strokeStyle = C.green; ctx.lineWidth = 1.5;
       for (let k = 0; k < 3; k++) { const a = spin + k * 2.094; ctx.beginPath(); ctx.moveTo(wx, gy - wr); ctx.lineTo(wx + Math.cos(a) * wr * .7, gy - wr + Math.sin(a) * wr * .7); ctx.stroke(); }
@@ -228,7 +228,7 @@ function Bridge() {
       al(.35); ctx.strokeStyle = C.mint; ctx.lineWidth = 1; ctx.setLineDash([10, 8]);
       ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(cx - half, gy); ctx.moveTo(cx + half, gy); ctx.lineTo(W, gy); ctx.stroke(); ctx.setLineDash([]);
       /* platform + load cells */
-      al(1); ctx.fillStyle = '#0d0b07'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
+      al(1); ctx.fillStyle = '#0A1A2A'; ctx.strokeStyle = C.green; ctx.lineWidth = 2;
       ctx.fillRect(cx - half, gy + defl, half * 2, R * .07); ctx.strokeRect(cx - half, gy + defl, half * 2, R * .07);
       al(.35); ctx.strokeStyle = C.mint; ctx.lineWidth = 1;
       for (let k = 1; k < 12; k++) { const xx = cx - half + half * 2 * k / 12; ctx.beginPath(); ctx.moveTo(xx, gy + defl + 2); ctx.lineTo(xx, gy + defl + R * .07 - 2); ctx.stroke(); }
@@ -275,11 +275,11 @@ function Utility() {
       const step = R * .16, o = (t * R * .5 * st.amp) % step;
       for (let x = mx + mw + o; x < W; x += step) { al((.25 + .6 * st.amp) * (1 - (x - mx - mw) / (W - mx - mw + 1) * .6)); ctx.fillStyle = C.green; ctx.fillRect(x, cy - 3, step * .45, 6); }
       /* meter */
-      al(1); ctx.fillStyle = '#0d0b07'; ctx.strokeStyle = C.green; ctx.lineWidth = 2.5;
+      al(1); ctx.fillStyle = '#0A1A2A'; ctx.strokeStyle = C.green; ctx.lineWidth = 2.5;
       rrect(mx, my, mw, mh, 18); ctx.fill(); ctx.stroke();
       al(.75); text('CDS · SMART METER  3Φ', cx, my + mh * .1, fs(.06), C.mint, { track: 2 });
       const lw = mw * .84, lh = mh * .26, lx = cx - lw / 2, ly = my + mh * .18;
-      al(1); ctx.fillStyle = '#1a1608'; rrect(lx, ly, lw, lh, 8); ctx.fill();
+      al(1); ctx.fillStyle = '#072A18'; rrect(lx, ly, lw, lh, 8); ctx.fill();
       al(.5); ctx.strokeStyle = C.mint; ctx.lineWidth = 1; ctx.stroke();
       al(1); text(kwh.v.toFixed(2).padStart(8, '0'), cx - lw * .06, ly + lh / 2, Math.min(lh * .62, lw / 6.2), C.green, { weight: 600 });
       al(.75); text('kWh', lx + lw - 8, ly + lh * .78, fs(.055), C.mint, { align: 'right' });
@@ -318,7 +318,7 @@ function Calibrate() {
       photoBg(4, t, .7);
       const dr = R * .82, gx = mobile() ? cx : cx - R * .55, gy = mobile() ? cy - R * .25 : cy;
       /* dial */
-      al(.85); ctx.fillStyle = 'rgba(11,10,7,.82)'; ctx.beginPath(); ctx.arc(gx, gy, dr * 1.12, 0, 7); ctx.fill();
+      al(.85); ctx.fillStyle = 'rgba(7,19,31,.82)'; ctx.beginPath(); ctx.arc(gx, gy, dr * 1.12, 0, 7); ctx.fill();
       al(.6); ctx.strokeStyle = C.mint; ctx.lineWidth = 1; ctx.stroke();
       al(.25); ctx.strokeStyle = C.mint; ctx.lineWidth = dr * .06; ctx.beginPath(); ctx.arc(gx, gy, dr * .93, ang(0), ang(100)); ctx.stroke();
       al(1); ctx.strokeStyle = C.green; ctx.beginPath(); ctx.arc(gx, gy, dr * .93, ang(0), ang(Math.max(.01, st.v))); ctx.stroke();

@@ -28,12 +28,12 @@ export default function LegalPage({ kind }: { kind: "privacy" | "terms" }) {
           <div className="space-y-12">
             {items.map(([t, b]) => (
               <div key={t}>
-                <h2 className="text-2xl font-bold mb-3 text-gold">{t}</h2>
+                <h2 className="text-2xl font-bold mb-3 text-brand">{t}</h2>
                 <p className="text-white/70 leading-relaxed">{b}</p>
               </div>
             ))}
           </div>
-          <p className="mt-16 text-white/60">Questions? Contact <a href={`mailto:${SITE.email}`} className="text-gold underline">{SITE.email}</a>.</p>
+          <p className="mt-16 text-white/60">Questions? Contact <a href={`mailto:${SITE.email}`} className="text-brand underline">{SITE.email}</a>.</p>
         </div>
       </section>
     </PageShell>

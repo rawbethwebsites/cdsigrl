@@ -29,3 +29,17 @@ npm run build
 Logo mark: a gauge-dial "C" with a calibrated needle. Sources in `brand/` (SVG + 1024px PNG); the site copies are
 `public/os/logo.svg`, `public/os/logo-white.svg` (transparent), `public/favicon.svg` (simplified for small sizes)
 and the inline `LogoMark` in `src/components/Logo.tsx`.
+
+### Palette — "Standard & Verified"
+Built from the client's original navy + green logo colours, tuned for contrast on dark UI.
+
+| Token | Hex | Use |
+|---|---|---|
+| Verified Green (`brand`, `--emerald`) | `#18C25A` | primary accent, CTAs, gauge arc |
+| Green Deep (`brand-deep`, `--forest`) | `#0E8A3E` | hover, secondary fills |
+| Signal Mint (`--mint`) | `#8FF0B5` | labels, data lines |
+| Midnight (`ink`, `--deep`) | `#07131F` | page background |
+| Navy (`coal`, `--navy`) | `#0C1E30` | surfaces / cards |
+| Paper (`cream`, `--cream`) | `#EEF4F8` | text on dark, light sections |
+
+Green on Midnight ≈ 7.9:1 contrast (AA for all text sizes); Midnight text on green buttons passes too.

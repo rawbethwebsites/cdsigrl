@@ -38,21 +38,21 @@ export default function SiteHeader({ backHref, backLabel = "All Services" }: { b
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  cn("text-[11px] font-semibold tracking-wide transition-colors", isActive ? "text-gold" : "text-white/75 hover:text-white")
+                  cn("text-[11px] font-semibold tracking-wide transition-colors", isActive ? "text-brand" : "text-white/75 hover:text-white")
                 }
               >
                 {n.label}
               </NavLink>
             ))}
             {backHref && (
-              <Link to={backHref} className="text-[11px] font-semibold tracking-wide text-white/60 hover:text-gold">← {backLabel}</Link>
+              <Link to={backHref} className="text-[11px] font-semibold tracking-wide text-white/60 hover:text-brand">← {backLabel}</Link>
             )}
           </nav>
 
           <div className="flex items-center gap-3">
             <Link
               to="/get-started"
-              className="whitespace-nowrap bg-gold text-ink px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition-all"
+              className="whitespace-nowrap bg-brand text-ink px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition-all"
             >
               <span className="sm:hidden">Contact</span>
               <span className="hidden sm:inline">Talk to Our Team</span>
@@ -84,7 +84,7 @@ export default function SiteHeader({ backHref, backLabel = "All Services" }: { b
                   to={n.to}
                   className={cn(
                     "rounded-xl border px-4 py-4 text-[11px] font-black uppercase tracking-widest",
-                    pathname === n.to ? "border-gold/60 bg-gold/10 text-gold" : "border-white/10 bg-white/5 text-white"
+                    pathname === n.to ? "border-brand/60 bg-brand/10 text-brand" : "border-white/10 bg-white/5 text-white"
                   )}
                 >
                   {n.label}
