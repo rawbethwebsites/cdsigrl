@@ -33,17 +33,29 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 img{display:block}
 ::selection{background:var(--emerald);color:var(--deep)}
 
-/* ---------- Boot ---------- */
-#boot{position:fixed;inset:0;background:#000;z-index:9999;display:grid;place-items:center;transition:opacity .6s}
-#boot.gone{opacity:0;pointer-events:none}
-#boot .in{display:flex;flex-direction:column;align-items:center;gap:36px}
-#boot img{width:72px;height:72px}
-#boot .bar{width:180px;height:4px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
-#boot .bar i{display:block;height:100%;width:0;background:#fff;border-radius:4px;animation:load 1.3s cubic-bezier(.6,.1,.3,1) forwards}
-@keyframes load{to{width:100%}}
+/* ---------- Boot (GSAP calibration preloader) ---------- */
+#boot{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;color:var(--cream);overflow:hidden}
+#boot.gone{opacity:0;pointer-events:none;transition:opacity .4s}
+#boot .sh{position:absolute;left:0;right:0;height:50.5%;background:#070605}
+#boot .sh.t{top:0;border-bottom:1px solid rgba(245,197,24,.0)}
+#boot .sh.b{bottom:0}
+#boot .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(251,227,138,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(251,227,138,.05) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 0,transparent 65%);mask-image:radial-gradient(circle at 50% 50%,#000 0,transparent 65%)}
+#boot .in{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
+#boot .mk{width:132px;height:132px;overflow:visible;filter:drop-shadow(0 0 28px rgba(245,197,24,.18))}
+#boot .wm{display:flex;gap:.04em;font-weight:900;font-size:clamp(30px,6vw,46px);letter-spacing:-.01em;line-height:1;overflow:hidden;padding:2px 4px}
+#boot .wm span{display:inline-block}
+#boot .wm .gap{width:.32em}
+#boot .tg{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.36em;color:var(--mint);text-transform:uppercase;padding-left:.36em}
+#boot .meter{margin-top:14px;width:min(300px,72vw);display:flex;flex-direction:column;gap:8px}
+#boot .rule{position:relative;height:2px;background:rgba(251,227,138,.16);border-radius:2px}
+#boot .rule i{position:absolute;inset:0;background:var(--emerald);transform-origin:left;transform:scaleX(0);box-shadow:0 0 12px rgba(245,197,24,.6)}
+#boot .ticks{height:7px;background-image:linear-gradient(90deg,rgba(251,227,138,.45) 1px,transparent 1px);background-size:10% 100%;-webkit-mask-image:linear-gradient(#000,transparent);mask-image:linear-gradient(#000,transparent)}
+#boot .rd{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.22em;color:var(--muted)}
+#boot .rd b{color:var(--emerald);font-weight:600}
+@media (prefers-reduced-motion:reduce){#boot .grid{display:none}}
 
 /* ---------- Wallpaper ---------- */
-#wallcv{position:fixed;inset:0;z-index:0;display:block;background:#070605 url(os/wallpapers/global.jpg) center/cover;filter:none}
+#wallcv{position:fixed;inset:0;z-index:0;display:block;background:#070605 url(os/wallpapers/trade.jpg) center/cover;filter:none}
 #wallcv:not(.live){box-shadow:inset 0 0 0 100vmax rgba(0,0,0,.58)}
 #wpLabel{position:fixed;left:18px;bottom:96px;z-index:1;pointer-events:none;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.2em;color:var(--mint);display:flex;flex-direction:column;gap:6px;opacity:0}
 #wpLabel div{display:flex;gap:12px;align-items:center}
@@ -394,7 +406,19 @@ img{display:block}
 </head>
 <body>
 
-<div id="boot"><div class="in"><img src="os/logo-white.svg" alt="CDS IGRL"><div class="bar"><i></i></div></div></div>
+<div id="boot" role="status" aria-label="Loading CDS IGRL">
+  <div class="sh t"></div><div class="sh b"></div><div class="grid"></div>
+  <div class="in">
+    <svg class="mk" viewBox="0 0 100 100" aria-hidden="true">
+      <path id="bArc" d="M73.04 29.26A31 31 0 1 0 73.04 70.74" fill="none" stroke="#F5C518" stroke-width="9" stroke-linecap="round"/>
+      <g id="bTicks" stroke="#F5C518" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round"><path d="M60.75 31.38L58 36.14"/><path d="M53.73 28.83L53.21 31.78"/><path d="M46.27 28.83L46.79 31.78"/><path d="M39.25 31.38L42 36.14"/><path d="M33.53 36.18L35.83 38.11"/><path d="M29.8 42.65L32.62 43.67"/><path d="M28.5 50L34 50"/><path d="M29.8 57.35L32.62 56.33"/><path d="M33.53 63.82L35.83 61.89"/><path d="M39.25 68.62L42 63.86"/><path d="M46.27 71.17L46.79 68.22"/><path d="M53.73 71.17L53.21 68.22"/><path d="M60.75 68.62L58 63.86"/></g>
+      <g id="bNeedle"><path d="M48.5 47.17L73.84 37.32L51.5 52.83Z" fill="#FFF8E6"/><circle cx="50" cy="50" r="5.2" fill="#FFF8E6"/><circle cx="50" cy="50" r="2" fill="#0B0A07"/></g>
+    </svg>
+    <div class="wm" aria-hidden="true"><span>C</span><span>D</span><span>S</span><span class="gap"></span><span>I</span><span>G</span><span>R</span><span>L</span></div>
+    <div class="tg">Legal Metrology · Nigeria</div>
+    <div class="meter"><div class="rule"><i></i></div><div class="ticks"></div><div class="rd"><span id="bState">CALIBRATING</span><b id="bPct">000.0%</b></div></div>
+  </div>
+</div>
 
 <canvas id="wallcv"></canvas>
 <div id="wpLabel"><div><em></em><b></b><span></span></div><div class="tr"><i></i></div></div>
@@ -546,7 +570,7 @@ img{display:block}
 
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="os/wallpaper.js?v=photos-2"></script>
+<script src="os/wallpaper.js?v=metrology-1"></script>
 <script>
 (() => {
 const BOOK = '/get-started';
@@ -647,7 +671,50 @@ const DOCK_LABEL = {work:'Capabilities',welcome:'Safari',notes:'Notes',nova:'Ask
 const DESK = [['readme','About CDS IGRL','notes'],['work','Capabilities','work'],['approach','Approach','approach'],['clients','Who We Serve','clients'],['nova','Ask CDS IGRL','nova'],['mail','Contact','mail']];
 
 /* ---------- Boot ---------- */
-setTimeout(() => { $('#boot').classList.add('gone'); openApp('welcome'); demoStart(); }, 1350);
+(() => {
+  const boot = $('#boot');
+  let started = false;
+  const start = () => { if (started) return; started = true; openApp('welcome'); demoStart(); };
+  let done = false;
+  const finish = () => { if (done) return; done = true; boot.classList.add('gone'); setTimeout(() => boot.remove(), 450); start(); };
+  setTimeout(finish, 7000); /* failsafe: never trap the visitor behind the loader */
+  if (matchMedia('(prefers-reduced-motion:reduce)').matches || typeof gsap === 'undefined') { setTimeout(finish, 900); return; }
+  /* Real readiness: fonts + first wallpaper photo, capped so a slow network never traps the visitor. */
+  const img = new Image(); img.src = 'os/wallpapers/trade.jpg';
+  const ready = Promise.race([
+    Promise.all([document.fonts ? document.fonts.ready : 0, img.decode ? img.decode().catch(() => 0) : 0]),
+    new Promise(r => setTimeout(r, 3800)),
+  ]);
+  const arc = $('#bArc'), len = arc.getTotalLength(), ticks = [...$('#bTicks').children];
+  const pct = $('#bPct'), state = $('#bState'), prog = { v: 0 };
+  const show = () => { pct.textContent = (prog.v * 100).toFixed(1).padStart(5, '0') + '%'; };
+  gsap.set(arc, { strokeDasharray: len, strokeDashoffset: len });
+  gsap.set(ticks, { opacity: 0 });
+  gsap.set('#bNeedle', { rotation: -290, svgOrigin: '50 50' });
+  gsap.set('#boot .wm span', { yPercent: 115 });
+  gsap.set(['#boot .tg', '#boot .meter'], { opacity: 0, y: 8 });
+  const intro = gsap.timeline({ defaults: { ease: 'power3.out' } })
+    .to(arc, { strokeDashoffset: 0, duration: 1.1, ease: 'power2.inOut' })
+    .to(ticks, { opacity: 1, duration: .25, stagger: .04 }, .25)
+    .to('#boot .wm span', { yPercent: 0, duration: .8, stagger: .045 }, .35)
+    .to(['#boot .tg', '#boot .meter'], { opacity: 1, y: 0, duration: .6, stagger: .1 }, .6)
+    /* the needle and readout climb together, holding short of full scale until assets are ready */
+    .to(prog, { v: .86, duration: 1.3, ease: 'power1.inOut', onUpdate: show }, .7)
+    .to('#bNeedle', { rotation: -40, duration: 1.3, ease: 'power1.inOut' }, .7)
+    .to('#boot .rule i', { scaleX: .86, duration: 1.3, ease: 'power1.inOut' }, .7);
+  Promise.all([ready, new Promise(r => intro.eventCallback('onComplete', r))]).then(() => {
+    gsap.timeline({ onComplete: finish })
+      .to(prog, { v: 1, duration: .45, ease: 'power2.out', onUpdate: show })
+      .to('#boot .rule i', { scaleX: 1, duration: .45, ease: 'power2.out' }, 0)
+      .to('#bNeedle', { rotation: 0, duration: 1, ease: 'elastic.out(1.1,.35)' }, 0)
+      .call(() => { state.textContent = '✓ VERIFIED'; state.style.color = 'var(--emerald)'; }, null, .35)
+      .to('#boot .in', { scale: .94, opacity: 0, duration: .45, ease: 'power2.in' }, '+=.35')
+      .to('#boot .grid', { opacity: 0, duration: .3 }, '<')
+      .call(start, null, '-=.1')
+      .to('#boot .sh.t', { yPercent: -100, duration: .75, ease: 'expo.inOut' })
+      .to('#boot .sh.b', { yPercent: 100, duration: .75, ease: 'expo.inOut' }, '<');
+  });
+})();
 
 /* ---------- Clock ---------- */
 function tick(){
