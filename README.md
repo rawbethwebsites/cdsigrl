@@ -15,12 +15,17 @@ npm run build
 ```
 
 ## Wallpaper photos
-`public/os/wallpapers/*.jpg` — free photos from Unsplash (Unsplash License), shown behind the GSAP scenes in `public/os/wallpaper.js` (`PHOTO_SRC`). To use the client's own photos, replace these files with the same names.
+`public/os/wallpapers/*.jpg` — free photos from Unsplash (Unsplash License), shown behind the GSAP measurement scenes in `public/os/wallpaper.js` (`PHOTO_SRC`). To use the client's own photos, replace these files with the same names.
 
 | File | Scene | Unsplash photo |
 |---|---|---|
-| global.jpg | Global Perspective | photo-1782977697822-aa50585579a9 |
-| identity.jpg | Institutional Identity | photo-1768617154318-b2caa1e97a60 |
-| systems.jpg | Integrated Systems | photo-1780076001401-4bc47b58b9a6 |
-| delivery.jpg | Measured Delivery | photo-1573164574572-cb89e39749b4 |
-| momentum.jpg | Momentum | photo-1622884589154-4bf891d0af40 |
+| trade.jpg | Fair Trade (beam balance) | photo-1552710218-bd32b0c98626 |
+| flow.jpg | Fuel & Flow (turbine meter) | photo-1695561324569-5e47c76dc0a3 |
+| bulk.jpg | Weighbridge (haul truck + load cells) | photo-1523848309072-c199db53f137 |
+| utility.jpg | Utilities & Metering (3-phase smart meter) | photo-1684684383508-261dd0e8f467 |
+| calibration.jpg | Certified Accuracy (gauge + stamp) | photo-1791085669879-471685e3fcc5 |
+
+## Brand
+Logo mark: a gauge-dial "C" with a calibrated needle. Sources in `brand/` (SVG + 1024px PNG); the site copies are
+`public/os/logo.svg`, `public/os/logo-white.svg` (transparent), `public/favicon.svg` (simplified for small sizes)
+and the inline `LogoMark` in `src/components/Logo.tsx`.

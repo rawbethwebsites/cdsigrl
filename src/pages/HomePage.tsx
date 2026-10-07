@@ -100,7 +100,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY ASTUDITY */}
+      {/* WHY CDS IGRL */}
       <section data-reveal className="bg-ink py-32 px-6 md:px-24">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div>
