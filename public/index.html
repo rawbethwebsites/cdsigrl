@@ -922,7 +922,7 @@ function wireTerm(w){
     book:()=>{window.open(BOOK,'_blank','noopener');return 'Opening request form…';},
     neofetch:()=>`<span class="p">      ▄▄</span>        you@cdsigrl\n<span class="p">     █▀▀█</span>       ------------\n<span class="p">    █▄▄▄▄█</span>      OS: CDS IGRL OS (Legal Metrology)\n<span class="p">   █      █</span>     Kernel: Assess · Select · Install · Support\n                  Method: Assess → Support\n                  Services: ${PILLARS.length}\n                  Uptime: measurement you can trust`,
     clear:()=>{$$('.ln',t).forEach(l=>l.remove());return null;},
-    sudo:a=>/request-quote/.test(a)?(window.open(BOOK,'_blank','noopener'),'Quote request accepted. We will be in touch\'s build. 🏛️'):'sudo: try <span class="k">sudo request-quote</span>',
+    sudo:a=>/request-quote/.test(a)?(window.open(BOOK,'_blank','noopener'),'Quote request accepted. We will be in touch.'):'sudo: try <span class="k">sudo request-quote</span>',
     open:a=>APPS[a]?(openApp(a),`Opening ${a}…`):'usage: open work|approach|clients|notes|nova|mail|welcome',
     exit:()=>{closeWin('terminal');return null;},
   };
