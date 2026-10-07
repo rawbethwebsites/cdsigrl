@@ -13,17 +13,17 @@ export default function SiteFooter() {
           </p>
         </div>
         <div className="flex flex-col gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white/60">
-          <Link to="/services" className="hover:text-gold">Services</Link>
-          <Link to="/equipment" className="hover:text-gold">Equipment</Link>
-          <Link to="/approach" className="hover:text-gold">Approach</Link>
-          <Link to="/about" className="hover:text-gold">About</Link>
-          <Link to="/privacy" className="hover:text-gold">Privacy</Link>
-          <Link to="/terms" className="hover:text-gold">Terms</Link>
+          <Link to="/services" className="hover:text-brand">Services</Link>
+          <Link to="/equipment" className="hover:text-brand">Equipment</Link>
+          <Link to="/approach" className="hover:text-brand">Approach</Link>
+          <Link to="/about" className="hover:text-brand">About</Link>
+          <Link to="/privacy" className="hover:text-brand">Privacy</Link>
+          <Link to="/terms" className="hover:text-brand">Terms</Link>
         </div>
         <address className="not-italic flex flex-col gap-3 text-sm text-white/60">
           <span>{SITE.address}</span>
-          <a href={SITE.phoneHref} className="hover:text-gold">{SITE.phone}</a>
-          <a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a>
+          <a href={SITE.phoneHref} className="hover:text-brand">{SITE.phone}</a>
+          <a href={`mailto:${SITE.email}`} className="hover:text-brand">{SITE.email}</a>
         </address>
       </div>
       <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4 text-[10px] font-black tracking-[0.3em] uppercase text-white/55">

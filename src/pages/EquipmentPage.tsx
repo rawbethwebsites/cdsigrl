@@ -30,7 +30,7 @@ export default function EquipmentPage() {
       description="Precision measurement instruments supplied and supported by CDS IGRL across Nigeria — scales, weighbridges, flow meters, meters, and laboratory balances."
       path="/equipment"
     >
-      <PageHero eyebrow="Equipment Catalogue" title={<>PRECISION<br /><span className="text-gold">INSTRUMENTS.</span></>}>
+      <PageHero eyebrow="Equipment Catalogue" title={<>PRECISION<br /><span className="text-brand">INSTRUMENTS.</span></>}>
         <p className="text-xl md:text-2xl font-medium text-white/75 max-w-3xl mx-auto leading-relaxed">
           {EQUIPMENT.length} instrument types across six service categories — supplied, installed, and
           supported for legal metrology compliance in Nigeria.
@@ -46,8 +46,8 @@ export default function EquipmentPage() {
             className={cn(
               "rounded-full px-5 py-3 text-[10px] font-black uppercase tracking-widest border transition-colors",
               filter === "all"
-                ? "bg-gold text-ink border-gold"
-                : "border-white/15 text-white/70 hover:border-gold/50 hover:text-white"
+                ? "bg-brand text-ink border-brand"
+                : "border-white/15 text-white/70 hover:border-brand/50 hover:text-white"
             )}
           >
             All ({EQUIPMENT.length})
@@ -63,8 +63,8 @@ export default function EquipmentPage() {
                 className={cn(
                   "rounded-full px-5 py-3 text-[10px] font-black uppercase tracking-widest border transition-colors",
                   on
-                    ? "bg-gold text-ink border-gold"
-                    : "border-white/15 text-white/70 hover:border-gold/50 hover:text-white"
+                    ? "bg-brand text-ink border-brand"
+                    : "border-white/15 text-white/70 hover:border-brand/50 hover:text-white"
                 )}
               >
                 {c.title} ({n})
@@ -84,10 +84,10 @@ export default function EquipmentPage() {
                 key={e.slug}
                 className={cn(
                   "bg-white/5 border rounded-2xl p-7 flex flex-col transition-colors",
-                  isOpen ? "border-gold/50" : "border-white/10 hover:border-gold/40"
+                  isOpen ? "border-brand/50" : "border-white/10 hover:border-brand/40"
                 )}
               >
-                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gold mb-4">
+                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-brand mb-4">
                   {e.tag}
                 </p>
                 <h2 className="text-xl font-black tracking-tight leading-tight mb-3">{e.title}</h2>
@@ -96,7 +96,7 @@ export default function EquipmentPage() {
                 <button
                   onClick={() => setOpen(isOpen ? null : e.slug)}
                   aria-expanded={isOpen}
-                  className="self-start text-[10px] font-black uppercase tracking-widest text-gold hover:text-cream transition-colors"
+                  className="self-start text-[10px] font-black uppercase tracking-widest text-brand hover:text-cream transition-colors"
                 >
                   {isOpen ? "Hide details" : "Uses & compliance +"}
                 </button>
@@ -109,7 +109,7 @@ export default function EquipmentPage() {
                     <ul className="space-y-2 mb-6">
                       {e.uses.map((u) => (
                         <li key={u} className="text-white/65 text-sm leading-relaxed flex gap-3">
-                          <span aria-hidden className="text-gold flex-shrink-0">—</span>
+                          <span aria-hidden className="text-brand flex-shrink-0">—</span>
                           <span>{u}</span>
                         </li>
                       ))}
@@ -135,7 +135,7 @@ export default function EquipmentPage() {
           </p>
           <Link
             to="/get-started"
-            className="inline-flex items-center justify-center px-10 md:px-12 py-5 rounded-full text-[10px] font-black uppercase tracking-widest bg-gold text-ink hover:bg-cream transition-all"
+            className="inline-flex items-center justify-center px-10 md:px-12 py-5 rounded-full text-[10px] font-black uppercase tracking-widest bg-brand text-ink hover:bg-cream transition-all"
           >
             Request a Quote
           </Link>

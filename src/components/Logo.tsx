@@ -10,12 +10,12 @@ export const MARK = {
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 100" className={cn("h-8 w-8", className)} role="img" aria-label="CDS IGRL">
-      <rect width="100" height="100" rx="22" fill="#0B0A07" />
-      <path d={MARK.arc} fill="none" stroke="#F5C518" strokeWidth="9" strokeLinecap="round" />
-      <path d={MARK.ticks} stroke="#F5C518" strokeOpacity=".55" strokeWidth="2.2" strokeLinecap="round" />
-      <path d={MARK.needle} fill="#FFF8E6" />
-      <circle cx="50" cy="50" r="5.2" fill="#FFF8E6" />
-      <circle cx="50" cy="50" r="2" fill="#0B0A07" />
+      <rect width="100" height="100" rx="22" fill="#07131F" />
+      <path d={MARK.arc} fill="none" stroke="#18C25A" strokeWidth="9" strokeLinecap="round" />
+      <path d={MARK.ticks} stroke="#18C25A" strokeOpacity=".55" strokeWidth="2.2" strokeLinecap="round" />
+      <path d={MARK.needle} fill="#EEF4F8" />
+      <circle cx="50" cy="50" r="5.2" fill="#EEF4F8" />
+      <circle cx="50" cy="50" r="2" fill="#07131F" />
     </svg>
   );
 }
