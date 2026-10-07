@@ -11,9 +11,9 @@ import { cn } from "@/utils/cn";
 const HeroOrb = lazy(() => import("@/components/HeroOrb"));
 
 const STATS = [
-  { value: "8", label: "Core Capabilities" },
-  { value: "End-to-End", label: "Delivery Model" },
-  { value: "Global + Local", label: "Operating Lens" },
+  { value: "6", label: "Service Categories" },
+  { value: "22+", label: "Instrument Types" },
+  { value: "36", label: "States Covered" },
 ];
 
 export default function HomePage() {
@@ -33,13 +33,13 @@ export default function HomePage() {
         <div aria-hidden className="absolute inset-0 z-0 bg-gradient-to-r from-ink/95 via-ink/55 to-transparent" />
 
         <div className="hero-content relative z-10 max-w-7xl mx-auto w-full">
-          <Eyebrow className="mb-8">Institutional Build Partner</Eyebrow>
+          <Eyebrow className="mb-8">Legal Metrology Partner</Eyebrow>
           <h1 className="text-[clamp(2.25rem,10vw,7rem)] font-black leading-[0.85] tracking-tighter mb-8 max-w-5xl">
-            END-TO-END<br />INSTITUTIONAL<br /><span className="text-gold">BUILD.</span>
+            PRECISION<br />MEASUREMENT<br /><span className="text-gold">SOLUTIONS.</span>
           </h1>
           <p className="text-lg md:text-2xl font-medium text-white/75 mb-12 max-w-2xl leading-relaxed">
-            We design, build, and transform institutions that last — from strategy to operations, governance to technology,
-            PPP to investor readiness — for governments, funds, and enterprises.
+            We supply, install, and support measurement instruments that keep trade fair, industry accurate, and
+            laboratories compliant — from retail scales to weighbridges, fuel dispensers to analytical balances.
           </p>
           <div className="flex flex-col sm:flex-row gap-5">
             <ButtonLink to="/get-started">Talk to Our Team</ButtonLink>
@@ -74,10 +74,10 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
             <div>
               <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold-deep mb-5">01 · Core Capabilities</p>
-              <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.9]">The 8 pillars of<br />institutional build.</h2>
+              <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.9]">The 6 services of<br />legal metrology.</h2>
             </div>
             <p className="reveal max-w-md text-lg text-ink/60">
-              Each pillar stands on its own. The strongest results come when they are sequenced and deployed as one system.
+              Each service stands on its own. The strongest results come when they are sequenced and delivered as one system.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -105,11 +105,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold mb-5">02 · Why CDS IGRL</p>
-            <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-8">Building institutions, not just fixing them.</h2>
+            <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-8">Measuring what matters, to the standard.</h2>
             <p className="reveal text-lg text-white/65 leading-relaxed mb-10">
               CDS International Global Resources Limited is Nigeria's trusted partner for legal metrology and precision measurement instruments.
-              Every mandate is an end-to-end build — aligning purpose, structure, people, systems, and capital so organizations
-              can perform, scale, and adapt.
+              Every engagement is end-to-end — assessing your application, selecting certified instruments, supporting installation, confirming compliance, and keeping them accurate.
             </p>
             <ButtonLink to="/about" variant="ghost" className="reveal">Read Who We Are</ButtonLink>
           </div>
@@ -155,7 +154,7 @@ export default function HomePage() {
       <section data-reveal className="bg-ink py-32 px-6 md:px-24">
         <div className="max-w-7xl mx-auto">
           <p className="reveal text-center text-[10px] font-black uppercase tracking-[0.4em] text-gold mb-5">04 · Who We Serve</p>
-          <h2 className="reveal text-center text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-20">Clients building<br />institutions that matter.</h2>
+          <h2 className="reveal text-center text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-20">Clients measuring<br />what matters.</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {AUDIENCES.map((a) => (
               <div key={a.code} className="reveal bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-gold/40 transition-colors">

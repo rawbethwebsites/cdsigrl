@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div>
           <Logo />
           <p className="mt-5 max-w-sm text-sm text-white/50 leading-relaxed">
-            Institutional build for governments, funds, and enterprises. Global perspective, local deployment.
+            Legal metrology and precision measurement instruments for retail, industry, and science. Abuja-based, serving all 36 states.
           </p>
         </div>
         <div className="flex flex-col gap-3 text-[10px] font-black tracking-[0.3em] uppercase text-white/45">

@@ -24,12 +24,12 @@ export default function ServiceDetailPage() {
       <section className="relative min-h-[85vh] flex flex-col justify-center px-6 md:px-24 pt-36 pb-24 overflow-hidden">
         <span aria-hidden className="absolute right-[-2rem] md:right-10 top-24 text-[16rem] md:text-[26rem] font-black leading-none text-gold/[0.07] select-none">{p.n}</span>
         <div className="hero-content relative max-w-5xl mx-auto text-center">
-          <Eyebrow className="mb-8">Pillar {p.n}</Eyebrow>
+          <Eyebrow className="mb-8">Service {p.n}</Eyebrow>
           <h1 className="text-[clamp(2.1rem,8.5vw,6rem)] font-black break-words leading-[0.88] tracking-tighter mb-8 uppercase">{p.title}</h1>
           <p className="text-xl md:text-2xl font-medium text-white/75 mb-12 max-w-3xl mx-auto leading-relaxed">{p.hook}</p>
           <div className="flex flex-col md:flex-row gap-5 justify-center">
-            <ButtonLink to="/get-started">Discuss Your Mandate</ButtonLink>
-            <ButtonLink to="/services" variant="ghost">All 8 Pillars</ButtonLink>
+            <ButtonLink to="/get-started">Request a Quote</ButtonLink>
+            <ButtonLink to="/services" variant="ghost">All Services</ButtonLink>
           </div>
         </div>
       </section>
@@ -87,11 +87,11 @@ export default function ServiceDetailPage() {
       {/* NEXT PILLAR */}
       <section data-reveal className="bg-white text-ink py-32 px-6 md:px-24">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold-deep mb-5">Next Pillar · {next.n}</p>
+          <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold-deep mb-5">Next Service · {next.n}</p>
           <h2 className="reveal text-4xl md:text-5xl font-black tracking-tighter mb-4">{next.title}</h2>
           <p className="reveal text-xl text-ink/60 mb-12 max-w-2xl mx-auto">{next.short}</p>
           <div className="reveal flex flex-col md:flex-row gap-5 justify-center">
-            <ButtonLink to={`/services/${next.slug}`} variant="primaryLight">View Next Pillar</ButtonLink>
+            <ButtonLink to={`/services/${next.slug}`} variant="primaryLight">View Next Service</ButtonLink>
             <ButtonLink to="/services" variant="ghostLight">All Services</ButtonLink>
           </div>
         </div>

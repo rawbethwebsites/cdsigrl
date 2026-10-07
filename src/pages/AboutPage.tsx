@@ -20,17 +20,14 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-gold-deep mb-8">Our Mission</p>
           <blockquote className="reveal text-3xl md:text-5xl font-black tracking-tighter leading-[1.05]">
-            “To design and operationalize institutions that deliver sustained public and commercial value.”
+            “To make every trade, industrial, and scientific measurement in Nigeria accurate, certified, and trusted.”
           </blockquote>
           <div className="reveal mt-14 grid md:grid-cols-2 gap-10 text-lg text-ink/65 leading-relaxed">
             <p>
-              We integrate strategy, institution design, technology, PPP advisory, investor engagement, operations,
-              governance, and capacity building into one implementation-led model — aligning purpose, structure, people,
-              systems, governance, and capital.
+              We integrate assessment, equipment selection, installation, certification, and ongoing support into one measurement-led service model — so instruments stay accurate, compliant, and reliable in daily use.
             </p>
             <p>
-              Headquartered globally and deployed locally, we combine global benchmarks with deep contextual understanding
-              to deliver solutions that work on the ground — not just on paper.
+              Headquartered in Maitama, Abuja, we combine relationships with verified global manufacturers and deep local knowledge to supply instruments that perform in Nigerian conditions.
             </p>
           </div>
         </div>

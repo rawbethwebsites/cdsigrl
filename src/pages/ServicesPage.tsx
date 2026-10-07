@@ -6,8 +6,8 @@ import CTASection from "@/components/CTASection";
 import { PILLARS } from "@/data/content";
 
 const HOW = [
-  "They connect strategy, structure, systems, governance, capital, and capability into one operating model.",
-  "They are designed for governments, funds, enterprises, and project sponsors facing real delivery pressure.",
+  "They connect assessment, equipment selection, installation, certification, and support into one service model.",
+  "They are built for retail, industrial, and scientific operations where measurement accuracy is non-negotiable.",
   "They are delivered through a five-step methodology from diagnosis to sustained performance.",
 ];
 
@@ -15,10 +15,10 @@ export default function ServicesPage() {
   return (
     <PageShell
       title="Services — Legal Metrology Solutions | CDS IGRL"
-      description="Eight integrated capabilities — strategy, institution design, technology, PPP, investor engagement, operations, governance, and capacity — delivered as one system."
+      description="Six integrated service categories — retail and packaging, fuel and industrial flow, bulk weighing, hospitality and agriculture, utilities and transport, laboratory and precision."
       path="/services"
     >
-      <PageHero eyebrow="Our Services" title={<>THE 8 PILLARS OF<br /><span className="text-gold">INSTITUTIONAL BUILD.</span></>}>
+      <PageHero eyebrow="Our Services" title={<>THE 6 SERVICES OF<br /><span className="text-gold">LEGAL METROLOGY.</span></>}>
         <p className="text-xl md:text-2xl font-medium text-white/75 max-w-3xl mx-auto leading-relaxed">
           We do not offer isolated fixes. Our eight capabilities work as one system to move clients from diagnosis to
           sustained performance.
@@ -54,7 +54,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTASection title="Not sure which pillars you need?" body="Start with a rapid institutional assessment. We will show you where the real constraints are." />
+      <CTASection title="Not sure which instruments you need?" body="Start with a rapid assessment of your application. We will show you where the real constraints are." />
     </PageShell>
   );
 }

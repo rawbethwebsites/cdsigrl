@@ -10,7 +10,7 @@ const PRIVACY = [
 
 const TERMS = [
   ["Use of this website", "This website provides general information about CDS International Global Resources Limited and its services. Content is not professional advice for any specific situation."],
-  ["Engagements", "Any advisory or implementation engagement is governed by a separate written agreement between CDS International Global Resources Limited and the client."],
+  ["Engagements", "Any supply, installation, calibration, or support engagement is governed by a separate written agreement between CDS International Global Resources Limited and the client."],
   ["Intellectual property", "All content on this site, including text and brand marks, belongs to CDS International Global Resources Limited unless otherwise stated."],
   ["Liability", "CDS International Global Resources Limited is not liable for decisions made solely on the basis of information published on this website."],
 ];

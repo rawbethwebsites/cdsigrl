@@ -429,9 +429,9 @@ img{display:block}
     </div>
     <div class="prog"><i id="nProg"></i></div>
     <div class="ctrl">
-      <button id="nPrev" aria-label="Previous pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 6v12l-8.5-6zM21 6v12l-8.5-6z"/></svg></button>
-      <button id="nOpen" class="open" aria-label="Open pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
-      <button id="nNext" aria-label="Next pillar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 6v12l8.5-6zM3 6v12l8.5-6z"/></svg></button>
+      <button id="nPrev" aria-label="Previous service"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 6v12l-8.5-6zM21 6v12l-8.5-6z"/></svg></button>
+      <button id="nOpen" class="open" aria-label="Open service"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg></button>
+      <button id="nNext" aria-label="Next service"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 6v12l8.5-6zM3 6v12l8.5-6z"/></svg></button>
     </div>
   </div>
 </div>
@@ -519,7 +519,7 @@ img{display:block}
   <div class="chat">
     <div class="chat-head"><div class="av">A</div><b>Ask CDS IGRL</b><small>● online · replies instantly</small></div>
     <div class="msgs" id="msgs"></div>
-    <div class="quick" id="quick"><button>What do you do?</button><button>How do you work?</button><button>Who do you serve?</button><button>PPP advisory?</button><button>Investor readiness?</button><button>Contact the team</button></div>
+    <div class="quick" id="quick"><button>What do you supply?</button><button>How do you work?</button><button>Who do you serve?</button><button>Weighbridges?</button><button>Calibration?</button><button>Contact the team</button></div>
     <form class="composer" id="composer"><input id="chatIn" placeholder="Ask about our instruments…" autocomplete="off"><button aria-label="Send"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></form>
   </div>
 </template>
@@ -629,12 +629,12 @@ const APPS = {
   mail:{title:'Inbox — Request a Conversation', name:'Mail', w:580, h:540},
   trash:{title:'Trash', name:'Finder', w:420, h:440},
 };
-/* one window per pillar, generated from data */
+/* one window per service, generated from data */
 const esc = s => s.replace(/&/g,'&amp;');
 PILLARS.forEach(p => {
   APPS[p.id] = {title:`${p.n} · ${p.t}`, name:'Capabilities', w:680, h:580};
   const t = document.createElement('template'); t.id = 't-' + p.id;
-  t.innerHTML = `<div class="prod"><div class="eyebrow">Pillar ${p.n}</div><h2>${esc(p.t)}</h2><p>${p.hook}</p><p style="margin-top:10px">${p.body}</p>
+  t.innerHTML = `<div class="prod"><div class="eyebrow">Service ${p.n}</div><h2>${esc(p.t)}</h2><p>${p.hook}</p><p style="margin-top:10px">${p.body}</p>
     <div class="feat">${p.del.map((d,i)=>`<div><b>0${i+1}</b><h4>${esc(d)}</h4></div>`).join('')}</div>
     <div class="ba"><div class="after"><small>OUTCOME</small><p>${p.out}</p></div><div class="neutral"><small>BEST FOR</small><p>${p.best}</p></div></div>
     <div class="trust">${p.tags.map(x=>`<span>${x}</span>`).join('')}</div>
@@ -672,7 +672,7 @@ function drawClocks(d){
 }
 tick(); setInterval(tick, 1000);
 
-/* ---------- Notch: cycles the 8 pillars ---------- */
+/* ---------- Notch: cycles the 6 services ---------- */
 const notch=$('#notch'); let ni=0; const NDUR=6000; let nStart=performance.now();
 function setNotch(i){
   ni=(i+PILLARS.length)%PILLARS.length; const p=PILLARS[ni];
@@ -910,11 +910,11 @@ function wireTerm(w){
   out(`Last login: ${new Date().toDateString()} on ttys001`);
   out(`Type <span class="k">help</span> to see what CDS IGRL can do.\n`);
   const C={
-    help:()=>`<span class="k">about</span>      who we are\n<span class="k">pillars</span>    the 8 core capabilities\n<span class="k">approach</span>   diagnose → deliver\n<span class="k">clients</span>    who we serve\n<span class="k">contact</span>    reach the team\n<span class="k">open</span> &lt;app&gt; open work|approach|clients|notes|nova|mail\n<span class="k">book</span>       request a conversation\n<span class="k">neofetch</span>   system info\n<span class="k">clear</span>      clear the screen`,
+    help:()=>`<span class="k">about</span>      who we are\n<span class="k">services</span>   the 6 service categories\n<span class="k">approach</span>   diagnose → deliver\n<span class="k">clients</span>    who we serve\n<span class="k">contact</span>    reach the team\n<span class="k">open</span> &lt;app&gt; open work|approach|clients|notes|nova|mail\n<span class="k">book</span>       request a conversation\n<span class="k">neofetch</span>   system info\n<span class="k">clear</span>      clear the screen`,
     about:()=>'CDS International Global Resources Limited is Nigeria\'s trusted partner\nfocused on one outcome: legal metrology and precision measurement instruments.',
     whoami:()=>'an operations leader who needs measurement accuracy and compliance.',
-    pillars:()=>PILLARS.map(p=>`<span class="k">${p.n}</span>  ${p.t.padEnd(36)} ${p.tags.join(' · ')}`).join('\n'),
-    ls:()=>C.pillars(),
+    services:()=>PILLARS.map(p=>`<span class="k">${p.n}</span>  ${p.t.padEnd(36)} ${p.tags.join(' · ')}`).join('\n'),
+    ls:()=>C.services(),
     approach:()=>STEPS.map(([l,h])=>`${l.padEnd(14)} ${h}`).join('\n'),
     clients:()=>'RETAIL        trade measurement · compliance\nINDUSTRIAL    flow meters · weighbridges, bulk weighing\nSCIENCE       analytical balances · lab precision · ',
     contact:()=>'House 21, Megro Crescent, Maitama, Abuja, Nigeria\n+234 800 CDS IGRL\n<a href="mailto:info@cdsigrl.org">info@cdsigrl.org</a>',
@@ -973,7 +973,7 @@ function toggleSlideshow(){window.OSWall&&OSWall.toggle();}
 /* ---------- Spotlight ---------- */
 const spot=$('#spot'), si=$('#spotIn'), sr=$('#spotRes'); let sel=0, results=[];
 const INDEX=[...Object.keys(APPS).filter(k=>!/^p\d/.test(k)).map(k=>({l:k==='welcome'?'Welcome — CDS IGRL':k==='nova'?'Ask CDS IGRL':APPS[k].title,ic:k,k:'Application',go:()=>openApp(k)})),
-  ...PILLARS.map(p=>({l:p.t,ic:'work',k:'Pillar '+p.n,sub:p.tags.join(' '),go:()=>openApp(p.id)})),
+  ...PILLARS.map(p=>({l:p.t,ic:'work',k:'Service '+p.n,sub:p.tags.join(' '),go:()=>openApp(p.id)})),
   {l:'Request a Conversation',ic:'mail',k:'Action',go:go(BOOK)}];
 function openSpot(){spot.classList.add('show');si.value='';renderSpot();setTimeout(()=>si.focus(),10);}
 function renderSpot(){const q=si.value.toLowerCase().trim();results=q?INDEX.filter(x=>(x.l+' '+(x.sub||'')+' '+x.k).toLowerCase().includes(q)).slice(0,8):[];sel=0;

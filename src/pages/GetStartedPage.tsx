@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/Buttons";
 import { PILLARS, SITE } from "@/data/content";
 import { cn } from "@/utils/cn";
 
-const ORG_TYPES = ["Government / Public Agency", "DFI / Fund", "Enterprise / Holding Company", "Project Sponsor / SPV", "Other"];
+const ORG_TYPES = ["Retail / Supermarket", "Food & Beverage Production", "Oil & Gas / Energy", "Healthcare / Laboratory", "Agriculture / Agro-processing", "Logistics / Mining", "Government / Regulator", "Other"];
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -59,7 +59,7 @@ export default function GetStartedPage() {
             <Eyebrow className="mb-8">Request a Conversation</Eyebrow>
             <h1 className="text-5xl md:text-7xl font-black leading-[0.88] tracking-tighter mb-8">TALK TO<br /><span className="text-gold">OUR TEAM.</span></h1>
             <p className="text-xl text-white/70 leading-relaxed mb-12 max-w-md">
-              Tell us about your mandate. We will come back with an honest view of where the real constraints are — and how
+              Tell us what you need to measure. We will come back with an honest view of the right instruments for your site — and how
               we would build past them.
             </p>
             <ul className="space-y-6">
@@ -115,7 +115,7 @@ export default function GetStartedPage() {
                     })}
                   </div>
                 </fieldset>
-                <div><label htmlFor="message" className={label}>Your mandate *</label><textarea id="message" name="message" required rows={5} className={cn(field, "resize-none")} placeholder="What are you trying to build, fix, or scale?" /></div>
+                <div><label htmlFor="message" className={label}>What do you need to measure? *</label><textarea id="message" name="message" required rows={5} className={cn(field, "resize-none")} placeholder="What are you trying to build, fix, or scale?" /></div>
 
                 {status === "error" && (
                   <p className="text-sm text-red-300">

@@ -7,12 +7,12 @@ export default function ClientsPage() {
   return (
     <PageShell
       title="Who We Serve | CDS IGRL"
-      description="Governments, development finance institutions and funds, and enterprises building institutions that matter."
+      description="Retailers, industrial operators, and scientific laboratories across Nigeria who rely on certified measurement."
       path="/clients"
     >
-      <PageHero eyebrow="Who We Serve" title={<>CLIENTS BUILDING<br /><span className="text-gold">INSTITUTIONS THAT MATTER.</span></>}>
+      <PageHero eyebrow="Who We Serve" title={<>CLIENTS MEASURING<br /><span className="text-gold">WHAT MATTERS.</span></>}>
         <p className="text-xl md:text-2xl font-medium text-white/75 max-w-3xl mx-auto leading-relaxed">
-          We work where complexity meets ambition — across the public sector, capital providers, and commercial clients.
+          We work across retail, industry, energy, healthcare, agriculture, logistics, and utilities — wherever measurement decides the outcome.
         </p>
       </PageHero>
 

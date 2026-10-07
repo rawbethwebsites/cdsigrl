@@ -113,7 +113,7 @@ function Identity() {
   };
   LOGO.complete ? build() : LOGO.addEventListener('load', build);
   return {
-    name: 'Institutional Identity',
+    name: 'Measurement Identity',
     enter() { tl && tl.play(); },
     leave() { tl && tl.pause(); },
     draw(t) {
