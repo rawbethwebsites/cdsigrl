@@ -1,0 +1,12 @@
+{
+  "name": "CDS-IGRL China Mission",
+  "short_name": "CDS Mission",
+  "start_url": "/mission",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06111C",
+  "theme_color": "#06111C",
+  "icons": [
+    { "src": "/os/mission-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

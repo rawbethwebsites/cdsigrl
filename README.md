@@ -43,3 +43,12 @@ Built from the client's original navy + green logo colours, tuned for contrast o
 | Paper (`cream`, `--cream`) | `#EEF4F8` | text on dark, light sections |
 
 Green on Midnight ≈ 7.9:1 contrast (AA for all text sizes); Midnight text on green buttons passes too.
+
+## China Partner Mission dashboard (`/mission`)
+A private trip app for the CDS-IGRL delegation (React in `src/mission/`, backend in `convex/`).
+- `/mission` delegate view: timed itinerary, factory due-diligence scoring (1–5 per check), notes, photos, tours to unlock, points, medals and standings.
+- `/mission/control` trip leader: roll calls (wake-up, lobby, meeting) that ring on every open screen and push to phones, live answer board, delegates and their private links, tour requests, itinerary editing.
+- `/mission/storybook` each delegate's printable book (Print → Save as PDF).
+- Sign-in is a private link per person (`/mission?k=…`); no passwords. Create the first trip leader with `npx convex run seed:leader '{"name":"Rob"}'`, then add everyone else in Trip control. `npx convex run seed:trip` loads the draft itinerary once.
+- Env: `VITE_CONVEX_URL` (Vercel + `.env.local`); on the Convex deployment `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` for phone alerts (generate with `npx web-push generate-vapid-keys`). Stop alarms are sent by a one-minute cron (`convex/crons.ts`).
+- iPhone alerts need the page added to the Home Screen first (iOS 16.4+).

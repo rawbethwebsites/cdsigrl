@@ -15,7 +15,10 @@ createRoot(document.getElementById("root")!).render(
 );
 
 // Ceedee, the animated CDS IGRL chat mascot (shared with the OS homepage; lives in public/os/buddy.js)
-const buddy = document.createElement("script");
-buddy.src = "/os/buddy.js?v=1";
-buddy.defer = true;
-document.body.append(buddy);
+// (kept off the /mission dashboard, where it would cover the large buttons)
+if (!window.location.pathname.startsWith("/mission")) {
+  const buddy = document.createElement("script");
+  buddy.src = "/os/buddy.js?v=1";
+  buddy.defer = true;
+  document.body.append(buddy);
+}

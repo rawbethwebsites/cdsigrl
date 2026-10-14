@@ -9,6 +9,7 @@ import ApproachPage from "./pages/ApproachPage";
 import ClientsPage from "./pages/ClientsPage";
 import GetStartedPage from "./pages/GetStartedPage";
 import LegalPage from "./pages/LegalPage";
+import MissionRoot from "./mission/MissionRoot";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="/contact" element={<Navigate to="/get-started" replace />} />
         <Route path="/privacy" element={<LegalPage kind="privacy" />} />
         <Route path="/terms" element={<LegalPage kind="terms" />} />
+        <Route path="/mission/*" element={<MissionRoot />} />
         <Route path="*" element={<OsHome />} />
       </Routes>
     </>
