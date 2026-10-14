@@ -72,7 +72,7 @@ export default function MissionHome({ token }: { token: string }) {
         <nav className="sticky top-[72px] z-20 -mx-4 mt-6 flex gap-1 overflow-x-auto border-b border-white/10 bg-ink px-4" role="tablist">
           {([["today", "Itinerary", Route], ["tours", "Tours", Compass], ["medals", "Medals", MedalIcon], ["photos", `Photos${nPhotos ? ` (${nPhotos})` : ""}`, Camera]] as const).map(([k, label, Icon]) => (
             <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
-              className={cn("flex min-h-14 items-center gap-2 whitespace-nowrap border-b-[3px] px-4 text-lg font-bold", tab === k ? "border-brand text-cream" : "border-transparent text-white/50 hover:text-cream")}>
+              className={cn("flex min-h-14 shrink-0 items-center gap-2 whitespace-nowrap border-b-[3px] px-4 text-lg font-bold", tab === k ? "border-brand text-cream" : "border-transparent text-white/50 hover:text-cream")}>
               <Icon size={20} /> {label}
             </button>
           ))}
@@ -213,7 +213,7 @@ function Itinerary({ items, now, token, journal, canEdit, onEdit }: {
           const done = d.list.every((s) => (s.te || s.t + 3_600_000) < now);
           return (
             <button key={d.date} onClick={() => setDay(d.date)} aria-current={d.date === cur.date}
-              className={cn("flex min-w-[150px] items-center gap-3 whitespace-nowrap rounded-2xl border px-3 py-2.5 text-left lg:min-w-0", d.date === cur.date ? "border-brand bg-brand/10" : "border-white/10 hover:border-white/30")}>
+              className={cn("flex min-w-[150px] shrink-0 items-center gap-3 whitespace-nowrap rounded-2xl lg:shrink border px-3 py-2.5 text-left lg:min-w-0", d.date === cur.date ? "border-brand bg-brand/10" : "border-white/10 hover:border-white/30")}>
               <span className={cn("grid h-11 w-11 shrink-0 place-items-center rounded-xl text-lg font-black", d.date === cur.date ? "bg-brand text-ink" : done ? "bg-white/10 text-brand" : "bg-white/5 text-white/60")}>{done ? "✓" : d.n}</span>
               <span className="leading-tight"><span className="block text-base font-bold">{dayLabel(d.date, true)}</span><span className="block text-sm text-white/50">{d.date === today ? "Today" : d.city}</span></span>
             </button>

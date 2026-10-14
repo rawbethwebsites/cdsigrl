@@ -5,3 +5,5 @@ dist/
 .claude/worktrees/condescending-khorana/
 .vercel
 .env*
+brag-output*/
+cds-igrl-mission.html
