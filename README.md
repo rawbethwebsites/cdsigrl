@@ -4,8 +4,9 @@ Built by The Boost Nation from the TBN OS template.
 Live: https://cdsigrl.theboostnation.space
 
 - `/` — **CDS IGRL OS** (`public/index.html` + `public/os/wallpaper.js`), the static desktop experience
-- `/classic`, `/services/*`, `/approach`, `/clients`, `/about`, `/get-started`, `/privacy`, `/terms` — React app (`app.html` → `src/`)
+- `/classic`, `/services/*`, `/approach`, `/clients`, `/about`, `/get-started`, `/investors`, `/privacy`, `/terms` — React app (`app.html` → `src/`)
 - Copy for the React pages lives in `src/data/content.ts`; OS copy lives in `public/index.html` (`PILLARS`, `STEPS`, `NOTES`)
+- `/investors` — investor relations page (diligence draft + document package). Files served from `public/investors/`: `CDS-IGRL-Investment-Memorandum.pdf`, `CDS-IGRL-Cashflow-Model.xlsx`. Source package: `~/Downloads/CDS-IGRL-Investor-Package`
 - Contact form posts to `api/lead.js` → Telegram. Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in Vercel.
 
 ```bash

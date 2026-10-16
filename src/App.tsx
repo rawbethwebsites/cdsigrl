@@ -9,6 +9,7 @@ import ApproachPage from "./pages/ApproachPage";
 import ClientsPage from "./pages/ClientsPage";
 import GetStartedPage from "./pages/GetStartedPage";
 import LegalPage from "./pages/LegalPage";
+import InvestorsPage from "./pages/InvestorsPage";
 import MissionRoot from "./mission/MissionRoot";
 
 function ScrollToTop() {
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/approach" element={<ApproachPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/get-started" element={<GetStartedPage />} />
+        <Route path="/investors" element={<InvestorsPage />} />
         <Route path="/contact" element={<Navigate to="/get-started" replace />} />
         <Route path="/privacy" element={<LegalPage kind="privacy" />} />
         <Route path="/terms" element={<LegalPage kind="terms" />} />
