@@ -4,7 +4,7 @@ import PageShell from "@/components/PageShell";
 import Eyebrow from "@/components/Eyebrow";
 import { ButtonLink } from "@/components/Buttons";
 import CTASection from "@/components/CTASection";
-import { PILLARS, STEPS } from "@/data/content";
+import { PILLARS, STEPS, serviceImage } from "@/data/content";
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
@@ -22,6 +22,8 @@ export default function ServiceDetailPage() {
     >
       {/* HERO */}
       <section className="relative min-h-[85vh] flex flex-col justify-center px-6 md:px-24 pt-36 pb-24 overflow-hidden">
+        <img src={serviceImage(p.slug)} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover opacity-35" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
         <span aria-hidden className="absolute right-[-2rem] md:right-10 top-24 text-[16rem] md:text-[26rem] font-black leading-none text-brand/[0.07] select-none">{p.n}</span>
         <div className="hero-content relative max-w-5xl mx-auto text-center">
           <Eyebrow className="mb-8">Service {p.n}</Eyebrow>

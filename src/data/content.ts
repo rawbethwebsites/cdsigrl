@@ -127,3 +127,6 @@ export const FAQS = [
   { q: "Are your instruments compliant with Nigerian legal metrology standards?", a: "Yes. Equipment is selected and verified to meet the relevant Nigerian and international certification requirements." },
   { q: "How do I request a quote or consultation?", a: "Contact us by phone or email, or fill the request form. We will assess your needs and recommend the right instruments." },
 ];
+
+/** Photo for a service (public/os/services/<slug>.jpg, Unsplash License). */
+export const serviceImage = (slug: string) => `/os/services/${slug}.jpg`;

@@ -5,7 +5,7 @@ import PageShell from "@/components/PageShell";
 import Eyebrow from "@/components/Eyebrow";
 import { ButtonLink } from "@/components/Buttons";
 import CTASection from "@/components/CTASection";
-import { AUDIENCES, FAQS, PILLARS, SECTORS, STEPS, VALUES } from "@/data/content";
+import { AUDIENCES, FAQS, PILLARS, SECTORS, STEPS, VALUES, serviceImage } from "@/data/content";
 import { cn } from "@/utils/cn";
 
 const HeroOrb = lazy(() => import("@/components/HeroOrb"));
@@ -87,7 +87,10 @@ export default function HomePage() {
                 to={`/services/${p.slug}`}
                 className="reveal group bg-white p-7 rounded-2xl shadow-lg shadow-ink/5 hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col"
               >
-                <div className="flex items-center justify-between mb-10">
+                <div className="-mx-7 -mt-7 mb-6 aspect-[16/10] overflow-hidden rounded-t-2xl bg-coal">
+                  <img src={serviceImage(p.slug)} alt={p.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex items-center justify-between mb-6">
                   <span className="text-3xl font-black text-brand-deep">{p.n}</span>
                   <ArrowUpRight className="text-ink/25 group-hover:text-ink transition-colors" size={20} />
                 </div>
