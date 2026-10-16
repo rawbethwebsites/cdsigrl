@@ -17,6 +17,7 @@ export default function SiteFooter() {
           <Link to="/equipment" className="hover:text-brand">Equipment</Link>
           <Link to="/approach" className="hover:text-brand">Approach</Link>
           <Link to="/about" className="hover:text-brand">About</Link>
+          <Link to="/investors" className="hover:text-brand">Investors</Link>
           <Link to="/privacy" className="hover:text-brand">Privacy</Link>
           <Link to="/terms" className="hover:text-brand">Terms</Link>
         </div>
