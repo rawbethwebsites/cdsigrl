@@ -10,32 +10,32 @@ const METRICS: Metric[] = [
   {
     value: "NGN 50B",
     label: "Proposed investor capital",
-    note: "Illustrative sizing; released in staged closes against milestones.",
+    note: "Illustrative sizing, released in staged closes against milestones.",
   },
   {
     value: "NGN 420B",
     label: "Illustrated 10-year gross proceeds",
-    note: "Entitlement case — 10% of the source's constant NGN 35B/month target.",
+    note: "Entitlement case: 10% of the source's constant NGN 35B/month target.",
   },
   {
     value: "8.4\u00D7",
     label: "MOIC on gross proceeds",
-    note: "NGN 420B divided by NGN 50B; no terminal principal repayment assumed.",
+    note: "NGN 420B divided by NGN 50B. No terminal principal repayment is assumed.",
   },
   {
     value: "740%",
-    label: "Simple net ROI — recalculated",
-    note: "The source's 840% conflates MOIC with ROI; corrected arithmetic in the memorandum.",
+    label: "Simple net ROI (recalculated)",
+    note: "The source's 840% mixes MOIC with ROI. The memorandum carries the corrected arithmetic.",
   },
   {
     value: "14.3 mo",
     label: "Interpolated payback",
-    note: "First whole monthly payment crossing capital occurs in month 15.",
+    note: "The first whole monthly payment crossing capital arrives in month 15.",
   },
   {
     value: "125.2% / 83.8%",
     label: "Illustrated effective annual IRR",
-    note: "Monthly vs year-end receipt timing. Neither reproduces the source's ~68%.",
+    note: "Monthly or year-end receipt timing. Neither schedule reproduces the source's ~68%.",
     compact: true,
   },
 ];
@@ -47,18 +47,18 @@ const SCENARIOS = [
 ];
 
 const USE_OF_FUNDS = [
-  { label: "Equipment — weighbridges, provers, reference weights, flow rigs, mobile verification units", amount: "NGN 25B", pct: 50 },
-  { label: "Infrastructure — six zonal ISO 17025 laboratories, field fleet, data centre and disaster recovery", amount: "NGN 10B", pct: 20 },
-  { label: "Technology — national metrology portal, e-certificates, e-payment, AI verification, USSD and app", amount: "NGN 8B", pct: 16 },
-  { label: "Human capital — inspector recruitment, OIML certification, factory training", amount: "NGN 4B", pct: 8 },
-  { label: "Compliance — ICRC, performance bond, insurance, legal and audit", amount: "NGN 3B", pct: 6 },
+  { label: "Equipment: weighbridges, provers, reference weights, flow rigs, mobile verification units", amount: "NGN 25B", pct: 50 },
+  { label: "Infrastructure: six zonal ISO 17025 laboratories, field fleet, data centre and disaster recovery", amount: "NGN 10B", pct: 20 },
+  { label: "Technology: national metrology portal, e-certificates, e-payment, AI verification, USSD and app", amount: "NGN 8B", pct: 16 },
+  { label: "Human capital: inspector recruitment, OIML certification, factory training", amount: "NGN 4B", pct: 8 },
+  { label: "Compliance: ICRC, performance bond, insurance, legal and audit", amount: "NGN 3B", pct: 6 },
 ];
 
 const CLAUSES = [
   {
     n: "12.1",
     title: "Tenor & profit share",
-    body: "A 20-year concession; the investor is admitted as a 10% gross-revenue profit-sharing partner for a fixed 10 years, computed as a first-line charge from the concessionaire's share, irrespective of payback speed.",
+    body: "A 20-year concession. The investor is admitted as a 10% gross-revenue profit-sharing partner for a fixed 10 years, computed as a first-line charge from the concessionaire's share, regardless of payback speed.",
   },
   {
     n: "12.2",
@@ -91,15 +91,15 @@ const PROCESS = [
   { n: "01", title: "NDA", body: "Mutual confidentiality before any sensitive document exchange." },
   { n: "02", title: "Data room", body: "Corporate records, concession and approvals, tariff instruments, instrument enumeration, collections evidence, procurement and the scenario workbook." },
   { n: "03", title: "Regulator sessions", body: "Meetings with the FMITI Department of Weights & Measures and with ICRC as PPP authority." },
-  { n: "04", title: "Site visits", body: "Lagos Apapa and the Abuja pilot lab — and witnessed factory acceptance testing in China at equipment-order stage." },
+  { n: "04", title: "Site visits", body: "Lagos Apapa and the Abuja pilot lab, plus witnessed factory acceptance testing in China once equipment is ordered." },
   { n: "05", title: "Escrow & close", body: "Trustee-arranged escrow with milestone release controls, then staged financial close against verified deliverables." },
 ];
 
 export default function InvestorsPage() {
   return (
     <PageShell
-      title="Investor Relations — NGN 50B Legal Metrology Raise | CDS IGRL"
-      description="The proposed NGN 50 billion expansion of Nigeria's legal metrology services — transaction structure, illustrative economics and diligence documents for prospective investors and lenders."
+      title="Investor Relations: NGN 50B Legal Metrology Raise | CDS IGRL"
+      description="The proposed NGN 50 billion expansion of Nigeria's legal metrology services, with the transaction structure, illustrative economics and diligence documents for prospective investors and lenders."
       path="/investors"
     >
       <PageHero
@@ -113,17 +113,17 @@ export default function InvestorsPage() {
         }
       >
         <p className="text-xl md:text-2xl font-medium text-white/75 max-w-3xl mx-auto leading-relaxed">
-          A proposed NGN 50 billion capital raise to modernize Nigeria's legal metrology infrastructure — structured as a
-          ten-year gross-revenue participation, presented for discussion and due diligence.
+          A proposed NGN 50 billion capital raise to modernize Nigeria's legal metrology infrastructure, structured as a
+          ten-year gross-revenue participation and presented for discussion and due diligence.
         </p>
       </PageHero>
 
       <section aria-label="Diligence status" className="bg-coal/60 border-y border-white/10 py-6 px-6 md:px-24">
         <p className="max-w-6xl mx-auto text-center text-sm md:text-base text-white/70 leading-relaxed">
           <span className="inline-block text-brand font-black uppercase tracking-[0.3em] text-[10px] mr-3 align-middle">Diligence draft</span>
-          This page summarizes a document prepared for discussion only — not an offer, legal opinion or evidence of an
-          executed guarantee. Terms shown are proposed; figures are management targets or mathematical illustrations,
-          not verified results.
+          This page summarizes a document prepared for discussion only. It is not an offer, a legal opinion or evidence
+          of an executed guarantee. Terms shown are proposed, and figures are management targets or mathematical
+          illustrations, not verified results.
         </p>
       </section>
 
@@ -137,14 +137,13 @@ export default function InvestorsPage() {
           <div className="reveal grid gap-6 md:grid-cols-2 mb-12">
             <p className="text-lg text-white/65 leading-relaxed">
               CDS-IGRL is described in the source memorandum as the sole concessionaire appointed by the Federal
-              Government of Nigeria — through the Federal Ministry of Industry, Trade &amp; Investment and its
-              Department of Weights &amp; Measures — to administer, modernize, expand and manage legal metrology
-              services nationwide. The appointment and the scope of exclusivity are source claims, subject to
-              diligence.
+              Government of Nigeria to administer, modernize, expand and manage legal metrology services nationwide,
+              working through the Federal Ministry of Industry, Trade &amp; Investment and its Department of Weights &amp;
+              Measures. The appointment and the scope of exclusivity are source claims, subject to diligence.
             </p>
             <p className="text-lg text-white/65 leading-relaxed">
               Official targets have long outpaced actual collections, and the cited bottleneck is equipment, mobility
-              and technology — not policy. The proposed program answers with certified infrastructure: six zonal
+              and technology, not policy. The proposed program answers with certified infrastructure: six zonal
               ISO 17025 laboratories, a fleet of mobile verification units, a national digital registry with
               e-certificates and e-payment, and trained inspectors across all 36 states and the FCT.
             </p>
@@ -157,7 +156,7 @@ export default function InvestorsPage() {
             ))}
           </div>
           <p className="reveal text-xs text-white/45 max-w-3xl leading-relaxed">
-            Source memorandum market assertions — not contracted customers. Subscribers are not automatically
+            Source memorandum market assertions, not contracted customers. Subscribers are not automatically
             separately chargeable instruments.
           </p>
         </div>
@@ -167,7 +166,7 @@ export default function InvestorsPage() {
         <div className="max-w-6xl mx-auto">
           <p className="reveal text-[10px] font-black uppercase tracking-[0.4em] text-brand-deep mb-6">Proposed structure</p>
           <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-10 max-w-4xl">
-            How the raise is proposed to work.
+            How the raise would work.
           </h2>
 
           <div className="reveal rounded-2xl bg-white shadow-lg shadow-ink/5 p-8 md:p-12 mb-10">
@@ -179,20 +178,20 @@ export default function InvestorsPage() {
             <ul className="grid gap-4 md:grid-cols-3 text-sm">
               <li className="flex items-start gap-3">
                 <span aria-hidden className="mt-1 h-3 w-3 shrink-0 rounded-sm bg-ink" />
-                <span><strong className="font-black">FGN — 40%</strong> — to the Treasury Single Account</span>
+                <span><strong className="font-black">FGN 40%</strong>, paid to the Treasury Single Account</span>
               </li>
               <li className="flex items-start gap-3">
                 <span aria-hidden className="mt-1 h-3 w-3 shrink-0 rounded-sm bg-brand" />
-                <span><strong className="font-black">Investor — 10%</strong> — first-line charge from the concessionaire's share</span>
+                <span><strong className="font-black">Investor 10%</strong>, charged first against the concessionaire's share</span>
               </li>
               <li className="flex items-start gap-3">
                 <span aria-hidden className="mt-1 h-3 w-3 shrink-0 rounded-sm bg-brand/20" />
-                <span><strong className="font-black">CDS-IGRL — 50%</strong> — includes the proposed OPEX reserve and distribution</span>
+                <span><strong className="font-black">CDS-IGRL 50%</strong>, including the proposed OPEX reserve and distribution</span>
               </li>
             </ul>
             <p className="mt-6 text-xs text-ink/50 leading-relaxed">
-              Percentages of defined gross revenue; totals 100% before separately resolved tax treatment. "Gross" must
-              be contractually defined before these allocations can be implemented.
+              Percentages of defined gross revenue, totalling 100% before separately resolved tax treatment. The term
+              "gross" must be contractually defined before these allocations can be implemented.
             </p>
           </div>
 
@@ -200,32 +199,32 @@ export default function InvestorsPage() {
             <div className="reveal rounded-2xl bg-white shadow-lg shadow-ink/5 p-8">
               <h3 className="text-xl font-black mb-3">The raise</h3>
               <p className="text-ink/65 leading-relaxed">
-                NGN 50 billion, proposed from one investor or a consortium — pension funds, banks, private equity and
-                high-net-worth individuals are the named candidates — released in staged closes against milestones.
+                NGN 50 billion from one investor or a consortium, released in staged closes against milestones. The
+                source names pension funds, banks, private equity and high-net-worth individuals as candidates.
               </p>
             </div>
             <div className="reveal rounded-2xl bg-white shadow-lg shadow-ink/5 p-8">
               <h3 className="text-xl font-black mb-3">The participation</h3>
               <p className="text-ink/65 leading-relaxed">
-                10% of defined gross revenue as a first-line charge from the concessionaire's share, for a fixed ten
-                years within a proposed twenty-year concession. Characterization for tax and law is for transaction
-                counsel.
+                A 10% share of defined gross revenue, charged first against the concessionaire's share for a fixed ten
+                years inside a proposed twenty-year concession. How it is characterized for tax and law remains with
+                transaction counsel.
               </p>
             </div>
             <div className="reveal rounded-2xl bg-white shadow-lg shadow-ink/5 p-8">
               <h3 className="text-xl font-black mb-3">The settlement</h3>
               <p className="text-ink/65 leading-relaxed">
-                A tripartite escrow under a CBN-appointed trustee with a proposed monthly auto-sweep. Bank and
-                trustee identities differ across the source sections and no commitment is verified; this is a term to
-                be reconciled.
+                A tripartite escrow under a CBN-appointed trustee with a proposed monthly auto-sweep. Bank and trustee
+                identities differ across the source sections, and no commitment is verified. This term must be
+                reconciled.
               </p>
             </div>
             <div className="reveal rounded-2xl bg-white shadow-lg shadow-ink/5 p-8">
               <h3 className="text-xl font-black mb-3">The security</h3>
               <p className="text-ink/65 leading-relaxed">
                 Proposed: receivables domiciliation, lien over the equipment, corporate and director guarantees,
-                all-risk and political-risk cover, and a performance bond. "Senior secured" is not established
-                without perfected documentation.
+                all-risk and political-risk cover, and a performance bond. "Senior secured" is not established without
+                perfected documentation.
               </p>
             </div>
           </div>
@@ -238,13 +237,13 @@ export default function InvestorsPage() {
 
       <section data-reveal className="bg-ink py-24 md:py-32 px-6 md:px-24">
         <div className="max-w-6xl mx-auto">
-          <Eyebrow className="mb-8">Illustrations — not forecasts</Eyebrow>
+          <Eyebrow className="mb-8">Illustrations, not forecasts</Eyebrow>
           <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-6 max-w-4xl">
             The target case, <span className="text-brand">recalculated.</span>
           </h2>
           <p className="reveal text-lg text-white/65 max-w-3xl mb-12 leading-relaxed">
-            On the source's constant NGN 35B/month gross target, with NGN 50B fully funded at month zero — arithmetic
-            only, before real-world ramp, costs or staging.
+            On the source's constant NGN 35B/month gross target, with NGN 50B fully funded at month zero. Arithmetic
+            only. No ramp, costs or staging are reflected.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mb-10">
@@ -265,15 +264,15 @@ export default function InvestorsPage() {
                 {s.name}: {s.moic} MOIC · payback {s.payback}
               </span>
             ))}
-            <span className="text-xs text-white/45">— companion cases in the workbook, all illustrative</span>
+            <span className="text-xs text-white/45">Companion cases in the workbook, all illustrative.</span>
           </div>
 
           <p className="reveal text-sm text-white/50 max-w-4xl leading-relaxed">
-            Not forecasts and not promised returns. The illustrations assume constant collections from month one, no
-            ramp, no costs deducted from the investor share and no terminal principal. Actual funded distributions
-            depend on agreed terms, staged rollout and collections — distribution commencement is a term to be
-            negotiated, and the source's day-one payout is not supported by its own rollout. See §3 of the memorandum
-            and the workbook's Headline, Ramp and Downside cases.
+            These are timing illustrations, not forecasts or promises of return. They assume constant collections from
+            month one, with no ramp, no costs deducted from the investor share and no terminal principal. Actual funded
+            distributions depend on agreed terms, staged rollout and collections. Distribution commencement is a term
+            to be negotiated, and the source's day-one payout is not supported by its own rollout. See §3 of the
+            memorandum and the workbook's Headline, Ramp and Downside cases.
           </p>
         </div>
       </section>
@@ -298,7 +297,7 @@ export default function InvestorsPage() {
             ))}
           </div>
           <p className="reveal mt-8 text-sm text-ink/55 max-w-3xl">
-            Management allocation targets — not actual spend. Procurement specifications, Incoterms, factory acceptance,
+            Management allocation targets, not actual spend. Procurement specifications, Incoterms, factory acceptance,
             warranty and retention terms are subject to diligence.
           </p>
         </div>
@@ -320,8 +319,8 @@ export default function InvestorsPage() {
             ))}
           </div>
           <p className="reveal mt-8 text-sm text-white/50 max-w-3xl leading-relaxed">
-            Source-memorandum proposals, preserved for diligence — not executed instruments. A draft guarantee clause
-            is not evidence of enforceable sovereign backing.
+            Source-memorandum proposals, preserved for diligence. These are not executed instruments, and a draft
+            guarantee clause is not evidence of enforceable sovereign backing.
           </p>
         </div>
       </section>
@@ -344,7 +343,7 @@ export default function InvestorsPage() {
             ))}
           </div>
           <p className="reveal mt-8 text-sm text-ink/55 max-w-3xl">
-            Recommended outcome: authorize diligence expenditure and document negotiation — not unconditional capital
+            Recommended outcome: authorize diligence expenditure and document negotiation, not unconditional capital
             release on present claims.
           </p>
         </div>
@@ -365,7 +364,7 @@ export default function InvestorsPage() {
               <h3 className="text-2xl font-black tracking-tight mb-3">Investment memorandum</h3>
               <p className="text-white/65 leading-relaxed mb-6 flex-1">
                 The expanded 15-page diligence draft: source claims flagged, arithmetic corrected, proposed controls
-                set out — with the complete original text preserved in Appendix A.
+                set out. The complete original text is preserved in Appendix A.
               </p>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/45 mb-4">PDF · 15 pages · 122 KB</p>
               <a
@@ -385,7 +384,7 @@ export default function InvestorsPage() {
               <h3 className="text-2xl font-black tracking-tight mb-3">Cash-flow model</h3>
               <p className="text-white/65 leading-relaxed mb-6 flex-1">
                 The illustrative workbook with Headline, Ramp and Downside cases, funding and waterfall tabs, and
-                audit checks. Entitlement projections only — funding gaps are flagged, not hidden.
+                audit checks. Entitlement projections only; the workbook flags funding gaps rather than hiding them.
               </p>
               <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/45 mb-4">XLSX · 12 sheets · 280 KB</p>
               <a
@@ -403,7 +402,7 @@ export default function InvestorsPage() {
               <h3 className="text-2xl font-black tracking-tight mb-2">Full diligence data room</h3>
               <p className="text-white/65 leading-relaxed max-w-2xl">
                 Corporate records, concession and approvals, tariff instruments, instrument enumeration, collections
-                evidence, procurement and calibration documentation — released under NDA.
+                evidence, procurement and calibration documentation. Released under NDA.
               </p>
             </div>
             <ButtonLink to="/get-started" variant="ghost">Request access</ButtonLink>
@@ -411,8 +410,8 @@ export default function InvestorsPage() {
 
           <p className="reveal flex items-start gap-3 text-sm text-white/55 leading-relaxed max-w-3xl">
             <Lock size={16} className="mt-0.5 shrink-0 text-brand" aria-hidden />
-            Both documents are marked confidential and shared for discussion and due diligence only — please do not
-            distribute. Confirm the current version with the CDS-IGRL team before relying on any figure.
+            Both documents are marked confidential and shared for discussion and due diligence only. Please do not
+            distribute them, and confirm the current version with the CDS-IGRL team before relying on any figure.
           </p>
         </div>
       </section>
@@ -422,8 +421,8 @@ export default function InvestorsPage() {
         <div className="relative max-w-4xl mx-auto text-center">
           <h2 className="reveal text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] mb-6">Start with the evidence.</h2>
           <p className="reveal text-xl text-white/65 mb-12 max-w-2xl mx-auto">
-            Begin with an NDA, the data room and a working session on the model — the numbers, the gaps and the open
-            items — before any funding decision.
+            Start with an NDA, the data room and a working session on the model. Look at the numbers and the open
+            items before any funding decision.
           </p>
           <div className="reveal flex flex-col md:flex-row gap-5 justify-center">
             <ButtonLink to="/get-started">Request an introduction</ButtonLink>
