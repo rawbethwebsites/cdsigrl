@@ -476,10 +476,10 @@ export default function InvestorsPage() {
               </span>
               <h3 className="mb-3 text-2xl font-black tracking-tight">Investment memorandum</h3>
               <p className="mb-6 flex-1 leading-relaxed text-white/65">
-                The expanded 15-page diligence draft: source claims flagged, arithmetic corrected, proposed controls
+                The expanded diligence draft: source claims flagged, arithmetic corrected, proposed controls
                 set out. The complete original text is preserved in Appendix A.
               </p>
-              <p className="mb-4 font-mono text-[10px] font-black uppercase tracking-[0.3em] text-white/45">PDF · 15 pages · 122 KB</p>
+              <p className="mb-4 font-mono text-[10px] font-black uppercase tracking-[0.3em] text-white/45">PDF · 31 pages · 544 KB</p>
               <a
                 href="/investors/CDS-IGRL-Investment-Memorandum.pdf"
                 target="_blank"
