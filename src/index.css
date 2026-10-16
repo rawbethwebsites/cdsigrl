@@ -7,7 +7,9 @@
   --color-coal:      #0C1E30;
   --color-cream:     #EEF4F8;
   --color-bone:      #F5F5F0;
+  --color-mint:      #8FF0B5;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @keyframes marquee {
@@ -43,6 +45,31 @@ canvas { touch-action: none; }
 
 :focus-visible { outline: 2px solid #18C25A; outline-offset: 3px; }
 
+/* ---- CDS IGRL OS motifs (shared with the homepage design) ---- */
+.os-grid {
+  background-image:
+    linear-gradient(rgba(143, 240, 181, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 240, 181, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, #000 0, transparent 65%);
+  mask-image: radial-gradient(circle at 50% 45%, #000 0, transparent 65%);
+}
+.tick-rule {
+  background-image: linear-gradient(90deg, rgba(143, 240, 181, 0.45) 1px, transparent 1px);
+  background-size: 10% 100%;
+  -webkit-mask-image: linear-gradient(#000, transparent);
+  mask-image: linear-gradient(#000, transparent);
+}
+@keyframes meterFill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.meter-fill {
+  transform-origin: left;
+  animation: meterFill 1.4s 0.25s cubic-bezier(0.25, 0.8, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee, .hero-content { animation: none; }
+  .meter-fill { animation: none; }
 }
